@@ -124,6 +124,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </p>
             </div>
           </div>
+          {/* Cloudflare Web Analytics — 쿠키리스, 프로덕션 빌드에서만 (dev 트래픽 오염 방지) */}
+          {process.env.NODE_ENV === "production" && (
+            <script
+              type="module"
+              src="https://static.cloudflareinsights.com/beacon.min.js"
+              data-cf-beacon='{"token": "9c980d8f43c34b409aa09e7e77528850"}'
+            />
+          )}
           <div className="border-t">
             <p className="mx-auto flex max-w-4xl flex-wrap items-center gap-x-4 gap-y-1 px-4 py-4 text-sm text-gray-400 dark:text-gray-500">
               <span>© {new Date().getFullYear()} {SITE_NAME}</span>
