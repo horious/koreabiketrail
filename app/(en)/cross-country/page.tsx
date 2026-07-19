@@ -54,11 +54,20 @@ export default function CrossCountryPage() {
         ))}
       </section>
 
-      <ImagePlaceholder
-        aspect="wide"
-        description="Simple schematic route map of Korea (illustration, not a web map): Incheon → Seoul → Chungju → Ihwaryeong → Daegu → Busan with the 4 path segments in different colors and distances labeled. Foreigners need to place the route on the peninsula at a glance."
-        caption="The Cross-Country Route: Incheon to Busan, 633 km."
-      />
+      <figure className="my-6">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${MEDIA_URL}/images/korea-cycling-paths-map.jpg`}
+          alt="Map of Korea's certification bike path network with every path color-coded and all certification centers marked, staffed centers highlighted"
+          loading="lazy"
+          className="w-full rounded-xl border bg-white"
+        />
+        <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+          Korea's whole certification network in one map — the Cross-Country
+          Route (국토종주, 633 km) runs through the middle of it, Incheon →
+          Busan. Yellow boxes are staffed centers.
+        </figcaption>
+      </figure>
 
       <section className="mt-8">
         <h2 className="text-xl font-semibold">What it is</h2>
@@ -80,10 +89,18 @@ export default function CrossCountryPage() {
           same as the Four Rivers certification (that needs the Geum and
           Yeongsan rivers too).
         </p>
-        <ImagePlaceholder
-          description="Close-up of the painted blue line on the path surface with a wheel/shadow of a bike in frame — the single most reassuring navigation fact on the route. Alternatively: a route signpost with '부산/Busan' distance marker."
-          caption="Follow the blue line. It really does go all the way to Busan."
-        />
+        <figure className="my-6">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${MEDIA_URL}/images/blueline.jpg`}
+            alt="Rider on the riverside path at sunset with the painted blue guide line running along the lane"
+            loading="lazy"
+            className="w-full rounded-xl border"
+          />
+          <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            Follow the blue line. It really does go all the way to Busan.
+          </figcaption>
+        </figure>
       </section>
 
       <section className="mt-8">

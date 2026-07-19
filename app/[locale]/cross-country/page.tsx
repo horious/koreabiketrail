@@ -41,6 +41,14 @@ export default async function LocaleCrossCountry({
         ))}
       </section>
 
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${MEDIA_URL}/images/korea-cycling-paths-map.jpg`}
+        alt="Korea certification bike path network map (Korean/English labels)"
+        loading="lazy"
+        className="mt-6 w-full rounded-xl border bg-white"
+      />
+
       <section className="mt-8">
         <h2 className="text-xl font-semibold">{d.whatTitle}</h2>
         <p className="mt-2 text-gray-700 dark:text-gray-300">{d.whatP1}</p>
@@ -50,6 +58,13 @@ export default async function LocaleCrossCountry({
           ))}
         </ul>
         <p className="mt-3 text-gray-700 dark:text-gray-300">{d.whatP2}</p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${MEDIA_URL}/images/blueline.jpg`}
+          alt=""
+          loading="lazy"
+          className="my-6 w-full rounded-xl border"
+        />
       </section>
 
       <section className="mt-8">
@@ -95,6 +110,13 @@ export default async function LocaleCrossCountry({
 
       <section className="mt-8 rounded-xl bg-amber-50 dark:bg-amber-950/30 p-5">
         <h2 className="text-xl font-semibold">{d.hardTitle}</h2>
+        {/* EN 페이지와 동일 미디어 — muted 속성을 정적 HTML에 보장하기 위해 raw HTML */}
+        <div
+          className="my-4"
+          dangerouslySetInnerHTML={{
+            __html: `<video class="w-full rounded-xl border" autoplay muted loop playsinline preload="metadata"><source src="${MEDIA_URL}/video/ihwaryeong-summit-v3.mp4" type="video/mp4" /><source src="${MEDIA_URL}/video/ihwaryeong-summit-v3.webm" type="video/webm" /></video>`,
+          }}
+        />
         <ul className="mt-2 list-disc space-y-1 pl-5 text-gray-700 dark:text-gray-300">
           {d.hard.map((h) => (
             <li key={h.slice(0, 20)}>{h}</li>
