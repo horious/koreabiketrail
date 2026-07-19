@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { languageAlternates } from "@/lib/i18n";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "./", languages: languageAlternates("/") },
+};
 
 const CARDS = [
   {
@@ -62,6 +68,44 @@ const REASONS = [
   },
 ];
 
+const REGIONS = [
+  {
+    flag: "🇪🇺",
+    who: "If you're a European rider...",
+    body: "You've done EuroVelo — now imagine a route with the Danube's infrastructure but zero cars for 600 km, a stamp passport, and a medal at the end. Motels at $45 a night mean you tour lighter than you ever could at home.",
+  },
+  {
+    flag: "🇺🇸",
+    who: "If you're riding in North America...",
+    body: "Tired of sharing a 12-inch shoulder with trucks? Here the entire country crossing is car-free, and there's a town with food and a bed every 20 km — credit-card touring without the RV traffic or the 100-mile empty stretches.",
+  },
+  {
+    flag: "🇦🇺",
+    who: "If you're from Australia or New Zealand...",
+    body: "Your spring is Korea's autumn — the best riding season here (Sep–Nov, dry and golden). Swap the outback's empty distances for a route where a convenience store is never more than a few km away, one direct flight north.",
+  },
+  {
+    flag: "🇯🇵",
+    who: "If you're in Japan...",
+    body: "You're one ferry ride away: Fukuoka to Busan overnight, riding by morning. If you loved the Shikoku 88 or Shimanami Kaido, Korea's stamp-and-medal system is the same joy — stretched across an entire country.",
+  },
+  {
+    flag: "🌏",
+    who: "If you're in Southeast Asia...",
+    body: "A 5–6 hour LCC flight trades tropical heat for crisp river mornings. Spring cherry blossoms or autumn colors, flat riding, and a finisher's medal to bring home — the perfect first overseas tour.",
+  },
+  {
+    flag: "🌎",
+    who: "If you're from South America...",
+    body: "You've earned your stripes on Andean climbs and Carretera gravel. Korea is the other kind of joy: smooth tarmac, zero traffic, a motel and hot food every evening — the tour where the country does the hard work for you.",
+  },
+  {
+    flag: "🌍",
+    who: "If you're from Africa...",
+    body: "You already know how to ride self-supported — here you can finally pack light. Bike shops in every city, convenience stores every few kilometers, and streets safe enough to leave a loaded bike outside. And your spring? That's Korea's golden autumn.",
+  },
+];
+
 export default function HomePage() {
   return (
     <div>
@@ -101,6 +145,38 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="py-10">
+        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+          Wherever you ride
+        </p>
+        <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
+          If this is you, Korea is your next tour
+        </h2>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {REGIONS.map((r) => (
+            <div
+              key={r.who}
+              className={`rounded-2xl border bg-white p-6 dark:bg-gray-900 ${
+                REGIONS.indexOf(r) === REGIONS.length - 1 ? "sm:col-span-2" : ""
+              }`}
+            >
+              <h3 className="font-semibold">
+                <span className="mr-2" aria-hidden>
+                  {r.flag}
+                </span>
+                {r.who}
+              </h3>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                {r.body}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-sm font-medium text-gray-500 italic dark:text-gray-400">
+          Wherever you start, the blue line ends in Busan.
+        </p>
       </section>
 
       <section className="py-10">

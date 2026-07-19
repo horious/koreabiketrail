@@ -3,6 +3,21 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { MEDIA_URL } from "@/lib/data";
+import type { HeroTexts } from "@/lib/i18n";
+
+const EN_TEXTS: HeroTexts = {
+  headline: "Cycle the length of South Korea.",
+  sub: "633 km of mostly car-free riding from Incheon to Busan, a stamp-collecting passport, and a medal at the end.",
+  cta1: "Plan the ride",
+  cta2: "How certification works",
+  labels: [
+    "The car-free blue line, Incheon → Busan",
+    "Stamp every red booth on the way",
+    "One real climb: Ihwaryeong",
+    "Long, calm days along the Nakdong valley",
+    "Finish at the Nakdong estuary, medal earned",
+  ],
+};
 
 // 이미지 확보 시 slide.image에 경로를 넣고 배경 div를 <img>로 교체 (next/image 금지)
 const SLIDES: {
@@ -61,7 +76,15 @@ const SLIDES: {
 
 const INTERVAL_MS = 5000;
 
-export default function HeroCarousel() {
+export default function HeroCarousel({
+  texts = EN_TEXTS,
+  cta1Href = "/cross-country/",
+  cta2Href = "/certification/",
+}: {
+  texts?: HeroTexts;
+  cta1Href?: string;
+  cta2Href?: string;
+}) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   // 비디오는 해당 슬라이드가 처음 활성화될 때만 개별 마운트 — 홈 진입만으로 수 MB를 내려받지 않게 함
@@ -169,30 +192,29 @@ export default function HeroCarousel() {
       {/* 고정 오버레이: 헤드라인 + CTA */}
       <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
         <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-white [text-shadow:0_0_10px_rgba(0,0,0,0.55),0_0_28px_rgba(0,0,0,0.35)] sm:text-4xl">
-          Cycle the length of South Korea.
+          {texts.headline}
         </h1>
         <p className="mt-3 max-w-xl text-sm text-gray-100 [text-shadow:0_0_8px_rgba(0,0,0,0.55),0_0_20px_rgba(0,0,0,0.35)] sm:text-base">
-          633 km of mostly car-free riding from Incheon to Busan, a
-          stamp-collecting passport, and a medal at the end.
+          {texts.sub}
         </p>
         <p
           className="mt-2 h-5 text-sm font-medium text-white/90 [text-shadow:0_0_8px_rgba(0,0,0,0.55),0_0_20px_rgba(0,0,0,0.35)]"
           aria-live="polite"
         >
-          {SLIDES[index].label}
+          {texts.labels[index]}
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link
-            href="/cross-country/"
+            href={cta1Href}
             className="rounded-lg bg-white px-5 py-2.5 font-medium text-gray-900 shadow hover:bg-gray-100"
           >
-            Plan the ride
+            {texts.cta1}
           </Link>
           <Link
-            href="/certification/"
+            href={cta2Href}
             className="rounded-lg border border-white/70 px-5 py-2.5 font-medium text-white backdrop-blur-sm hover:bg-white/10"
           >
-            How certification works
+            {texts.cta2}
           </Link>
         </div>
 

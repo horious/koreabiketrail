@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { languageAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Bike Passport & Certification — how Korea's stamp system works",
   description:
     "Buying the ₩4,000 Bike Passport, stamping at red booths, getting certified and ordering the medal — including the parts that are hard as a foreigner.",
+  alternates: { canonical: "./", languages: languageAlternates("/certification/") },
 };
 
 const STEPS = [

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { certCenters, certCentersLastVerified, MEDIA_URL } from "@/lib/data";
+import { languageAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "GPX & TCX downloads — full Cross-Country Route track + stamp-booth waypoints",
   description:
     "Free GPX/TCX of Korea's full 633km Cross-Country cycling route plus every certification center as a named waypoint — Garmin, Wahoo and Komoot compatible.",
+  alternates: { canonical: "./", languages: languageAlternates("/gpx/") },
 };
 
 export default function GpxPage() {

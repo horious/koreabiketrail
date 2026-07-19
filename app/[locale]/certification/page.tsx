@@ -1,0 +1,66 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { DICTS, isLocale, languageAlternates } from "@/lib/i18n";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const d = DICTS[locale].certification;
+  return {
+    title: d.metaTitle,
+    description: d.metaDesc,
+    alternates: { canonical: "./", languages: languageAlternates("/certification/") },
+  };
+}
+
+export default async function LocaleCertification({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound();
+  const d = DICTS[locale].certification;
+
+  return (
+    <article>
+      <h1 className="text-3xl font-bold">{d.title}</h1>
+      <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">{d.intro}</p>
+
+      <ol className="mt-8 space-y-5">
+        {d.steps.map((s) => (
+          <li key={s.title} className="rounded-xl border p-5">
+            <h2 className="font-semibold">{s.title}</h2>
+            <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{s.body}</p>
+          </li>
+        ))}
+      </ol>
+
+      <section className="mt-8">
+        <h2 className="text-xl font-semibold">{d.levelsTitle}</h2>
+        <table className="mt-3 w-full border-collapse text-sm">
+          <thead>
+            <tr className="border-b text-left text-gray-500 dark:text-gray-400">
+              <th className="py-1 pr-3">{d.levelsHead.level}</th>
+              <th className="py-1 pr-3">{d.levelsHead.what}</th>
+              <th className="py-1">{d.levelsHead.reward}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {d.levels.map(([level, what, reward]) => (
+              <tr key={level} className="border-b">
+                <td className="py-1.5 pr-3">{level}</td>
+                <td className="py-1.5 pr-3">{what}</td>
+                <td className="py-1.5">{reward}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    </article>
+  );
+}

@@ -8,11 +8,13 @@ import {
   stagePlans,
   stagesLastVerified,
 } from "@/lib/data";
+import { languageAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Cross-Country Route (Gukto Jongju) — 633km Incheon to Busan",
   description:
     "Stage-by-stage guide to Korea's 633km Cross-Country cycling route: 5 and 7-day plans, the Ihwaryeong climb, certification stamps, and where to sleep.",
+  alternates: { canonical: "./", languages: languageAlternates("/cross-country/") },
 };
 
 const jsonLd = {
