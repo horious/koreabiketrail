@@ -73,9 +73,9 @@ const GROUPS: {
         desc: "The English-speaking group for exactly this ride: daily splits, lodging picks, GPX swaps, current path conditions.",
       },
       {
-        href: "https://www.facebook.com/groups/",
-        name: "Korea Cycling Community / Han River Riders — Facebook",
-        desc: "Broader expat riding groups with active Q&A; search the group names on Facebook.",
+        href: "https://www.facebook.com/groups/koreacyclingcommunity/",
+        name: "Korea Cycling Community — Facebook",
+        desc: "Broad expat riding group with active Q&A and a well-maintained FAQ. (Han River Riders is the related Seoul riding group — search the name on Facebook.)",
       },
     ],
   },
