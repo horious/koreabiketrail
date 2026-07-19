@@ -18,7 +18,7 @@ const SLIDES: {
     gradient:
       "from-amber-200 via-orange-100 to-sky-200 dark:from-amber-800 dark:via-orange-900 dark:to-sky-900",
     label: "The car-free blue line, Incheon → Busan",
-    image: `${MEDIA_URL}/images/hero-carfree-v2.jpg`,
+    image: `${MEDIA_URL}/images/hero-carfree-v3.jpg`,
   },
   {
     id: "booth",
@@ -55,8 +55,7 @@ const SLIDES: {
     gradient:
       "from-sky-200 via-blue-100 to-indigo-200 dark:from-sky-900 dark:via-blue-950 dark:to-indigo-900",
     label: "Finish at the Nakdong estuary, medal earned",
-    imageNote:
-      "IMAGE: rider holding the stamped passport/medal at the Busan finish line",
+    image: `${MEDIA_URL}/images/hero-goal.jpg`,
   },
 ];
 
