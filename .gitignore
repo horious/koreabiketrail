@@ -10,5 +10,8 @@ docs/private/
 .claude/settings.local.json
 # prebuild(scripts/build-gpx.mjs)가 생성
 public/gpx/
-# 원본 미디어 (배포 제외 — 웹용은 ffmpeg로 변환해 public/video/에)
+# 원본 미디어 (배포 제외 — scripts/media.mjs로 변환·R2 업로드)
 assets-src/
+# R2 로컬 미러 — dev 미리보기 전용 (media:add/pull이 생성)
+public/video/
+public/images/
