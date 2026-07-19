@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* 클래스 기반 다크모드: <html class="dark"> 토글 (ThemeToggle + layout 인라인 스크립트) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-gray-200);
+  }
+  .dark *,
+  .dark ::before,
+  .dark ::after {
+    border-color: var(--color-gray-800);
+  }
+  body {
+    @apply bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100;
+  }
+}
+
+/* MapLibre 팝업 다크모드 */
+.dark .maplibregl-popup-content {
+  background: var(--color-gray-900);
+  color: var(--color-gray-100);
+}
+.dark .maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: var(--color-gray-900);
+}
+.dark .maplibregl-popup-anchor-top .maplibregl-popup-tip {
+  border-bottom-color: var(--color-gray-900);
+}

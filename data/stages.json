@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "note": "Distances are approximate, rounded from rider reports. TODO(M2): replace with GPS-measured figures.",
+    "lastVerified": "2026-07-16"
+  },
+  "plans": [
+    {
+      "id": "7-day",
+      "title": "7 days — recommended",
+      "blurb": "Comfortable daily distances with time for stamps, food stops and photos. The pass day (Day 4) is kept deliberately short.",
+      "days": [
+        { "day": 1, "from": "Incheon (Ara West Sea Lock)", "to": "Paldang / Namyangju", "km": 70, "notes": "Buy your passport at the start (cash!). Flat riverside all day; last stamp in Seoul is Gwangnaru." },
+        { "day": 2, "from": "Paldang", "to": "Yeoju", "km": 85, "notes": "Old rail-trail section around Neungnae Station; weir stamps begin." },
+        { "day": 3, "from": "Yeoju", "to": "Chungju", "km": 85, "notes": "Quiet South Han river valley. Binae Island booth is remote — check your ink." },
+        { "day": 4, "from": "Chungju", "to": "Sangju", "km": 105, "notes": "The big one: Suanbo, then the Ihwaryeong climb (5km, up to ~12%). Start early." },
+        { "day": 5, "from": "Sangju", "to": "Daegu (Gangjeong Goryeong Weir)", "km": 115, "notes": "Long weir-to-weir riding on the Nakdong." },
+        { "day": 6, "from": "Daegu", "to": "Namji", "km": 100, "notes": "Some short steep ramps ('walls') south of Daegu." },
+        { "day": 7, "from": "Namji", "to": "Busan (Nakdong Estuary Bank)", "km": 73, "notes": "Finish at the estuary. Get the passport verified at the staffed center. City traffic near the end — see the city riding guide." }
+      ]
+    },
+    {
+      "id": "5-day",
+      "title": "5 days — fast",
+      "blurb": "For fit riders comfortable with 120km+ days. Little slack for weather or mechanicals.",
+      "days": [
+        { "day": 1, "from": "Incheon", "to": "Yangpyeong", "km": 120, "notes": "" },
+        { "day": 2, "from": "Yangpyeong", "to": "Suanbo", "km": 120, "notes": "Sleep at the foot of the pass." },
+        { "day": 3, "from": "Suanbo", "to": "Gumi", "km": 130, "notes": "Ihwaryeong first thing." },
+        { "day": 4, "from": "Gumi", "to": "Changnyeong (Haman Weir area)", "km": 130, "notes": "" },
+        { "day": 5, "from": "Changnyeong", "to": "Busan", "km": 133, "notes": "" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.env*
+# 내부 기획/제작 문서 (공개 저장소에 올리지 않음 — images.md 등 공개 가능 문서는 docs/ 루트에)
+docs/private/
+# Claude Code 로컬 설정
+.claude/settings.local.json
+# prebuild(scripts/build-gpx.mjs)가 생성
+public/gpx/
+# 원본 미디어 (배포 제외 — 웹용은 ffmpeg로 변환해 public/video/에)
+assets-src/
