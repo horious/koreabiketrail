@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import { certCenters, certCentersLastVerified } from "@/lib/data";
+import { certCenters, certCentersLastVerified, MEDIA_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "GPX downloads — Cross-Country Route with stamp-booth waypoints",
+  title: "GPX & TCX downloads — full Cross-Country Route track + stamp-booth waypoints",
   description:
-    "Free GPX for Korea's Cross-Country cycling route with every certification center as a named waypoint, compatible with Garmin, Wahoo and Komoot.",
+    "Free GPX/TCX of Korea's full 633km Cross-Country cycling route plus every certification center as a named waypoint — Garmin, Wahoo and Komoot compatible.",
 };
 
 export default function GpxPage() {
@@ -20,33 +20,53 @@ export default function GpxPage() {
       </p>
 
       <div className="mt-6 rounded-xl border p-5">
+        <h2 className="font-semibold">Full route track — Incheon → Busan</h2>
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+          The complete Cross-Country track, start gate to estuary. GPX for most
+          devices and apps, TCX if your Garmin ecosystem prefers it.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <a
+            href={`${MEDIA_URL}/gpx/cross-country-route.gpx`}
+            download
+            className="inline-block rounded-lg bg-gray-900 px-5 py-2.5 font-medium text-white hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+          >
+            Download GPX (1.9 MB)
+          </a>
+          <a
+            href={`${MEDIA_URL}/gpx/cross-country-route.tcx`}
+            download
+            className="inline-block rounded-lg border px-5 py-2.5 font-medium hover:bg-gray-50 dark:hover:bg-gray-800/50"
+          >
+            Download TCX (3.9 MB)
+          </a>
+        </div>
+        <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+          Heads-up: the track skips the <strong>Ttukseom Viewpoint booth</strong>{" "}
+          (north bank). That stamp is optional — it is{" "}
+          <strong>not required for Cross-Country certification</strong>, and
+          skipping it doesn't affect your certificate or medal. Want it anyway?
+          It's a short bridge detour in eastern Seoul.
+        </p>
+      </div>
+
+      <div className="mt-4 rounded-xl border p-5">
         <h2 className="font-semibold">
           Certification centers — waypoint GPX ({certCenters.length} booths)
         </h2>
         <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
           Every stamp booth from Incheon to Busan as a named waypoint, staffed
-          centers flagged. Works in Garmin, Wahoo, Komoot, OsmAnd. Coordinates
-          from the official bike.go.kr map data (last verified{" "}
-          {certCentersLastVerified}).
+          centers flagged. Load it alongside the track and your GPS warns you
+          before each booth. Coordinates from the official bike.go.kr map data
+          (last verified {certCentersLastVerified}).
         </p>
         <a
           href="/gpx/cross-country-cert-centers.gpx"
           download
-          className="mt-4 inline-block rounded-lg bg-gray-900 px-5 py-2.5 font-medium text-white hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+          className="mt-4 inline-block rounded-lg border px-5 py-2.5 font-medium hover:bg-gray-50 dark:hover:bg-gray-800/50"
         >
-          Download GPX (free)
+          Download waypoints GPX
         </a>
-      </div>
-
-      <div className="mt-4 rounded-xl border border-dashed p-5 text-sm text-gray-500 dark:text-gray-400">
-        <h2 className="font-semibold text-gray-700 dark:text-gray-300">
-          Full 633 km track GPX — coming soon
-        </h2>
-        <p className="mt-2">
-          We only publish tracks we've ride-verified. Until then, the route is
-          navigable by the painted blue line plus these waypoints, or grab a
-          community track from Komoot.
-        </p>
       </div>
 
       <ImagePlaceholder

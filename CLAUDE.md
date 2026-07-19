@@ -26,6 +26,10 @@
     M1의 PMTiles도 같은 버킷 사용 예정
   - 예외: 소형 UI 그래픽(공식 표지판 도안 등, 개당 ~20KB)은 `public/signs/`에 git 커밋 —
     R2 규칙은 사진·영상 같은 대용량용. 표지판 도안 출처: 도로교통법 시행규칙 공식 도안(Wikimedia Commons SVG 렌더)
+  - 전체 트랙 GPX/TCX: R2 `gpx/cross-country-route.{gpx,tcx}` (wrangler put 수동, content-type
+    `application/gpx+xml` / `application/vnd.garmin.tcx+xml`, **캐시 1일** — 트랙 수정 가능성 때문에
+    immutable 아님, 같은 키에 재업로드로 갱신). 원본은 `assets-src/`, 로컬 미러 `public/gpx/`.
+    뚝섬 부스는 트랙 미경유(국토종주 인증에 선택사항 — 사용자 확인)
 - `components/ImagePlaceholder.tsx` — 이미지 확보 전 자리표시(수급 가이드 설명 포함). 교체 시 `<img>` 사용, next/image 금지.
   (참고: Wikimedia Commons 무료 사진으로 채웠다가 품질 문제로 원복함 — 자체 촬영/제작 이미지로 채울 것)
 - `data/stages.json` — 5일/7일 스테이지 분할 (거리 근사값)
