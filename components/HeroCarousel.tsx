@@ -10,6 +10,7 @@ const SLIDES: {
   gradient: string;
   label: string;
   imageNote?: string;
+  image?: string;
   video?: { mp4: string; webm: string };
 }[] = [
   {
@@ -17,16 +18,17 @@ const SLIDES: {
     gradient:
       "from-amber-200 via-orange-100 to-sky-200 dark:from-amber-800 dark:via-orange-900 dark:to-sky-900",
     label: "The car-free blue line, Incheon → Busan",
-    imageNote:
-      "IMAGE: loaded touring bike on the riverside path, painted blue line visible, golden hour (Namhan River or Ara path)",
+    image: `${MEDIA_URL}/images/hero-carfree.jpg`,
   },
   {
     id: "booth",
     gradient:
       "from-rose-200 via-red-100 to-amber-100 dark:from-rose-900 dark:via-red-950 dark:to-amber-900",
     label: "Stamp every red booth on the way",
-    imageNote:
-      "IMAGE: the iconic red stamp booth beside the path, rider reaching for the stamp",
+    video: {
+      mp4: `${MEDIA_URL}/video/cert-booth.mp4`,
+      webm: `${MEDIA_URL}/video/cert-booth.webm`,
+    },
   },
   {
     id: "pass",
@@ -105,6 +107,15 @@ export default function HeroCarousel() {
             i === index ? "opacity-100" : "opacity-0"
           }`}
         >
+          {s.image && (
+            // 첫 슬라이드 배경 — LCP 요소이므로 lazy 없이 즉시 로드
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={s.image}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          )}
           {s.video && mountedVideos[s.id] && (
             <video
               className="absolute inset-0 h-full w-full object-cover"
