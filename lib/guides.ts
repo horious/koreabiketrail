@@ -129,7 +129,13 @@ export const guides: Guide[] = [
       {
         heading: "Read a real sign",
         paragraphs: [
-          "이화령휴게소 인증센터 = Ihwa-ryeong (pass) + hyugeso (rest area) + certification center → 'stamp booth at the top of the Ihwaryeong pass'. 남한강자전거길 = Nam (south) + Han-gang (Han River) + bike path. 상주상풍교 = Sangju (city) + Sangpung-gyo (bridge). Twenty syllables, and the whole route map reads itself.",
+          "Break a few real signs into their parts and the trick becomes obvious:",
+        ],
+        list: [
+          "이화령휴게소 인증센터 = Ihwa-ryeong (pass) + hyugeso (rest area) + certification center → 'stamp booth at the top of the Ihwaryeong pass'.",
+          "남한강자전거길 = Nam (south) + Han-gang (Han River) + jajeongeo-gil (bike path) → 'South Han River bike path'.",
+          "상주상풍교 = Sangju (city) + Sangpung-gyo (bridge) → 'Sangpung Bridge in Sangju'.",
+          "That's the whole trick — twenty syllables, and the route map reads itself.",
         ],
         image:
           "A real route signpost photo with each name-part color-underlined and translated in overlay (e.g. 남한강/자전거길 split and labeled). One annotated sign teaches the whole system visually.",
