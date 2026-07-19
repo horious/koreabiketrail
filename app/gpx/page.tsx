@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { certCenters, certCentersLastVerified, MEDIA_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -56,11 +55,39 @@ export default function GpxPage() {
           skipping it doesn't affect your certificate or medal. Want it anyway?
           It's a short bridge detour in eastern Seoul.
         </p>
+        <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-500 dark:text-gray-400">
+          <li>
+            This is a <strong>recommended</strong> line, not a mandatory one —
+            certification only cares about the stamps. As long as you pass the
+            certification centers, any route you like is fine.
+          </li>
+          <li>
+            Some older GPS units can't display a route this long. If yours
+            struggles, split the file into day-sized chunks before uploading
+            (RideWithGPS, Komoot or gpx.studio can cut it).
+          </li>
+          <li>
+            No GPS? KakaoMap has built-in bicycle routing — it can navigate you
+            between certification centers on the fly.
+          </li>
+        </ul>
       </div>
 
-      <ImagePlaceholder
-        description="Screenshot of a Garmin/Wahoo head unit (or Komoot app) on a handlebar showing the route with our stamp-booth waypoint flags approaching — proof of the 'your GPS warns you before the booth' promise. Annotate the waypoint icon with an arrow."
-      />
+      <section className="mt-8">
+        <h2 className="text-xl font-semibold">Preview the route</h2>
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+          The same track on RideWithGPS — pan the map, check the elevation
+          profile, or send it straight to your device from there.
+        </p>
+        <iframe
+          src="https://ridewithgps.com/embeds?type=route&id=56205968&title=Korea%20Cross-Country%20Route&metricUnits=true&sampleGraph=true&privacyCode=W8UuRMByvk97SbdCOswzdIV7uBCgML54"
+          title="Korea Cross-Country Route on RideWithGPS"
+          loading="lazy"
+          scrolling="no"
+          className="mt-4 h-[700px] w-full min-w-full rounded-xl border"
+          style={{ width: "1px" }}
+        />
+      </section>
 
       <section className="mt-8">
         <h2 className="text-xl font-semibold">Loading it</h2>
