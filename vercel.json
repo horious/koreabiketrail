@@ -1,0 +1,56 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "lang", "value": "ja" }],
+      "destination": "/ja/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "lang", "value": "zh" }],
+      "destination": "/zh/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "lang", "value": "th" }],
+      "destination": "/th/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "lang", "value": "es" }],
+      "destination": "/es/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "ja.*" }],
+      "missing": [{ "type": "cookie", "key": "lang" }],
+      "destination": "/ja/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "zh.*" }],
+      "missing": [{ "type": "cookie", "key": "lang" }],
+      "destination": "/zh/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "th.*" }],
+      "missing": [{ "type": "cookie", "key": "lang" }],
+      "destination": "/th/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "es.*" }],
+      "missing": [{ "type": "cookie", "key": "lang" }],
+      "destination": "/es/",
+      "permanent": false
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { SITE_NAME, SITE_URL } from "@/lib/data";
 
@@ -47,6 +48,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             src="https://static.cloudflareinsights.com/beacon.min.js"
             data-cf-beacon='{"token": "9c980d8f43c34b409aa09e7e77528850"}'
           />
+        )}
+        {/* GA4 — CF WA와 병행. GA는 쿠키 사용: EU 트래픽 본격화·수익화 시 Consent Mode 배너 필요 */}
+        {process.env.NODE_ENV === "production" && (
+          <GoogleAnalytics gaId="G-VB4RWGE68G" />
         )}
       </body>
     </html>

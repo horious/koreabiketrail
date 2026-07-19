@@ -48,6 +48,12 @@ export default async function LocaleLayout({
             <Link href="/" className="underline hover:text-gray-600 dark:hover:text-gray-300">
               {d.nav.english}
             </Link>
+            <Link
+              href="/privacy/"
+              className="underline hover:text-gray-600 dark:hover:text-gray-300"
+            >
+              Privacy
+            </Link>
             <a
               href="mailto:contact@koreabiketrail.com"
               className="underline hover:text-gray-600 dark:hover:text-gray-300"

@@ -13,6 +13,7 @@ const STATIC_PATHS: [path: string, lastModified: string][] = [
   ["/guides", "2026-07-19"],
   ["/gpx", certCentersLastVerified],
   ["/resources", "2026-07-17"],
+  ["/privacy", "2026-07-20"],
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

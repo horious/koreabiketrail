@@ -59,6 +59,12 @@ export default function SiteHeader({
     return CORE_PATHS.includes(rest) ? `${l.prefix}${rest}` : `${l.prefix}/`;
   };
 
+  // 명시적 언어 선택을 쿠키에 저장 — vercel.json의 Accept-Language 자동 리다이렉트가
+  // 사용자 선택을 존중하게 함 (환경설정 쿠키: 추적 아님, 동의 불요, 12개월)
+  const rememberLang = (code: string) => {
+    document.cookie = `lang=${code};path=/;max-age=31536000;SameSite=Lax`;
+  };
+
   const linkCls = (href: string) =>
     `transition hover:text-gray-900 dark:hover:text-gray-100 ${
       pathname === href
@@ -97,6 +103,7 @@ export default function SiteHeader({
                 <li key={l.code}>
                   <Link
                     href={langHref(l)}
+                    onClick={() => rememberLang(l.code)}
                     className={`block px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-800/50 ${
                       l.code === currentLang ? "font-semibold" : ""
                     }`}
@@ -148,6 +155,7 @@ export default function SiteHeader({
                 <Link
                   key={l.code}
                   href={langHref(l)}
+                  onClick={() => rememberLang(l.code)}
                   className={
                     l.code === currentLang
                       ? "font-semibold"

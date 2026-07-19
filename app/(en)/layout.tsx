@@ -78,6 +78,12 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
         <div className="border-t">
           <p className="mx-auto flex max-w-4xl flex-wrap items-center gap-x-4 gap-y-1 px-4 py-4 text-sm text-gray-400 dark:text-gray-500">
             <span>© {new Date().getFullYear()} {SITE_NAME}</span>
+            <Link
+              href="/privacy/"
+              className="underline hover:text-gray-600 dark:hover:text-gray-300"
+            >
+              Privacy
+            </Link>
             <span>
               Ideas to make this site better? We read every email —{" "}
               <a
