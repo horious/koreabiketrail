@@ -117,11 +117,48 @@ function pairPath(a, b) {
   return [a, b];
 }
 
-const chain = [cps[0]];
+let chain = [cps[0]];
 for (let i = 0; i < cps.length - 1; i++) {
   chain.push(...pairPath(cps[i], cps[i + 1]));
 }
 console.log(`\n체인 완성: ${chain.length}점 · 직선 대체 ${straightFallbacks}구간`);
+
+// 3) 알려진 데이터 아티팩트 제거 구역
+//    팔당대교: 북안 경로가 남단 진입점 때문에 다리를 건넜다 되돌아오는 ~1.3km 왕복 딥 발생.
+//    일반 루프 필터는 이화령 헤어핀을 훼손하므로, 검증된 bbox로 해당 딥만 잘라낸다.
+//    (bbox 안 점 제거 → 양옆 북안 지점이 짧게 직결됨)
+const EXCISE_ZONES = [
+  { name: "팔당대교 남단 왕복 딥", box: [127.233, 37.538, 127.247, 37.5462] },
+];
+for (const z of EXCISE_ZONES) {
+  const [x1, y1, x2, y2] = z.box;
+  const before = chain.length;
+  chain = chain.filter(
+    (p) => !(p[0] >= x1 && p[0] <= x2 && p[1] >= y1 && p[1] <= y2),
+  );
+  console.log(`아티팩트 제거 [${z.name}]: ${before - chain.length}점 절제`);
+}
+
+// 절제 부위 주변에서만 스텁 진동 정리 (⚠ 전역 적용 금지 — 점 간격이 촘촘한
+// 정상 곡선(이화령 헤어핀 등)에서는 k-2가 항상 60m 이내라 경로를 파괴한다)
+{
+  const before = chain.length;
+  for (const z of EXCISE_ZONES) {
+    const [x1, y1, x2, y2] = z.box;
+    const pad = 0.004; // ~400m
+    const inPad = (p) =>
+      p[0] >= x1 - pad && p[0] <= x2 + pad && p[1] >= y1 - pad && p[1] <= y2 + pad;
+    for (let pass = 0; pass < 3; pass++) {
+      for (let k = chain.length - 2; k >= 1; k--) {
+        if (!inPad(chain[k])) continue;
+        // 스파이크 꼭짓점(양옆이 서로 60m 이내) 또는 직전 점과 중복(30m 이내)
+        if (dist(chain[k - 1], chain[k + 1]) < 0.06 || dist(chain[k], chain[k - 1]) < 0.03)
+          chain.splice(k, 1);
+      }
+    }
+  }
+  console.log(`스텁 정리(절제 구역 국소): ${before - chain.length}점 제거`);
+}
 
 // 3) 검증
 let total = 0, maxGap = 0;
