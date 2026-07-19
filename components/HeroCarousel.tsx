@@ -39,6 +39,16 @@ const SLIDES: {
     },
   },
   {
+    id: "nakdong",
+    gradient:
+      "from-lime-200 via-emerald-100 to-cyan-200 dark:from-lime-900 dark:via-emerald-950 dark:to-cyan-900",
+    label: "Long, calm days along the Nakdong valley",
+    video: {
+      mp4: `${MEDIA_URL}/video/nakdonggang.mp4`,
+      webm: `${MEDIA_URL}/video/nakdonggang.webm`,
+    },
+  },
+  {
     id: "finish",
     gradient:
       "from-sky-200 via-blue-100 to-indigo-200 dark:from-sky-900 dark:via-blue-950 dark:to-indigo-900",
@@ -53,13 +63,15 @@ const INTERVAL_MS = 5000;
 export default function HeroCarousel() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  // 비디오는 해당 슬라이드가 처음 활성화될 때만 마운트 — 홈 진입만으로 3MB를 내려받지 않게 함
-  const [videoMounted, setVideoMounted] = useState(false);
+  // 비디오는 해당 슬라이드가 처음 활성화될 때만 개별 마운트 — 홈 진입만으로 수 MB를 내려받지 않게 함
+  const [mountedVideos, setMountedVideos] = useState<Record<string, boolean>>({});
   const reducedMotion = useRef(false);
 
   useEffect(() => {
-    if (SLIDES[index].video) setVideoMounted(true);
-  }, [index]);
+    const s = SLIDES[index];
+    if (s.video && !mountedVideos[s.id])
+      setMountedVideos((m) => ({ ...m, [s.id]: true }));
+  }, [index, mountedVideos]);
 
   useEffect(() => {
     reducedMotion.current = window.matchMedia(
@@ -93,7 +105,7 @@ export default function HeroCarousel() {
             i === index ? "opacity-100" : "opacity-0"
           }`}
         >
-          {s.video && videoMounted && (
+          {s.video && mountedVideos[s.id] && (
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
