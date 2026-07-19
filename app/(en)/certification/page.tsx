@@ -60,7 +60,8 @@ export default function CertificationPage() {
 
       <section className="mt-8">
         <h2 className="text-xl font-semibold">Certification levels</h2>
-        <table className="mt-3 w-full border-collapse text-sm">
+        <div className="mt-3 overflow-x-auto">
+        <table className="w-full min-w-[480px] border-collapse text-sm">
           <thead>
             <tr className="border-b text-left text-gray-500 dark:text-gray-400">
               <th className="py-1 pr-3">Level</th>
@@ -91,6 +92,7 @@ export default function CertificationPage() {
             </tr>
           </tbody>
         </table>
+        </div>
       </section>
 
       <p className="mt-8">

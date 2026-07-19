@@ -106,7 +106,8 @@ export default function CrossCountryPage() {
           <div key={plan.id} className="mt-4">
             <h3 className="font-semibold">{plan.title}</h3>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{plan.blurb}</p>
-            <table className="mt-2 w-full border-collapse text-sm">
+            <div className="mt-2 overflow-x-auto">
+            <table className="w-full min-w-[560px] border-collapse text-sm">
               <thead>
                 <tr className="border-b text-left text-gray-500 dark:text-gray-400">
                   <th className="py-1 pr-2">Day</th>
@@ -128,6 +129,7 @@ export default function CrossCountryPage() {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         ))}
       </section>
@@ -139,7 +141,7 @@ export default function CrossCountryPage() {
               muted 속성이 정적 HTML에 있어야 자동재생이 허용됨 */}
           <div
             dangerouslySetInnerHTML={{
-              __html: `<video class="w-full rounded-xl border" autoplay muted loop playsinline preload="metadata"><source src="${MEDIA_URL}/video/ihwaryeong-summit.mp4" type="video/mp4" /><source src="${MEDIA_URL}/video/ihwaryeong-summit.webm" type="video/webm" /></video>`,
+              __html: `<video class="w-full rounded-xl border" autoplay muted loop playsinline preload="metadata"><source src="${MEDIA_URL}/video/ihwaryeong-summit-v3.mp4" type="video/mp4" /><source src="${MEDIA_URL}/video/ihwaryeong-summit-v3.webm" type="video/webm" /></video>`,
             }}
           />
           <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">

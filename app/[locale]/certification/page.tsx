@@ -42,7 +42,8 @@ export default async function LocaleCertification({
 
       <section className="mt-8">
         <h2 className="text-xl font-semibold">{d.levelsTitle}</h2>
-        <table className="mt-3 w-full border-collapse text-sm">
+        <div className="mt-3 overflow-x-auto">
+        <table className="w-full min-w-[480px] border-collapse text-sm">
           <thead>
             <tr className="border-b text-left text-gray-500 dark:text-gray-400">
               <th className="py-1 pr-3">{d.levelsHead.level}</th>
@@ -60,6 +61,7 @@ export default async function LocaleCertification({
             ))}
           </tbody>
         </table>
+        </div>
       </section>
     </article>
   );

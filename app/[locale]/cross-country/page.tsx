@@ -65,7 +65,8 @@ export default async function LocaleCrossCountry({
           <div key={plan.title} className="mt-4">
             <h3 className="font-semibold">{plan.title}</h3>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{plan.blurb}</p>
-            <table className="mt-2 w-full border-collapse text-sm">
+            <div className="mt-2 overflow-x-auto">
+            <table className="w-full min-w-[560px] border-collapse text-sm">
               <thead>
                 <tr className="border-b text-left text-gray-500 dark:text-gray-400">
                   <th className="py-1 pr-2">{d.tableHead.day}</th>
@@ -87,6 +88,7 @@ export default async function LocaleCrossCountry({
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         ))}
       </section>

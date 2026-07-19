@@ -67,7 +67,7 @@ async function add() {
         "video/mp4",
         (dest) =>
           run(
-            `ffmpeg -y -v error -i "${src}" -vf "scale='min(960,iw)':-2,fps=30" -an ` +
+            `ffmpeg -y -v error -i "${src}" -vf "scale='min(1280,iw)':-2,fps=30" -an ` +
               `-c:v libx264 -crf 32 -preset slow -pix_fmt yuv420p -movflags +faststart "${dest}"`,
           ),
       ],
@@ -76,7 +76,7 @@ async function add() {
         "video/webm",
         (dest) =>
           run(
-            `ffmpeg -y -v error -i "${src}" -vf "scale='min(960,iw)':-2,fps=30" -an ` +
+            `ffmpeg -y -v error -i "${src}" -vf "scale='min(1280,iw)':-2,fps=30" -an ` +
               `-c:v libvpx-vp9 -crf 50 -b:v 0 -row-mt 1 -deadline good "${dest}"`,
           ),
       ],

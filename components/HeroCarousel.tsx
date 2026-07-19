@@ -41,8 +41,8 @@ const SLIDES: {
       "from-rose-200 via-red-100 to-amber-100 dark:from-rose-900 dark:via-red-950 dark:to-amber-900",
     label: "Stamp every red booth on the way",
     video: {
-      mp4: `${MEDIA_URL}/video/cert-booth.mp4`,
-      webm: `${MEDIA_URL}/video/cert-booth.webm`,
+      mp4: `${MEDIA_URL}/video/cert-booth-v2.mp4`,
+      webm: `${MEDIA_URL}/video/cert-booth-v2.webm`,
     },
   },
   {
@@ -51,8 +51,8 @@ const SLIDES: {
       "from-emerald-200 via-teal-100 to-slate-200 dark:from-emerald-900 dark:via-teal-950 dark:to-slate-900",
     label: "One real climb: Ihwaryeong",
     video: {
-      mp4: `${MEDIA_URL}/video/ihwaryeong.mp4`,
-      webm: `${MEDIA_URL}/video/ihwaryeong.webm`,
+      mp4: `${MEDIA_URL}/video/ihwaryeong-v2.mp4`,
+      webm: `${MEDIA_URL}/video/ihwaryeong-v2.webm`,
     },
   },
   {
@@ -61,8 +61,8 @@ const SLIDES: {
       "from-lime-200 via-emerald-100 to-cyan-200 dark:from-lime-900 dark:via-emerald-950 dark:to-cyan-900",
     label: "Long, calm days along the Nakdong valley",
     video: {
-      mp4: `${MEDIA_URL}/video/nakdonggang.mp4`,
-      webm: `${MEDIA_URL}/video/nakdonggang.webm`,
+      mp4: `${MEDIA_URL}/video/nakdonggang-v2.mp4`,
+      webm: `${MEDIA_URL}/video/nakdonggang-v2.webm`,
     },
   },
   {

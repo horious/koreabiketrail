@@ -50,7 +50,8 @@ export default function CentersPage() {
       {PATH_ORDER.map((path) => (
         <section key={path} className="mt-8">
           <h2 className="text-xl font-semibold">{PATH_LABELS[path]}</h2>
-          <table className="mt-3 w-full border-collapse text-sm">
+          <div className="mt-3 overflow-x-auto">
+          <table className="w-full min-w-[560px] border-collapse text-sm">
             <thead>
               <tr className="border-b text-left text-gray-500 dark:text-gray-400">
                 <th className="py-1 pr-3">Center</th>
@@ -86,6 +87,7 @@ export default function CentersPage() {
                 ))}
             </tbody>
           </table>
+          </div>
         </section>
       ))}
     </article>
