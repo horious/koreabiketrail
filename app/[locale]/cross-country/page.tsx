@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DICTS, isLocale, languageAlternates } from "@/lib/i18n";
+import { MEDIA_URL } from "@/lib/data";
 
 export async function generateMetadata({
   params,
@@ -53,6 +54,13 @@ export default async function LocaleCrossCountry({
 
       <section className="mt-8">
         <h2 className="text-xl font-semibold">{d.stagesTitle}</h2>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${MEDIA_URL}/images/elevation-profile-v2.jpg`}
+          alt="Elevation and gradient profile: flat with twin peaks around km 240–260 (Saejae passes)"
+          loading="lazy"
+          className="mt-3 w-full rounded-lg border bg-white"
+        />
         {d.plans.map((plan) => (
           <div key={plan.title} className="mt-4">
             <h3 className="font-semibold">{plan.title}</h3>

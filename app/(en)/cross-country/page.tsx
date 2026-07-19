@@ -88,10 +88,20 @@ export default function CrossCountryPage() {
 
       <section className="mt-8">
         <h2 className="text-xl font-semibold">Stage plans</h2>
-        <ImagePlaceholder
-          aspect="wide"
-          description="Elevation profile chart of the full 633 km (generated from GPS data, not a photo): mostly flat with the Ihwaryeong spike around km 340 clearly annotated. Riders decide their daily splits off this one graphic."
-        />
+        <figure className="my-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${MEDIA_URL}/images/elevation-profile-v2.jpg`}
+            alt="Elevation and gradient profile of the full route: mostly flat with twin peaks around km 240–260 at the Saejae passes, gradients briefly exceeding 10% there"
+            loading="lazy"
+            className="w-full rounded-lg border bg-white"
+          />
+          <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            The whole route in one picture — elevation (top) and gradient
+            (bottom). Flat river riding, one real spike: the Saejae passes
+            (Sojo-ryeong + Ihwaryeong) around km 240–260, briefly over 10%.
+          </figcaption>
+        </figure>
         {stagePlans.map((plan) => (
           <div key={plan.id} className="mt-4">
             <h3 className="font-semibold">{plan.title}</h3>
