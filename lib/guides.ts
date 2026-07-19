@@ -4,6 +4,8 @@ export interface GuideSection {
   list?: string[];
   /** 이미지 자리 설명 — ImagePlaceholder로 렌더링 */
   image?: string;
+  /** 작은 그림 나열 (공식 표지판 도안 등) — 그리드로 렌더링 */
+  figures?: { src: string; alt: string; caption: string }[];
 }
 
 export interface Guide {
@@ -151,14 +153,36 @@ export const guides: Guide[] = [
     sections: [
       {
         heading: "How Korean bike infrastructure works",
+        paragraphs: [
+          "Korean law (Bicycle Use Activation Act, Article 3) defines exactly four kinds of bike road. Learn the four signs/markings and you always know who you're sharing with — and note that e-scooters (개인형이동장치) are legally allowed on all of them, so expect them near cities.",
+        ],
         list: [
-          "자전거 전용도로 (dedicated bike road): bikes only, marked with a blue circular bike sign. The best stretches of the Cross-Country Route are this.",
-          "자전거·보행자 겸용도로 (shared bike/pedestrian path): the most common type, including most riverside parks. Legally you share with walkers — slow down around people, and expect strolling families near cities on weekends.",
-          "Painted bike lanes on regular roads: used on the connecting sections. Traffic is usually light, but treat them as suggestions drivers may not honor.",
-          "Rules that surprise visitors: helmets are legally required; ride on the right; at pedestrian crosswalks you're supposed to dismount and walk the bike across.",
+          "자전거 전용도로 (bike-only road): physically separated from cars AND sidewalks. Blue circular sign with a bicycle. The best stretches of the Cross-Country Route are this.",
+          "자전거·보행자 겸용도로 (shared bike/pedestrian path): the most common type, including most riverside parks — blue circle with pedestrians + bicycle. On split versions the surface is divided into a walking half and a riding half: keep to the bike side, it's an actual traffic rule, not a suggestion.",
+          "자전거 전용차로 (bike-only lane on the roadway): a lane carved out of the car road by lines/color, marked with a rectangular blue sign. Cars may not drive in it — but check over your shoulder anyway.",
+          "자전거 우선도로 (bicycle priority road): low-traffic country roads shared with cars. No separate lane — just bike-and-chevron stencils painted on the tarmac. This is what the 'quiet road' connecting sections of the route mostly are.",
+          "Crossings: at big intersections look for the 자전거횡단도 (bicycle crossing) — a marked strip beside the pedestrian crosswalk that you may ride across. If there's only a crosswalk, dismount and walk.",
+          "Rules that surprise visitors: helmets are legally required, and you ride on the right.",
+        ],
+        figures: [
+          {
+            src: "/signs/sign-302-bike-only-road.png",
+            alt: "Korean road sign 302: blue circle with white bicycle and 자전거전용",
+            caption: "302 · Bike-only road (자전거 전용도로)",
+          },
+          {
+            src: "/signs/sign-303-shared-path.png",
+            alt: "Korean road sign 303: blue circle with pedestrians and bicycle",
+            caption: "303 · Shared bike/pedestrian path (자전거·보행자 겸용도로)",
+          },
+          {
+            src: "/signs/sign-318-bike-lane.png",
+            alt: "Korean road sign 318: blue rectangle with bicycle, lane lines and arrow",
+            caption: "318 · Bike-only lane (자전거 전용차로)",
+          },
         ],
         image:
-          "Photo trio of the three road types with their actual signage: a dedicated bike road with the blue sign, a shared path with the bike+pedestrian sign, and an on-road painted bike lane. Foreigners can't read the signs — show them.",
+          "Real-world photo of each road type in the wild (bike-only riverside road, split shared path, on-road bike lane, priority-road pavement stencil) to pair with the official sign graphics above.",
       },
       {
         heading: "Construction zones: don't panic",

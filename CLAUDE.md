@@ -24,6 +24,8 @@
     미러가 비었으면 `npm run media:pull -- video/ihwaryeong.mp4 video/ihwaryeong.webm`
   - 원본은 `assets-src/`(git 제외). 히어로 비디오는 슬라이드 첫 활성화 시에만 마운트(대역폭 보호).
     M1의 PMTiles도 같은 버킷 사용 예정
+  - 예외: 소형 UI 그래픽(공식 표지판 도안 등, 개당 ~20KB)은 `public/signs/`에 git 커밋 —
+    R2 규칙은 사진·영상 같은 대용량용. 표지판 도안 출처: 도로교통법 시행규칙 공식 도안(Wikimedia Commons SVG 렌더)
 - `components/ImagePlaceholder.tsx` — 이미지 확보 전 자리표시(수급 가이드 설명 포함). 교체 시 `<img>` 사용, next/image 금지.
   (참고: Wikimedia Commons 무료 사진으로 채웠다가 품질 문제로 원복함 — 자체 촬영/제작 이미지로 채울 것)
 - `data/stages.json` — 5일/7일 스테이지 분할 (거리 근사값)

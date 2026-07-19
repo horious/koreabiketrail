@@ -53,6 +53,24 @@ export default async function GuidePage({
               ))}
             </ul>
           )}
+          {s.figures && (
+            <div className="mt-4 flex flex-wrap gap-6">
+              {s.figures.map((f) => (
+                <figure key={f.src} className="w-40 text-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={f.src}
+                    alt={f.alt}
+                    loading="lazy"
+                    className="mx-auto h-24 w-auto"
+                  />
+                  <figcaption className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                    {f.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
           {s.image && <ImagePlaceholder description={s.image} />}
         </section>
       ))}
