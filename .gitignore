@@ -8,7 +8,7 @@ next-env.d.ts
 docs/private/
 # Claude Code 로컬 설정
 .claude/settings.local.json
-# prebuild(scripts/build-gpx.mjs)가 생성
+# R2 로컬 미러 (트랙 GPX/TCX)
 public/gpx/
 # 원본 미디어 (배포 제외 — scripts/media.mjs로 변환·R2 업로드)
 assets-src/

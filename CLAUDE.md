@@ -34,7 +34,8 @@
   (참고: Wikimedia Commons 무료 사진으로 채웠다가 품질 문제로 원복함 — 자체 촬영/제작 이미지로 채울 것)
 - `data/stages.json` — 5일/7일 스테이지 분할 (거리 근사값)
 - `lib/guides.ts` — 가이드 7편 콘텐츠 (구조화 데이터)
-- `scripts/build-gpx.mjs` — prebuild에서 인증센터 웨이포인트 GPX 생성 → `public/gpx/`
+- GPX 웨이포인트: 별도 파일 없음 — 실주행 트랙 GPX/TCX에 필수 인증센터 25곳(선택인 뚝섬 제외)이
+  웨이포인트/CoursePoint로 내장되어 있음 (구 build-gpx.mjs prebuild 체계는 2026-07-19 제거)
 - `components/CertCenterMap.tsx` — MapLibre 지도. 현재 OSM 타일 임시 사용 — **M1에서 PMTiles@R2로 교체 필요** (고트래픽 시 OSM 정책 위반)
 - 빌드: `npm run build` → `out/` (정적). 배포: Vercel.
   이 Windows 환경에서 `PageNotFoundError`/`pages-manifest.json ENOENT`/`Cannot find module './NNN.js'` 같은

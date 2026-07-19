@@ -22,8 +22,16 @@ export default function GpxPage() {
       <div className="mt-6 rounded-xl border p-5">
         <h2 className="font-semibold">Full route track — Incheon → Busan</h2>
         <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-          The complete Cross-Country track, start gate to estuary. GPX for most
-          devices and apps, TCX if your Garmin ecosystem prefers it.
+          The complete Cross-Country track, start gate to estuary — with{" "}
+          <strong>
+            all {certCenters.filter((c) => c.id !== "ttukseom").length} required
+            certification centers embedded
+          </strong>{" "}
+          as named waypoints (GPX) / course points (TCX), staffed centers
+          flagged. Load one file and your GPS warns you before every booth.
+          Booth coordinates from the official bike.go.kr map data (last
+          verified {certCentersLastVerified}). GPX works everywhere; TCX if
+          your Garmin ecosystem prefers it.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <a
@@ -48,25 +56,6 @@ export default function GpxPage() {
           skipping it doesn't affect your certificate or medal. Want it anyway?
           It's a short bridge detour in eastern Seoul.
         </p>
-      </div>
-
-      <div className="mt-4 rounded-xl border p-5">
-        <h2 className="font-semibold">
-          Certification centers — waypoint GPX ({certCenters.length} booths)
-        </h2>
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-          Every stamp booth from Incheon to Busan as a named waypoint, staffed
-          centers flagged. Load it alongside the track and your GPS warns you
-          before each booth. Coordinates from the official bike.go.kr map data
-          (last verified {certCentersLastVerified}).
-        </p>
-        <a
-          href="/gpx/cross-country-cert-centers.gpx"
-          download
-          className="mt-4 inline-block rounded-lg border px-5 py-2.5 font-medium hover:bg-gray-50 dark:hover:bg-gray-800/50"
-        >
-          Download waypoints GPX
-        </a>
       </div>
 
       <ImagePlaceholder
