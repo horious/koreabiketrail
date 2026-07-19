@@ -69,6 +69,41 @@ export default async function LocaleHome({
 
       <section className="py-10">
         <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+          {d.home.regions.eyebrow}
+        </p>
+        <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
+          {d.home.regions.title}
+        </h2>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {d.home.regions.items.map((r, i) => (
+            <div
+              key={r.who}
+              className={`rounded-2xl border bg-white p-6 dark:bg-gray-900 ${
+                i === d.home.regions.items.length - 1 &&
+                d.home.regions.items.length % 2 === 1
+                  ? "sm:col-span-2"
+                  : ""
+              }`}
+            >
+              <h3 className="font-semibold">
+                <span className="mr-2" aria-hidden>
+                  {r.flag}
+                </span>
+                {r.who}
+              </h3>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                {r.body}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-sm font-medium text-gray-500 italic dark:text-gray-400">
+          {d.home.regions.closing}
+        </p>
+      </section>
+
+      <section className="py-10">
+        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
           {d.home.startEyebrow}
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">

@@ -32,6 +32,13 @@ export interface LocaleDict {
     startTitle: string;
     cards: { icon: string; title: string; body: string; href: string; en?: boolean }[];
     enNote: string; // "(English)" 표기
+    regions: {
+      eyebrow: string;
+      title: string;
+      closing: string;
+      /** 해당 로케일의 타깃 카드를 맨 앞에 배치 (zh는 대만 전용 카드 추가) */
+      items: { flag: string; who: string; body: string }[];
+    };
     confusionTitle: string;
     confusionBody: string;
   };
