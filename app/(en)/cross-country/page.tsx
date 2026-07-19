@@ -3,6 +3,7 @@ import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import {
   certCenters,
+  MEDIA_URL,
   PATH_LABELS,
   SITE_URL,
   stagePlans,
@@ -123,9 +124,18 @@ export default function CrossCountryPage() {
 
       <section className="mt-8 rounded-xl bg-amber-50 dark:bg-amber-950/30 p-5">
         <h2 className="text-xl font-semibold">The hard parts, honestly</h2>
-        <ImagePlaceholder
-          description="The Ihwaryeong climb: switchbacks seen from above, or a rider pushing near the top with the gradient visible. Pair with the summit gate/monument photo where everyone takes their victory shot. Sets honest expectations for the only real climb."
-        />
+        <figure className="my-6">
+          {/* 서버 컴포넌트에서 React가 muted 속성을 SSR HTML에 내보내지 않는 이슈 회피 —
+              muted 속성이 정적 HTML에 있어야 자동재생이 허용됨 */}
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `<video class="w-full rounded-xl border" autoplay muted loop playsinline preload="metadata"><source src="${MEDIA_URL}/video/ihwaryeong-summit.mp4" type="video/mp4" /><source src="${MEDIA_URL}/video/ihwaryeong-summit.webm" type="video/webm" /></video>`,
+            }}
+          />
+          <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            The top of Ihwaryeong — the one climb between you and Busan.
+          </figcaption>
+        </figure>
         <ul className="mt-2 list-disc pl-5 text-gray-700 dark:text-gray-300">
           <li>
             <strong>Ihwaryeong pass</strong> — the one serious climb. Sleep in
