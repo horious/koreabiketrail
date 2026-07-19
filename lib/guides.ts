@@ -2,8 +2,12 @@ export interface GuideSection {
   heading: string;
   paragraphs?: string[];
   list?: string[];
-  /** 이미지 자리 설명 — ImagePlaceholder로 렌더링 */
+  /** 이미지 자리 설명 — ImagePlaceholder로 렌더링 (imageSrc 있으면 무시) */
   image?: string;
+  /** 실제 이미지 (R2 경로) — 지정 시 플레이스홀더 대신 렌더링 */
+  imageSrc?: string;
+  imageAlt?: string;
+  imageCaption?: string;
   /** 작은 그림 나열 (공식 표지판 도안 등) — 그리드로 렌더링 */
   figures?: { src: string; alt: string; caption: string }[];
 }
@@ -38,8 +42,6 @@ export const guides: Guide[] = [
           "Komoot — riders report better in-city bike routing than Kakao; works with our GPX files.",
           "OsmAnd — the offline fallback if you don't read Korean at all.",
         ],
-        image:
-          "Two phone screenshots side by side: Naver Map in English showing a bike route, and KakaoMap showing its elevation profile for the same route. Annotate the language-setting button on Naver — the #1 setup question.",
       },
       {
         heading: "Show the bike lanes on the map",
@@ -48,16 +50,17 @@ export const guides: Guide[] = [
           "KakaoMap: same idea — the bicycle layer marks bike paths in color and bike-mode routing shows the elevation profile before you commit.",
           "The Cross-Country Route itself appears on both apps as a continuous marked path, which is handy for finding your way back after a detour to food or a motel.",
         ],
-        image:
-          "Phone screenshot pair: the layers panel in Naver Map with the bicycle layer toggled ON, and the resulting map with bike paths highlighted. Circle the toggle — this setting is buried and most visitors never find it.",
+        imageSrc: "/images/navermap.jpg",
+        imageAlt:
+          "Naver Map screenshots: map view, Street View of a bike path, the map-type panel with the Biking layer selected, and the language setting switched to English",
+        imageCaption:
+          "Naver Map in practice — English language setting, the Biking map layer, and Street View to scout the path ahead.",
       },
       {
         heading: "Street View: scout before you ride",
         paragraphs: [
           "Both apps include street-level imagery — Kakao calls it Road View, Naver calls it Street View (거리뷰). Drag the little person icon onto a road to preview it. Use it to scout anything you're unsure about: the motel's actual entrance, whether a bridge has a bike lane, or what a construction detour looks like. Korean street imagery covers even small rural roads and is usually fresher than Google's.",
         ],
-        image:
-          "Screenshot of Kakao Road View open on a riverside bike path section, with the map + street imagery split visible, showing how to drag the Road View icon onto the path.",
       },
       {
         heading: "Do this before you fly",

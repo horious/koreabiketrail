@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { MEDIA_URL } from "@/lib/data";
 import { getGuide, guides } from "@/lib/guides";
 
 export function generateStaticParams() {
@@ -71,7 +72,24 @@ export default async function GuidePage({
               ))}
             </div>
           )}
-          {s.image && <ImagePlaceholder description={s.image} />}
+          {s.imageSrc ? (
+            <figure className="my-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${MEDIA_URL}${s.imageSrc}`}
+                alt={s.imageAlt ?? ""}
+                loading="lazy"
+                className="w-full rounded-xl border"
+              />
+              {s.imageCaption && (
+                <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                  {s.imageCaption}
+                </figcaption>
+              )}
+            </figure>
+          ) : (
+            s.image && <ImagePlaceholder description={s.image} />
+          )}
         </section>
       ))}
     </article>
