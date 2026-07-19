@@ -15,7 +15,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <SiteHeader
-        brand={`🚲 ${SITE_NAME}`}
+        brand={SITE_NAME}
         homeHref="/"
         nav={NAV}
         langs={LANG_OPTIONS}
@@ -25,7 +25,11 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
       <footer className="border-t bg-gray-50 dark:bg-gray-900">
         <div className="mx-auto grid max-w-4xl gap-8 px-4 py-10 sm:grid-cols-3">
           <div>
-            <p className="font-bold">🚲 {SITE_NAME}</p>
+            <p className="flex items-center gap-2 font-bold">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/koreabiketrail.svg" alt="" className="h-6 w-6" />
+              {SITE_NAME}
+            </p>
             <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
               The practical English guide to riding Incheon → Busan: plan it,
               ride it, get it certified.

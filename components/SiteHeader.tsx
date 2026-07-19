@@ -75,7 +75,12 @@ export default function SiteHeader({
   return (
     <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur-md dark:bg-gray-950/80">
       <div className="mx-auto flex h-14 max-w-4xl items-center gap-4 px-4">
-        <Link href={homeHref} className="shrink-0 text-lg font-bold tracking-tight">
+        <Link
+          href={homeHref}
+          className="flex shrink-0 items-center gap-2 text-lg font-bold tracking-tight"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/koreabiketrail.svg" alt="" className="h-7 w-7" />
           {brand}
         </Link>
 

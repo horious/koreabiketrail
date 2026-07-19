@@ -30,7 +30,7 @@ export default async function LocaleLayout({
     // 루트 <html lang="en">은 고정이므로 컨테이너에 lang 지정 (hreflang은 메타데이터로 제공)
     <div lang={d.htmlLang}>
       <SiteHeader
-        brand={`🚲 ${SITE_NAME}`}
+        brand={SITE_NAME}
         homeHref={`/${locale}/`}
         nav={nav}
         langs={LANG_OPTIONS}
@@ -39,7 +39,11 @@ export default async function LocaleLayout({
       <main className="mx-auto max-w-4xl px-4 py-8">{children}</main>
       <footer className="border-t bg-gray-50 dark:bg-gray-900">
         <div className="mx-auto max-w-4xl px-4 py-8">
-          <p className="font-bold">🚲 {SITE_NAME}</p>
+          <p className="flex items-center gap-2 font-bold">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/koreabiketrail.svg" alt="" className="h-6 w-6" />
+            {SITE_NAME}
+          </p>
           <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
             {d.footer.tagline}
           </p>
