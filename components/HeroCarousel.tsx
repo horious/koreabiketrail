@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { MEDIA_URL } from "@/lib/data";
 
 // 이미지 확보 시 slide.image에 경로를 넣고 배경 div를 <img>로 교체 (next/image 금지)
 const SLIDES: {
@@ -33,8 +34,8 @@ const SLIDES: {
       "from-emerald-200 via-teal-100 to-slate-200 dark:from-emerald-900 dark:via-teal-950 dark:to-slate-900",
     label: "One real climb: Ihwaryeong",
     video: {
-      mp4: "/video/ihwaryeong.mp4",
-      webm: "/video/ihwaryeong.webm",
+      mp4: `${MEDIA_URL}/video/ihwaryeong.mp4`,
+      webm: `${MEDIA_URL}/video/ihwaryeong.webm`,
     },
   },
   {

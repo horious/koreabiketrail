@@ -45,3 +45,5 @@ export const PATH_LABELS: Record<BikePath, string> = {
 
 export const SITE_URL = "https://koreabiketrail.com";
 export const SITE_NAME = "Korea Bike Trail";
+// 대용량 미디어는 Vercel이 아닌 Cloudflare R2에서 서빙 (CLAUDE.md 절대 규칙 1)
+export const MEDIA_URL = "https://media.koreabiketrail.com";

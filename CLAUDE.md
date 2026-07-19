@@ -16,9 +16,11 @@
   첫 페인트 전 `<html class="dark">` 적용(FOUC 방지), `components/ThemeToggle.tsx`가
   light/dark/system 선택을 localStorage `theme`에 저장. **새 UI에는 반드시 `dark:` 변형 포함**
 - 디자인: Cruip Simple Light 스타일 참조 (스티키 블러 헤더, 카드 호버, 3열 푸터)
-- 비디오: 원본은 `assets-src/`(배포 제외), 웹용은 ffmpeg로 960px/30fps/무음 변환해 `public/video/`
-  (예: `ffmpeg -i src -vf "scale=960:-2,fps=30" -an -c:v libx264 -crf 32 -movflags +faststart out.mp4`).
-  히어로 비디오는 해당 슬라이드 첫 활성화 시에만 마운트(대역폭 보호). **트래픽 증가 시 R2로 이전 필수** — 절대 규칙 1 적용 대상
+- 비디오/대용량 미디어: **Cloudflare R2에서 서빙** (`MEDIA_URL` = media.koreabiketrail.com,
+  버킷 `koreabiketrail-media`). 원본은 `assets-src/`(배포 제외), 웹용은 ffmpeg로 960px/30fps/무음
+  변환(`ffmpeg -i src -vf "scale=960:-2,fps=30" -an -c:v libx264 -crf 32 -movflags +faststart out.mp4`)
+  후 업로드: `npx wrangler r2 object put koreabiketrail-media/video/<name> --file=<f> --content-type video/mp4 --cache-control "public, max-age=31536000, immutable" --remote`.
+  히어로 비디오는 해당 슬라이드 첫 활성화 시에만 마운트(대역폭 보호). M1의 PMTiles도 같은 버킷 사용 예정
 - `components/ImagePlaceholder.tsx` — 이미지 확보 전 자리표시(수급 가이드 설명 포함). 교체 시 `<img>` 사용, next/image 금지.
   (참고: Wikimedia Commons 무료 사진으로 채웠다가 품질 문제로 원복함 — 자체 촬영/제작 이미지로 채울 것)
 - `data/stages.json` — 5일/7일 스테이지 분할 (거리 근사값)
