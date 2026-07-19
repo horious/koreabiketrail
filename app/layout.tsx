@@ -12,7 +12,19 @@ export const metadata: Metadata = {
   },
   description:
     "The practical English guide to cycling South Korea: the 633km Cross-Country Route from Incheon to Busan, the Bike Passport stamp system, certification centers, GPX files and trip planning.",
-  openGraph: { siteName: SITE_NAME, type: "website" },
+  // "./"는 metadataBase 기준으로 페이지별 자기 URL로 해석됨 — 전 페이지 canonical/og:url 자동 생성
+  alternates: { canonical: "./" },
+  openGraph: { siteName: SITE_NAME, type: "website", url: "./", locale: "en_US" },
+  twitter: { card: "summary_large_image" },
+};
+
+const WEBSITE_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description:
+    "The practical English guide to cycling South Korea's Cross-Country Route.",
 };
 
 const NAV = [
@@ -33,6 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSONLD) }}
+        />
         <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur-md dark:bg-gray-950/80">
           <div className="mx-auto flex max-w-4xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3">
             <Link href="/" className="text-lg font-bold tracking-tight">
