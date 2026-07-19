@@ -80,6 +80,7 @@ export default function HeroCarousel() {
     ).matches;
   }, []);
 
+  // index를 deps에 포함 — 수동 이동(닷/스와이프) 후에도 해당 슬라이드가 온전히 5초 보이도록 타이머 리셋
   useEffect(() => {
     if (paused || reducedMotion.current) return;
     const t = setInterval(
@@ -87,7 +88,24 @@ export default function HeroCarousel() {
       INTERVAL_MS,
     );
     return () => clearInterval(t);
-  }, [paused]);
+  }, [paused, index]);
+
+  // 터치 스와이프 (가로 50px 이상, 세로 스크롤과 구분)
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const s = touchStart.current;
+    touchStart.current = null;
+    if (!s) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - s.x;
+    const dy = t.clientY - s.y;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy))
+      setIndex((i) => (i + (dx < 0 ? 1 : -1) + SLIDES.length) % SLIDES.length);
+  };
 
   return (
     <section
@@ -96,6 +114,8 @@ export default function HeroCarousel() {
       className="relative h-[440px] overflow-hidden rounded-2xl sm:h-[500px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
       {/* 배경 슬라이드 */}
       {SLIDES.map((s, i) => (
@@ -148,15 +168,15 @@ export default function HeroCarousel() {
 
       {/* 고정 오버레이: 헤드라인 + CTA */}
       <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
-        <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-white [text-shadow:0_0_10px_rgba(0,0,0,0.55),0_0_28px_rgba(0,0,0,0.35)] sm:text-4xl">
           Cycle the length of South Korea.
         </h1>
-        <p className="mt-3 max-w-xl text-sm text-gray-100 sm:text-base">
+        <p className="mt-3 max-w-xl text-sm text-gray-100 [text-shadow:0_0_8px_rgba(0,0,0,0.55),0_0_20px_rgba(0,0,0,0.35)] sm:text-base">
           633 km of mostly car-free riding from Incheon to Busan, a
           stamp-collecting passport, and a medal at the end.
         </p>
         <p
-          className="mt-2 h-5 text-sm font-medium text-white/90"
+          className="mt-2 h-5 text-sm font-medium text-white/90 [text-shadow:0_0_8px_rgba(0,0,0,0.55),0_0_20px_rgba(0,0,0,0.35)]"
           aria-live="polite"
         >
           {SLIDES[index].label}
@@ -175,22 +195,22 @@ export default function HeroCarousel() {
             How certification works
           </Link>
         </div>
-      </div>
 
-      {/* 인디케이터 */}
-      <div className="absolute right-6 bottom-6 flex gap-2 sm:right-10">
-        {SLIDES.map((s, i) => (
-          <button
-            key={s.id}
-            type="button"
-            aria-label={`Slide ${i + 1}: ${s.label}`}
-            aria-current={i === index}
-            onClick={() => setIndex(i)}
-            className={`h-2.5 rounded-full transition-all ${
-              i === index ? "w-6 bg-white" : "w-2.5 bg-white/50 hover:bg-white/80"
-            }`}
-          />
-        ))}
+        {/* 인디케이터 — 오버레이 흐름 안에 배치해 모바일에서 버튼과 겹치지 않음 */}
+        <div className="mt-5 flex gap-2">
+          {SLIDES.map((s, i) => (
+            <button
+              key={s.id}
+              type="button"
+              aria-label={`Slide ${i + 1}: ${s.label}`}
+              aria-current={i === index}
+              onClick={() => setIndex(i)}
+              className={`h-2.5 rounded-full transition-all ${
+                i === index ? "w-6 bg-white" : "w-2.5 bg-white/50 hover:bg-white/80"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
