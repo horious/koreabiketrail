@@ -18,7 +18,7 @@ const SLIDES: {
     gradient:
       "from-amber-200 via-orange-100 to-sky-200 dark:from-amber-800 dark:via-orange-900 dark:to-sky-900",
     label: "The car-free blue line, Incheon → Busan",
-    image: `${MEDIA_URL}/images/hero-carfree.jpg`,
+    image: `${MEDIA_URL}/images/hero-carfree-v2.jpg`,
   },
   {
     id: "booth",

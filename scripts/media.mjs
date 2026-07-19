@@ -89,6 +89,7 @@ async function add() {
         async (dest) => {
           const { default: sharp } = await import("sharp");
           await sharp(src)
+            .rotate() // EXIF 방향 태그 적용 — 없으면 회전 촬영본이 뒤집혀 나옴
             .resize({ width: 1600, withoutEnlargement: true })
             .jpeg({ quality: 72, mozjpeg: true })
             .toFile(dest);
