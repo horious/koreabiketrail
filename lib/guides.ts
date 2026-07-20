@@ -309,7 +309,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "bike-rental",
-    title: "Renting a bike (including one-way)",
+    title: "Renting a bicycle in South Korea (one-way included)",
     description:
       "No need to fly your bike over: Seoul shops rent tourers from ~$25/day, and one-way Seoul→Busan drop-off exists.",
     lastVerified: "2026-07-16",
@@ -328,6 +328,51 @@ export const guides: Guide[] = [
         heading: "Before you commit",
         paragraphs: [
           "Ask explicitly about: one-way drop-off, pannier racks, included spares, and what happens if the bike breaks mid-route. Reserve ahead for Sep–Oct weekends.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "repairs",
+    title: "Flats, breakdowns and bike shops in Korea",
+    description:
+      "What to do when you puncture 40 km from anywhere: the fix-it kit, finding a bike shop, and the escape hatches when it can't be fixed roadside.",
+    lastVerified: "2026-07-21",
+    sections: [
+      {
+        heading: "Carry this, fix most things",
+        list: [
+          "A spare tube in YOUR size — check before you fly. Rural shops stock common sizes and lean toward Schrader valves; if you run something exotic (or Presta-only rims), bring two tubes.",
+          "Tire levers + a mini pump or CO2. The riverside benches every few km make decent workshops.",
+          "A multitool with a chain breaker, plus one quick-link for your chain speed.",
+          "Zip ties and a strip of duct tape — the universal Korean farm-road fix.",
+        ],
+      },
+      {
+        heading: "The puncture drill",
+        paragraphs: [
+          "Convenience stores do NOT sell tubes — don't count on GS25 for anything beyond snacks and zip ties. Fix it yourself or roll/walk to a shop. Asking for help needs zero Korean: point at the flat tire and mime a pump — it works every time. And remember you're never really alone out there: fellow Gukto Jongju tourers are famously quick to stop for one of their own.",
+        ],
+        list: [
+          "To find help on the map, paste 자전거 수리 (bicycle repair) into Naver Map — no pronunciation required.",
+          "Some major riverside parks and weir plazas have free self-service stands (셀프 정비대) with pumps and basic tools bolted to them.",
+        ],
+      },
+      {
+        heading: "Finding a bike shop",
+        list: [
+          "Search 자전거 (bicycle) in Naver Map — results with 수리 (repair) in reviews are what you want.",
+          "삼천리자전거 (Samchully) — Korea's oldest homegrown bike brand, a household name for over 70 years — has dealers in almost every town on the route: basic parts, tubes and repairs. Pointing works fine.",
+          "Real service shops (Giant, Trek, Specialized dealers) cluster in the cities: Seoul, Chungju, Gumi, Daegu, Busan.",
+          "Small-town shops often close Sundays — if something feels wrong on a Saturday, deal with it that day.",
+        ],
+      },
+      {
+        heading: "When it can't be fixed roadside",
+        list: [
+          "Bus bail-out: intercity terminals line the route — bike goes in the luggage bay, and you restart from a city with a real shop. This is the standard escape hatch.",
+          "Kakao T (taxi app): a 'Venti' / van-class taxi takes a bike with the front wheel off for shorter hops. Card-friendly, English UI.",
+          "Worst case, motels will happily store your bike for a day while you fetch parts from the nearest city by bus.",
         ],
       },
     ],

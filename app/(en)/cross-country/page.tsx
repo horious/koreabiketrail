@@ -12,10 +12,34 @@ import {
 import { languageAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Cross-Country Route (Gukto Jongju) — 633km Incheon to Busan",
+  title: "Seoul to Busan Bike Path — Cross-Country Route",
   description:
-    "Stage-by-stage guide to Korea's 633km Cross-Country cycling route: 5 and 7-day plans, the Ihwaryeong climb, certification stamps, and where to sleep.",
+    "The Seoul to Busan bike path (Korea's 633km Cross-Country Route from Incheon): 5 and 7-day stage plans, the Ihwaryeong climb, certification stamps, and where to sleep.",
   alternates: { canonical: "./", languages: languageAlternates("/cross-country/") },
+};
+
+// FAQ 리치 결과용 — 이 페이지의 가시 콘텐츠(스탯 카드 5–9일, What-it-is의 4대강 구분)와 일치
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How long does the Seoul to Busan bike path take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most riders take 5–9 days for the 633 km Cross-Country Route from Incheon (through Seoul) to Busan. Seven days is the comfortable standard; fit riders do it in five.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is the Cross-Country Route the same as the Four Rivers bike path?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. The Cross-Country Route (국토종주) is the continuous Incheon→Busan ride. The Four Rivers certification also requires the Geum and Yeongsan river paths, so finishing Incheon→Busan does not complete it.",
+      },
+    },
+  ],
 };
 
 const jsonLd = {
@@ -35,7 +59,13 @@ export default function CrossCountryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="text-3xl font-bold">The Cross-Country Route (국토종주)</h1>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <h1 className="text-3xl font-bold">
+        The Cross-Country Bike Route (국토종주): Incheon &amp; Seoul to Busan
+      </h1>
       <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
         Last verified: {stagesLastVerified} · distances approximate
       </p>
@@ -75,8 +105,10 @@ export default function CrossCountryPage() {
           Four certification bike paths strung together into one continuous,
           mostly car-free ride: a blue line painted on the tarmac leads from the
           Ara West Sea Lock near Incheon Airport to the Nakdong Estuary Bank in
-          Busan. Collect a stamp at every booth on the way and you can claim the
-          Cross-Country medal.
+          Busan. Searching for the <strong>"Seoul to Busan bike path"</strong>?
+          This is it — Seoul sits right on the route, about 40 km in. Collect a
+          stamp at every booth on the way and you can claim the Cross-Country
+          medal.
         </p>
         <ul className="mt-3 list-disc pl-5 text-gray-700 dark:text-gray-300">
           {Object.values(PATH_LABELS).map((label) => (

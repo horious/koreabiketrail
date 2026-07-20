@@ -82,16 +82,17 @@ async function add() {
       ],
     ];
   } else if (IMAGE_EXT.includes(ext)) {
+    // WebP 출력 (JPG q72 대비 ~25-30% 경량, 전 브라우저 지원)
     outputs = [
       [
-        `${key}.jpg`,
-        "image/jpeg",
+        `${key}.webp`,
+        "image/webp",
         async (dest) => {
           const { default: sharp } = await import("sharp");
           await sharp(src)
             .rotate() // EXIF 방향 태그 적용 — 없으면 회전 촬영본이 뒤집혀 나옴
             .resize({ width: 1600, withoutEnlargement: true })
-            .jpeg({ quality: 72, mozjpeg: true })
+            .webp({ quality: 75 })
             .toFile(dest);
         },
       ],

@@ -9,7 +9,7 @@ import {
 } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Certification Centers — every stamp booth, Incheon to Busan",
+  title: "Certification Centers — all 26 stamp booths",
   description:
     "Map and list of all certification centers (stamp booths) on Korea's Cross-Country cycling route, with staffed/unstaffed status and passport sales points.",
 };

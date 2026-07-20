@@ -4,16 +4,18 @@ import { certCenters, certCentersLastVerified, MEDIA_URL } from "@/lib/data";
 import { languageAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "GPX & TCX downloads — full Cross-Country Route track + stamp-booth waypoints",
+  title: "Cross-Country Route GPX & TCX downloads",
   description:
-    "Free GPX/TCX of Korea's full 633km Cross-Country cycling route plus every certification center as a named waypoint — Garmin, Wahoo and Komoot compatible.",
+    "Free GPX/TCX of Korea's full 633km Seoul-to-Busan Cross-Country cycling route with every certification center as a named waypoint — Garmin, Wahoo and Komoot compatible.",
   alternates: { canonical: "./", languages: languageAlternates("/gpx/") },
 };
 
 export default function GpxPage() {
   return (
     <article>
-      <h1 className="text-3xl font-bold">Maps & GPX</h1>
+      <h1 className="text-3xl font-bold">
+        Korea Cross-Country Route: GPX, TCX &amp; maps
+      </h1>
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
         The single most common way to ruin a day on this route is sailing past
         a stamp booth and backtracking 20 km. Load these waypoints and your GPS

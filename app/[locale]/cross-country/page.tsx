@@ -61,7 +61,7 @@ export default async function LocaleCrossCountry({
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`${MEDIA_URL}/images/blueline.jpg`}
-          alt=""
+          alt="Rider on the riverside path at sunset with the painted blue guide line"
           loading="lazy"
           className="my-6 w-full rounded-xl border"
         />

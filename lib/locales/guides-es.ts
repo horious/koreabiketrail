@@ -178,6 +178,35 @@ const guides: Guide[] = [
     ],
   },
   {
+    slug: "repairs",
+    title: "Pinchazos, averías y tiendas de bici en Corea",
+    description: "Qué hacer cuando pinchas a 40 km de todo: el kit de arreglos, cómo encontrar una tienda y las vías de escape cuando no se puede arreglar en el arcén.",
+    lastVerified: "2026-07-21",
+    sections: [
+      { heading: "Lleva esto y arreglarás casi todo", list: [
+        "Una cámara de repuesto de TU medida — compruébalo antes de volar. Las tiendas rurales tienen tallas comunes y tiran a válvula Schrader; si usas algo exótico (o llantas solo-Presta), lleva dos.",
+        "Desmontables + minibomba o CO2. Los bancos de la ribera, cada pocos kilómetros, son buenos talleres.",
+        "Multiherramienta con tronchacadenas y un quick-link de tu número de velocidades.",
+        "Bridas y un trozo de cinta americana: el arreglo universal de los caminos rurales coreanos.",
+      ] },
+      { heading: "El protocolo del pinchazo", paragraphs: ["Las tiendas 24h NO venden cámaras: de un GS25 no esperes más que snacks y bridas. Arréglalo tú o empuja hasta una tienda. Pedir ayuda no requiere nada de coreano: señala la rueda pinchada y haz el gesto de bombear — funciona siempre. Y recuerda que ahí fuera nunca estás solo: los cicloturistas del Gukto Jongju tienen fama de parar enseguida por uno de los suyos."], list: [
+        "Para buscar ayuda en el mapa, pega 자전거 수리 (reparación de bicicletas) en Naver Map — sin pronunciar nada.",
+        "Algunos parques fluviales grandes y plazas de azud tienen estaciones gratuitas de autoservicio (셀프 정비대) con bomba y herramientas básicas.",
+      ] },
+      { heading: "Encontrar una tienda de bicis", list: [
+        "Busca 자전거 (bicicleta) en Naver Map: las que mencionan 수리 (reparación) en las reseñas son las buenas.",
+        "삼천리자전거 (Samchully) — la marca de bicicletas local más antigua de Corea, un nombre de toda la vida desde hace más de 70 años — tiene concesionarios en casi cada pueblo de la ruta: piezas básicas, cámaras y arreglos. Señalar funciona.",
+        "Las tiendas serias (Giant, Trek, etc.) se concentran en las ciudades: Seúl, Chungju, Gumi, Daegu, Busan.",
+        "Las tiendas de pueblo suelen cerrar los domingos: si algo suena raro un sábado, resuélvelo ese mismo día.",
+      ] },
+      { heading: "Cuando no se puede arreglar en el arcén", list: [
+        "Escape en bus: las terminales interurbanas jalonan la ruta — la bici va en la bodega y reinicias desde una ciudad con tienda de verdad. Es la vía de escape estándar.",
+        "Kakao T (app de taxi): un taxi tipo furgoneta (Venti) lleva la bici con la rueda delantera quitada para trayectos cortos. Acepta tarjeta y tiene interfaz en inglés.",
+        "En el peor caso, los moteles te guardan la bici encantados un día mientras vas en bus a por piezas.",
+      ] },
+    ],
+  },
+  {
     slug: "city-riding",
     title: "Sobrevivir a las ciudades: salir de Seúl, llegar a Busan",
     description: "Los kilómetros más peligrosos de la ruta son los primeros y los últimos. Cómo entrar y salir de las grandes ciudades de una pieza.",

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function GuidesPage() {
   return (
     <div>
-      <h1 className="text-3xl font-bold">Guides</h1>
+      <h1 className="text-3xl font-bold">Korea bike touring guides</h1>
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
         The questions every foreign rider asks, answered from actual ride
         reports — not brochures.

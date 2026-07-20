@@ -4,7 +4,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { languageAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Bike Passport & Certification — how Korea's stamp system works",
+  title: "Korea Bike Passport & Certification Guide",
   description:
     "Buying the ₩4,000 Bike Passport, stamping at red booths, getting certified and ordering the medal — including the parts that are hard as a foreigner.",
   alternates: { canonical: "./", languages: languageAlternates("/certification/") },
@@ -37,10 +37,31 @@ const STEPS = [
   },
 ];
 
+// HowTo 리치 결과용 — 가시 콘텐츠(STEPS)와 1:1 일치
+const HOWTO_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to get certified riding Korea's Cross-Country Route",
+  description:
+    "Buy the Bike Passport, stamp at every red booth, get verified at a staffed center and order your medal.",
+  step: STEPS.map((s, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: s.title.replace(/^\d+\.\s*/, ""),
+    text: s.body,
+  })),
+};
+
 export default function CertificationPage() {
   return (
     <article>
-      <h1 className="text-3xl font-bold">The Bike Passport system</h1>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(HOWTO_JSONLD) }}
+      />
+      <h1 className="text-3xl font-bold">
+        Korea's Bike Passport &amp; certification system
+      </h1>
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
         Korea's cycling network is gamified: collect stamps in a paper passport
         as you ride, get paths certified, earn stickers, certificates and
