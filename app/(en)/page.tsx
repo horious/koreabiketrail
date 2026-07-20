@@ -100,9 +100,9 @@ const REGIONS = [
     body: "You've earned your stripes on Andean climbs and Carretera gravel. Korea is the other kind of joy: smooth tarmac, zero traffic, a motel and hot food every evening — the tour where the country does the hard work for you.",
   },
   {
-    flag: "🌍",
-    who: "If you're from Africa...",
-    body: "You already know how to ride self-supported — here you can finally pack light. Bike shops in every city, convenience stores every few kilometers, and streets safe enough to leave a loaded bike outside. And your spring? That's Korea's golden autumn.",
+    flag: "🛸",
+    who: "If you're visiting from outer space...",
+    body: "Welcome, traveler. The blue line is basically a 633 km landing strip, the red stamp booths look suspiciously like teleport pods, and the finisher's medal is accepted in every galaxy we've checked. Helmets are required by law — exoskeletons included.",
   },
 ];
 
@@ -175,7 +175,8 @@ export default function HomePage() {
           ))}
         </div>
         <p className="mt-6 text-center text-sm font-medium text-gray-500 italic dark:text-gray-400">
-          Wherever you start, the blue line ends in Busan.
+          Wherever you start — any continent, any planet — the blue line ends
+          in Busan.
         </p>
       </section>
 

@@ -70,7 +70,7 @@ const es: LocaleDict = {
     regions: {
       eyebrow: "Pedales donde pedales",
       title: "Si este eres tú, Corea es tu próxima ruta",
-      closing: "Empieces donde empieces, la línea azul termina en Busan.",
+      closing: "Empieces donde empieces — en cualquier continente o planeta — la línea azul termina en Busan.",
       items: [
         { flag: "🌎", who: "Si vienes de Sudamérica…", body: "Los puertos andinos y el ripio de la Carretera ya te dieron tus galones. Corea es el otro tipo de placer: asfalto liso, cero tráfico, motel y comida caliente cada noche — la ruta donde el país hace el trabajo duro por ti." },
         { flag: "🇪🇺", who: "Si eres ciclista europeo…", body: "Ya hiciste EuroVelo — ahora imagina una ruta con la infraestructura del Danubio pero sin un solo coche en 600 km, con pasaporte de sellos y medalla al final. Con moteles a $45 la noche, viajas más ligero que en casa." },
@@ -78,7 +78,7 @@ const es: LocaleDict = {
         { flag: "🇦🇺", who: "Si vienes de Australia o Nueva Zelanda…", body: "Tu primavera es el otoño coreano — la mejor temporada aquí (sep–nov, seca y dorada). Cambia las distancias vacías del outback por una ruta con tienda 24h a pocos kilómetros siempre, a un vuelo directo." },
         { flag: "🇯🇵", who: "Si estás en Japón…", body: "Estás a un ferry: Fukuoka–Busan de noche y pedaleando por la mañana. Si te gustó Shikoku 88 o Shimanami Kaido, el sistema coreano de sellos y medalla es la misma alegría — a escala de país entero." },
         { flag: "🌏", who: "Si estás en el Sudeste Asiático…", body: "Un vuelo low-cost de 5–6 horas cambia el calor tropical por mañanas frescas junto al río. Cerezos en primavera u hojas rojas en otoño, terreno llano y una medalla de finisher para llevar a casa." },
-        { flag: "🌍", who: "Si vienes de África…", body: "Ya sabes rodar autosuficiente — aquí por fin puedes empacar ligero: tiendas de bici en cada ciudad, tienda 24h cada pocos kilómetros y calles donde la bici cargada te espera fuera. Y tu primavera es el otoño dorado de Corea." },
+        { flag: "🛸", who: "Si vienes del espacio exterior…", body: "Bienvenido, viajero. La línea azul es básicamente una pista de aterrizaje de 633 km, las casetas rojas parecen sospechosamente cápsulas de teletransporte y la medalla de finisher se acepta en todas las galaxias que hemos comprobado. Casco obligatorio por ley — exoesqueletos incluidos." },
       ],
     },
     confusionTitle: "Cross-Country ≠ Four Rivers",
