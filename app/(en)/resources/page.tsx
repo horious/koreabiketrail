@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Resources — official sites and English-language links",
   description:
     "Official Korean government cycling sites, the K-water center operator, medal ordering, and the best English-language guides and communities.",
+  alternates: { canonical: "./", languages: languageAlternates("/resources/") },
 };
 
 const GROUPS: {

@@ -23,7 +23,9 @@ export default async function LocaleLayout({
   const nav: NavItem[] = [
     { href: `/${locale}/cross-country/`, label: d.nav.route },
     { href: `/${locale}/certification/`, label: d.nav.cert },
+    { href: `/${locale}/guides/`, label: d.nav.guides },
     { href: `/${locale}/gpx/`, label: d.nav.gpx },
+    { href: `/${locale}/resources/`, label: d.nav.resources },
   ];
 
   return (

@@ -73,7 +73,8 @@
 
 ## i18n (2026-07-19 도입)
 
-- 언어: EN(루트, 전체) + JA·ZH-Hant·TH·ES(`/{locale}/`, **코어 4페이지만**: 홈·cross-country·certification·gpx)
+- 언어: EN(루트, 전체) + JA·ZH-Hant·TH·ES(`/{locale}/` — 홈·cross-country·certification·gpx·**guides 9편·resources**.
+  로케일 미제공: 인증센터 목록·privacy). 가이드 번역은 `lib/locales/guides-{locale}.ts` (레지스트리 `lib/guides-i18n.ts`)
 - 구조: `app/(en)/`=영어 전체, `app/[locale]/`=번역판, 루트 layout은 html/테마/분석만.
   사전은 `lib/locales/*.ts` (타입 `lib/i18n.ts`), 언어 스위처 옵션은 `lib/langs.ts`(클라이언트 안전)
 - **지명 정책**: 로마자 기본+한글 병기. JA는 대도시만 현지 표기(ソウル·釜山·仁川),

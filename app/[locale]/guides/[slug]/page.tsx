@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { DICTS, isLocale, languageAlternates } from "@/lib/i18n";
+import { getLocaleGuide } from "@/lib/guides-i18n";
+import { guides } from "@/lib/guides";
 import { MEDIA_URL } from "@/lib/data";
-import { getGuide, guides } from "@/lib/guides";
-import { languageAlternates } from "@/lib/i18n";
 
 export function generateStaticParams() {
+  // locale은 상위 세그먼트의 generateStaticParams와 곱집합으로 생성됨
   return guides.map((g) => ({ slug: g.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const guide = getGuide(slug);
+  const { locale, slug } = await params;
+  if (!isLocale(locale)) return {};
+  const guide = getLocaleGuide(locale, slug);
   if (!guide) return {};
   return {
     title: guide.title,
@@ -28,24 +30,27 @@ export async function generateMetadata({
   };
 }
 
-export default async function GuidePage({
+export default async function LocaleGuidePage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const guide = getGuide((await params).slug);
+  const { locale, slug } = await params;
+  if (!isLocale(locale)) notFound();
+  const guide = getLocaleGuide(locale, slug);
   if (!guide) notFound();
+  const ui = DICTS[locale].guidesUi;
 
   return (
     <article>
       <p className="text-sm">
-        <Link href="/guides/" className="text-gray-500 dark:text-gray-400 underline">
-          ← All guides
+        <Link href={`/${locale}/guides/`} className="text-gray-500 dark:text-gray-400 underline">
+          {ui.back}
         </Link>
       </p>
       <h1 className="mt-2 text-3xl font-bold">{guide.title}</h1>
       <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-        Last verified: {guide.lastVerified}
+        {ui.lastVerified}: {guide.lastVerified}
       </p>
 
       {guide.sections.map((s) => (
@@ -68,12 +73,7 @@ export default async function GuidePage({
               {s.figures.map((f) => (
                 <figure key={f.src} className="w-40 text-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={f.src}
-                    alt={f.alt}
-                    loading="lazy"
-                    className="mx-auto h-24 w-auto"
-                  />
+                  <img src={f.src} alt={f.alt} loading="lazy" className="mx-auto h-24 w-auto" />
                   <figcaption className="mt-2 text-xs text-gray-500 dark:text-gray-400">
                     {f.caption}
                   </figcaption>
@@ -81,7 +81,7 @@ export default async function GuidePage({
               ))}
             </div>
           )}
-          {s.imageSrc ? (
+          {s.imageSrc && (
             <figure className="my-6">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -96,8 +96,6 @@ export default async function GuidePage({
                 </figcaption>
               )}
             </figure>
-          ) : (
-            s.image && <ImagePlaceholder description={s.image} />
           )}
         </section>
       ))}

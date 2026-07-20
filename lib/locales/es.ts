@@ -5,7 +5,36 @@ const es: LocaleDict = {
   code: "es",
   htmlLang: "es",
   name: "Español",
-  nav: { route: "Ruta transnacional", cert: "Certificación", gpx: "GPX · Mapas", english: "English" },
+  nav: { route: "Ruta transnacional", cert: "Certificación", gpx: "GPX · Mapas", guides: "Guías", resources: "Recursos", english: "English" },
+  guidesUi: {
+    title: "Guías",
+    intro: "Las preguntas que todo ciclista extranjero se hace, respondidas con informes de ruta reales — no con folletos.",
+    back: "← Todas las guías",
+    lastVerified: "Última verificación",
+  },
+  resources: {
+    title: "Recursos",
+    metaDesc: "Los sitios oficiales coreanos, K-water, el pedido de medallas y las mejores guías y comunidades en inglés.",
+    intro: "Este sitio busca ser práctico y estar al día, pero conviene conocer también las fuentes primarias. Última verificación: 2026-07-17.",
+    groups: [
+      { title: "Oficial", blurb: "Las fuentes primarias: datos de rutas, reglas de certificación, pedido de medallas.", links: [
+        { href: "https://www.bike.go.kr", name: "bike.go.kr", desc: "El portal ciclista del gobierno: mapas de rutas, listado de centros, reglas del pasaporte. Prioriza el coreano; las páginas en inglés son más escuetas." },
+        { href: "https://www.bike.go.kr/eng", name: "bike.go.kr — English", desc: "Páginas oficiales en inglés sobre el sistema de certificación y el pasaporte. Bien para reglas, flojo en mapas." },
+        { href: "https://www.riverguide.go.kr", name: "riverguide.go.kr", desc: "Donde se piden las medallas tras validar el pasaporte. Pago coreano y envío solo dentro de Corea — soluciones en nuestra guía de certificación." },
+        { href: "https://www.kwateromc.co.kr", name: "K-water O&M (케이워터운영관리)", desc: "La filial de K-water que opera muchos centros en los azudes; los avisos de operación suelen aparecer aquí primero." },
+      ] },
+      { title: "Guías en inglés", blurb: "Sitios independientes que cubren las rutas a fondo.", links: [
+        { href: "https://koreabybike.com", name: "Korea by Bike", desc: "La guía independiente en inglés más completa: cada vía certificada, listados de centros y tutorial de la app del pasaporte." },
+        { href: "https://kojects.com/long-distance-cycling/", name: "Kojects — Long-Distance Cycling", desc: "Resumen conciso de las rutas largas con consejos de transporte (buses, trenes)." },
+        { href: "https://bikebuskorea.com", name: "Bike Bus Korea", desc: "Crónicas recientes y listados de centros; especialmente fuerte en la costa este." },
+        { href: "https://www.crazyguyonabike.com", name: "CrazyGuyOnABike — diarios de Corea", desc: "Diarios de cicloturismo de formato largo, con varios Incheon–Busan; busca «Korea 4 rivers»." },
+      ] },
+      { title: "Comunidades", blurb: "Donde vive la información más fresca sobre el terreno.", links: [
+        { href: "https://www.facebook.com/groups/543187712445164/", name: "Seoul to Busan and Beyond (SBB) — Facebook", desc: "El grupo anglófono para exactamente esta ruta: etapas diarias, alojamientos, intercambio de GPX, estado actual del camino." },
+        { href: "https://www.facebook.com/groups/koreacyclingcommunity/", name: "Korea Cycling Community — Facebook", desc: "Gran grupo de ciclistas expatriados con Q&A activo y buen FAQ. (Para rodar en Seúl, busca Han River Riders.)" },
+      ] },
+    ],
+  },
   hero: {
     headline: "Cruza Corea del Sur en bici.",
     sub: "633 km de Incheon a Busan por carril bici casi sin coches, un pasaporte de sellos y una medalla al final.",
@@ -35,7 +64,7 @@ const es: LocaleDict = {
       { icon: "🗺️", title: "La ruta transnacional", body: "633 km de Incheon a Busan: etapas día a día, el puerto de Ihwaryeong y cada caseta de sellos.", href: "cross-country" },
       { icon: "📔", title: "Bike Passport y medallas", body: "Cómo comprar el pasaporte de ₩4.000, las casetas rojas y conseguir tu medalla siendo extranjero.", href: "certification" },
       { icon: "📍", title: "Descargas GPX · TCX", body: "El track real con los centros de certificación integrados: no vuelvas a pasarte una caseta.", href: "gpx" },
-      { icon: "🧭", title: "Guías prácticas", body: "Apps de mapas, transporte, alojamiento, equipaje y más.", href: "/guides/", en: true },
+      { icon: "🧭", title: "Guías prácticas", body: "Apps de mapas, transporte, alojamiento, equipaje y más.", href: "guides" },
     ],
     enNote: "(en inglés)",
     regions: {

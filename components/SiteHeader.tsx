@@ -11,8 +11,10 @@ export interface NavItem {
   label: string;
 }
 
-// 번역판이 존재하는 코어 경로 — 그 외 페이지에서 언어 전환 시 해당 언어 홈으로
-const CORE_PATHS = ["/", "/cross-country/", "/certification/", "/gpx/"];
+// 번역판이 존재하는 경로 — 그 외(인증센터 목록·privacy)는 언어 전환 시 해당 언어 홈으로
+const isLocalized = (path: string) =>
+  ["/", "/cross-country/", "/certification/", "/gpx/", "/resources/"].includes(path) ||
+  /^\/guides\/[a-z0-9-]*\/?$/.test(path);
 
 export default function SiteHeader({
   brand,
@@ -62,7 +64,7 @@ export default function SiteHeader({
       : pathname;
   const langHref = (l: LangOption) => {
     if (l.prefix === "") return rest; // 영어는 전 페이지 보유
-    return CORE_PATHS.includes(rest) ? `${l.prefix}${rest}` : `${l.prefix}/`;
+    return isLocalized(rest) ? `${l.prefix}${rest}` : `${l.prefix}/`;
   };
 
   // 명시적 언어 선택을 쿠키에 저장 — vercel.json의 Accept-Language 자동 리다이렉트가

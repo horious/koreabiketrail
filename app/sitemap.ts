@@ -28,13 +28,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: g.lastVerified,
       changeFrequency: "monthly" as const,
     })),
-    // 번역판 (JA/ZH-Hant/TH/ES × 코어 4페이지)
-    ...(["ja", "zh", "th", "es"] as const).flatMap((l) =>
-      ["", "/cross-country", "/certification", "/gpx"].map((p) => ({
-        url: `${SITE_URL}/${l}${p}/`,
-        lastModified: "2026-07-19",
+    // 번역판 (JA/ZH-Hant/TH/ES × 코어 4페이지 + guides + resources)
+    ...(["ja", "zh", "th", "es"] as const).flatMap((l) => [
+      ...["", "/cross-country", "/certification", "/gpx", "/guides", "/resources"].map(
+        (p) => ({
+          url: `${SITE_URL}/${l}${p}/`,
+          lastModified: "2026-07-20",
+          changeFrequency: "monthly" as const,
+        }),
+      ),
+      ...guides.map((g) => ({
+        url: `${SITE_URL}/${l}/guides/${g.slug}/`,
+        lastModified: "2026-07-20",
         changeFrequency: "monthly" as const,
       })),
-    ),
+    ]),
   ];
 }

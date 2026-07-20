@@ -22,7 +22,31 @@ export interface LocaleDict {
   htmlLang: string;
   /** 언어 전환 UI에 표시할 자기 이름 */
   name: string;
-  nav: { route: string; cert: string; gpx: string; english: string };
+  nav: {
+    route: string;
+    cert: string;
+    gpx: string;
+    guides: string;
+    resources: string;
+    english: string;
+  };
+  /** 가이드 목록·상세 페이지 공통 UI 문자열 */
+  guidesUi: {
+    title: string;
+    intro: string;
+    back: string;
+    lastVerified: string;
+  };
+  resources: {
+    title: string;
+    metaDesc: string;
+    intro: string;
+    groups: {
+      title: string;
+      blurb: string;
+      links: { href: string; name: string; desc: string }[];
+    }[];
+  };
   hero: HeroTexts;
   home: {
     whyEyebrow: string;

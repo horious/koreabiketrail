@@ -5,7 +5,36 @@ const ja: LocaleDict = {
   code: "ja",
   htmlLang: "ja",
   name: "日本語",
-  nav: { route: "国土縦走ルート", cert: "認証システム", gpx: "GPX・地図", english: "English" },
+  nav: { route: "国土縦走ルート", cert: "認証システム", gpx: "GPX・地図", guides: "ガイド", resources: "リソース", english: "English" },
+  guidesUi: {
+    title: "ガイド",
+    intro: "外国人ライダーが必ず聞く質問に、パンフレットではなく実走レポートで答えます。",
+    back: "← ガイド一覧",
+    lastVerified: "最終確認",
+  },
+  resources: {
+    title: "リソース",
+    metaDesc: "韓国政府の公式サイクリングサイト、K-water、メダル注文、そして英語圏のガイドとコミュニティ。",
+    intro: "当サイトは実用と最新性を旨としていますが、一次情報源も知っておいてください。最終確認:2026-07-17。",
+    groups: [
+      { title: "公式", blurb: "一次情報源——ルートデータ、認証規定、メダル注文。", links: [
+        { href: "https://www.bike.go.kr", name: "bike.go.kr(自転車幸福分かち合い)", desc: "政府のサイクリングポータル:ルート地図、認証センター一覧、手帳の規定。韓国語中心で英語ページは薄め。" },
+        { href: "https://www.bike.go.kr/eng", name: "bike.go.kr — 英語版", desc: "認証制度と手帳の公式英語ページ。規則には良いが地図は弱い。" },
+        { href: "https://www.riverguide.go.kr", name: "우리강 이용 도우미(riverguide.go.kr)", desc: "手帳認証後にメダルを注文する場所。韓国の決済手段・国内配送のみ——回避策は当サイトの認証ガイドへ。" },
+        { href: "https://www.kwateromc.co.kr", name: "K-water運営管理(케이워터운영관리)", desc: "多くの堰の認証センターを運営するK-water子会社。センター運営のお知らせが最初に出ることも。" },
+      ] },
+      { title: "英語ガイド", blurb: "ルートを深く扱う独立系サイト。", links: [
+        { href: "https://koreabybike.com", name: "Korea by Bike", desc: "最も網羅的な独立系英語ガイド:全認証路線、センター一覧、手帳アプリの解説。" },
+        { href: "https://kojects.com/long-distance-cycling/", name: "Kojects — Long-Distance Cycling", desc: "長距離ルートの簡潔な概観と交通(バス・鉄道)のコツ。" },
+        { href: "https://bikebuskorea.com", name: "Bike Bus Korea", desc: "最近の走行記とセンター一覧。東海岸ルートに強い。" },
+        { href: "https://www.crazyguyonabike.com", name: "CrazyGuyOnABike — 韓国の旅行記", desc: "仁川–釜山を含む長編ツーリング日記多数。「Korea 4 rivers」で検索。" },
+      ] },
+      { title: "コミュニティ", blurb: "現地の最新情報が集まる場所。", links: [
+        { href: "https://www.facebook.com/groups/543187712445164/", name: "Seoul to Busan and Beyond (SBB) — Facebook", desc: "まさにこのライドのための英語グループ:日割り・宿の選択・GPX交換・最新の路面状況。" },
+        { href: "https://www.facebook.com/groups/koreacyclingcommunity/", name: "Korea Cycling Community — Facebook", desc: "活発なQ&AとよくまとまったFAQを持つ在韓ライダーの大型グループ。(ソウルのライド仲間はHan River Ridersを検索。)" },
+      ] },
+    ],
+  },
   hero: {
     headline: "韓国を縦断するライド。",
     sub: "仁川から釜山まで633km、ほぼ全線が車の来ない自転車道。スタンプ手帳を集めて、ゴールでメダルを。",
@@ -35,7 +64,7 @@ const ja: LocaleDict = {
       { icon: "🗺️", title: "国土縦走ルート", body: "仁川→釜山633km。日別の行程案、Ihwaryeong峠、すべてのスタンプブース。", href: "cross-country" },
       { icon: "📔", title: "自転車手帳とメダル", body: "₩4,000の手帳の買い方、赤いブース、外国人がメダルを受け取る方法。", href: "certification" },
       { icon: "📍", title: "GPX・TCXダウンロード", body: "認証センター入りの実走トラック。ブースの見逃しはもう終わり。", href: "gpx" },
-      { icon: "🧭", title: "実用ガイド", body: "地図アプリ・輸送・宿・持ち物・都市走行など。", href: "/guides/", en: true },
+      { icon: "🧭", title: "実用ガイド", body: "地図アプリ・輸送・宿・持ち物・都市走行など。", href: "guides" },
     ],
     enNote: "(英語)",
     regions: {

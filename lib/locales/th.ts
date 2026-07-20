@@ -6,7 +6,36 @@ const th: LocaleDict = {
   code: "th",
   htmlLang: "th",
   name: "ไทย",
-  nav: { route: "เส้นทางข้ามประเทศ", cert: "ระบบสแตมป์", gpx: "GPX·แผนที่", english: "English" },
+  nav: { route: "เส้นทางข้ามประเทศ", cert: "ระบบสแตมป์", gpx: "GPX·แผนที่", guides: "คู่มือ", resources: "แหล่งข้อมูล", english: "English" },
+  guidesUi: {
+    title: "คู่มือ",
+    intro: "คำถามที่นักปั่นต่างชาติถามกันทุกคน ตอบจากรายงานการปั่นจริง — ไม่ใช่โบรชัวร์",
+    back: "← คู่มือทั้งหมด",
+    lastVerified: "ตรวจสอบล่าสุด",
+  },
+  resources: {
+    title: "แหล่งข้อมูล",
+    metaDesc: "เว็บทางการของเกาหลี K-water การสั่งเหรียญ และคู่มือ/คอมมูนิตี้ภาษาอังกฤษที่ดีที่สุด",
+    intro: "เราตั้งใจให้เว็บนี้ใช้งานได้จริงและอัปเดต แต่คุณควรรู้จักแหล่งข้อมูลต้นทางด้วย ตรวจสอบล่าสุด: 2026-07-17",
+    groups: [
+      { title: "ทางการ", blurb: "แหล่งข้อมูลต้นทาง — ข้อมูลเส้นทาง กฎการรับรอง สั่งเหรียญ", links: [
+        { href: "https://www.bike.go.kr", name: "bike.go.kr", desc: "พอร์ทัลจักรยานของรัฐบาล: แผนที่เส้นทาง รายชื่อศูนย์รับรอง กฎพาสปอร์ต เนื้อหาเน้นเกาหลี หน้าอังกฤษบางกว่า" },
+        { href: "https://www.bike.go.kr/eng", name: "bike.go.kr — English", desc: "หน้าอังกฤษทางการเรื่องระบบรับรองและพาสปอร์ต ดูกฎดี แต่แผนที่อ่อน" },
+        { href: "https://www.riverguide.go.kr", name: "riverguide.go.kr", desc: "ที่สั่งเหรียญหลังพาสปอร์ตผ่านการรับรอง ต้องใช้ช่องทางจ่ายเงินเกาหลีและส่งในเกาหลีเท่านั้น — ทางออกดูในคู่มือรับรองของเรา" },
+        { href: "https://www.kwateromc.co.kr", name: "K-water O&M (케이워터운영관리)", desc: "บริษัทลูก K-water ที่ดูแลศูนย์รับรองตามฝายหลายแห่ง ประกาศเวลาทำการมักออกที่นี่ก่อน" },
+      ] },
+      { title: "คู่มือภาษาอังกฤษ", blurb: "เว็บอิสระที่ลงลึกเรื่องเส้นทาง", links: [
+        { href: "https://koreabybike.com", name: "Korea by Bike", desc: "คู่มืออังกฤษอิสระที่ครบที่สุด: ทุกเส้นทางรับรอง รายชื่อศูนย์ วิธีใช้แอปพาสปอร์ต" },
+        { href: "https://kojects.com/long-distance-cycling/", name: "Kojects — Long-Distance Cycling", desc: "ภาพรวมเส้นทางไกลแบบกระชับ พร้อมทริคการเดินทาง (รถบัส รถไฟ)" },
+        { href: "https://bikebuskorea.com", name: "Bike Bus Korea", desc: "รายงานการปั่นล่าสุดและรายชื่อศูนย์ เด่นสุดที่เส้นชายฝั่งตะวันออก" },
+        { href: "https://www.crazyguyonabike.com", name: "CrazyGuyOnABike — บันทึกเกาหลี", desc: "บันทึกทัวร์ริ่งยาวๆ รวมหลายทริป Incheon–Busan; ค้น 'Korea 4 rivers'" },
+      ] },
+      { title: "คอมมูนิตี้", blurb: "ข้อมูลหน้างานสดใหม่ที่สุดอยู่ที่นี่", links: [
+        { href: "https://www.facebook.com/groups/543187712445164/", name: "Seoul to Busan and Beyond (SBB) — Facebook", desc: "กลุ่มภาษาอังกฤษสำหรับทริปนี้โดยเฉพาะ: แผนรายวัน ที่พัก แลก GPX สภาพเส้นทางปัจจุบัน" },
+        { href: "https://www.facebook.com/groups/koreacyclingcommunity/", name: "Korea Cycling Community — Facebook", desc: "กลุ่มนักปั่นต่างชาติขนาดใหญ่ Q&A คึกคักและ FAQ จัดไว้ดี (เพื่อนปั่นใน Seoul ค้นชื่อ Han River Riders)" },
+      ] },
+    ],
+  },
   hero: {
     headline: "ปั่นข้ามเกาหลีทั้งประเทศ",
     sub: "633 กม. จาก Incheon ถึง Busan บนเลนจักรยานแทบไร้รถยนต์ เก็บสแตมป์ลงพาสปอร์ต แล้วรับเหรียญที่เส้นชัย",
@@ -36,7 +65,7 @@ const th: LocaleDict = {
       { icon: "🗺️", title: "เส้นทางข้ามประเทศ", body: "Incheon → Busan 633 กม.: แผนรายวัน เนิน Ihwaryeong และตู้สแตมป์ทุกจุด", href: "cross-country" },
       { icon: "📔", title: "Bike Passport และเหรียญ", body: "วิธีซื้อพาสปอร์ต ₩4,000 ตู้แดง และวิธีรับเหรียญสำหรับชาวต่างชาติ", href: "certification" },
       { icon: "📍", title: "ดาวน์โหลด GPX·TCX", body: "แทร็กจริงพร้อมจุดเช็คอินในไฟล์ — ไม่พลาดตู้สแตมป์อีกต่อไป", href: "gpx" },
-      { icon: "🧭", title: "คู่มือการเดินทาง", body: "แอปแผนที่ การขนส่ง ที่พัก ของที่ต้องแพ็ค ฯลฯ", href: "/guides/", en: true },
+      { icon: "🧭", title: "คู่มือการเดินทาง", body: "แอปแผนที่ การขนส่ง ที่พัก ของที่ต้องแพ็ค ฯลฯ", href: "guides" },
     ],
     enNote: "(ภาษาอังกฤษ)",
     regions: {

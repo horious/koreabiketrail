@@ -6,7 +6,36 @@ const zh: LocaleDict = {
   code: "zh",
   htmlLang: "zh-Hant",
   name: "繁體中文",
-  nav: { route: "縱貫路線", cert: "認證制度", gpx: "GPX·地圖", english: "English" },
+  nav: { route: "縱貫路線", cert: "認證制度", gpx: "GPX·地圖", guides: "指南", resources: "資源", english: "English" },
+  guidesUi: {
+    title: "指南",
+    intro: "外國騎士都會問的問題,用真實騎行報告回答——不是觀光手冊。",
+    back: "← 全部指南",
+    lastVerified: "最後確認",
+  },
+  resources: {
+    title: "資源",
+    metaDesc: "韓國官方單車網站、K-water、獎牌訂購,以及最好的英文指南與社群。",
+    intro: "本站力求實用與更新,但你也該認識一手來源。最後確認:2026-07-17。",
+    groups: [
+      { title: "官方", blurb: "一手來源——路線資料、認證規則、獎牌訂購。", links: [
+        { href: "https://www.bike.go.kr", name: "bike.go.kr(自行車幸福分享)", desc: "政府單車入口:路線圖、認證中心清單、護照規定。以韓文為主,英文頁面較薄。" },
+        { href: "https://www.bike.go.kr/eng", name: "bike.go.kr — 英文版", desc: "認證制度與護照的官方英文頁。查規則好用,地圖偏弱。" },
+        { href: "https://www.riverguide.go.kr", name: "우리강 이용 도우미(riverguide.go.kr)", desc: "護照認證後訂購獎牌的地方。需韓國支付方式、僅寄韓國境內——變通方法見本站認證指南。" },
+        { href: "https://www.kwateromc.co.kr", name: "K-water營運管理(케이워터운영관리)", desc: "營運多數攔河堰認證中心的K-water子公司,中心營運公告常先出現在這裡。" },
+      ] },
+      { title: "英文指南", blurb: "深入涵蓋各路線的獨立網站。", links: [
+        { href: "https://koreabybike.com", name: "Korea by Bike", desc: "最完整的獨立英文指南:每條認證路線、中心清單、護照App教學。" },
+        { href: "https://kojects.com/long-distance-cycling/", name: "Kojects — Long-Distance Cycling", desc: "長程路線的精要總覽與交通(巴士、火車)訣竅。" },
+        { href: "https://bikebuskorea.com", name: "Bike Bus Korea", desc: "近期騎行報告與中心清單,東海岸路線最強。" },
+        { href: "https://www.crazyguyonabike.com", name: "CrazyGuyOnABike — 韓國遊記", desc: "大量長篇旅行日誌,含多趟仁川–釜山;搜「Korea 4 rivers」。" },
+      ] },
+      { title: "社群", blurb: "最新鮮的路況情報都在這裡。", links: [
+        { href: "https://www.facebook.com/groups/543187712445164/", name: "Seoul to Busan and Beyond (SBB) — Facebook", desc: "專為這趟騎行而生的英文社團:每日里程、住宿、GPX交換、即時路況。" },
+        { href: "https://www.facebook.com/groups/koreacyclingcommunity/", name: "Korea Cycling Community — Facebook", desc: "問答活躍、FAQ完善的外籍騎士大社團。(首爾騎車夥伴請搜Han River Riders。)" },
+      ] },
+    ],
+  },
   hero: {
     headline: "騎完整個韓國。",
     sub: "從仁川到釜山633公里,幾乎全程無汽車的自行車道。集章護照一路蓋到底,終點還有獎牌。",
@@ -36,7 +65,7 @@ const zh: LocaleDict = {
       { icon: "🗺️", title: "縱貫路線(國土縱走)", body: "仁川→釜山633公里:逐日行程、梨花嶺、每一個蓋章崗亭。", href: "cross-country" },
       { icon: "📔", title: "單車護照與獎牌", body: "₩4,000護照怎麼買、紅色崗亭、外國人領獎牌的方法。", href: "certification" },
       { icon: "📍", title: "GPX·TCX下載", body: "內建認證中心航點的實騎軌跡,不再錯過崗亭。", href: "gpx" },
-      { icon: "🧭", title: "實用指南", body: "地圖App、交通、住宿、行李、市區騎行等。", href: "/guides/", en: true },
+      { icon: "🧭", title: "實用指南", body: "地圖App、交通、住宿、行李、市區騎行等。", href: "guides" },
     ],
     enNote: "(英文)",
     regions: {

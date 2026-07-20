@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { guides } from "@/lib/guides";
+import { languageAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Practical guides for cycling Korea",
   description:
     "Navigation apps, transport, motels, packing, seasons, rentals and city riding — everything foreign riders ask before the Cross-Country Route.",
+  alternates: { canonical: "./", languages: languageAlternates("/guides/") },
 };
 
 export default function GuidesPage() {
