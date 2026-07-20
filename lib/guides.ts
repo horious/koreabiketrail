@@ -22,6 +22,59 @@ export interface Guide {
 
 export const guides: Guide[] = [
   {
+    slug: "four-rivers",
+    title: "Korea's 4 Rivers bike path (Four Rivers), explained",
+    description:
+      "What Korea's 4 Rivers (Four Rivers) certification actually covers, how it overlaps with the Incheon–Busan Cross-Country ride, and the full menu of certifiable paths beyond it.",
+    lastVerified: "2026-07-21",
+    sections: [
+      {
+        heading: "What the Four Rivers path actually is",
+        paragraphs: [
+          "The Four Rivers certification — written '4 Rivers path' as often as not — is 4대강 종주 in Korean, and covers the bike paths along Korea's four great rivers — the Han (Hangang), Nakdong (Nakdonggang), Geum (Geumgang) and Yeongsan (Yeongsangang). Important: it is NOT one continuous route. It's four separate river paths, roughly 860 km combined, and two of them sit in the southwest far from the other two. You complete it by riding each path and collecting its stamps in the same Bike Passport.",
+        ],
+      },
+      {
+        heading: "How it relates to the Cross-Country Route",
+        paragraphs: [
+          "Think of the certifications as overlapping sets. The Incheon→Busan Cross-Country Route already contains the full Hangang and Nakdonggang legs — so the day you finish in Busan, you're two rivers into the Four Rivers challenge whether you meant to be or not. Add the Geum and the Yeongsan later and the Four Rivers medal is yours on the same passport. (This is also why the 'Four Rivers' sign at the Busan finish line confuses everyone: it marks a shared endpoint, not a completed certification.)",
+        ],
+      },
+      {
+        heading: "The two rivers you're missing",
+        list: [
+          "Geumgang path (금강, ~146 km): Daecheong Dam → Geum River Estuary Bank, past Sejong and through Gongju and Buyeo — the old Baekje kingdom heartland. Flat, quiet, temple-and-fortress scenery.",
+          "Yeongsangang path (영산강, ~133 km): Damyang Dam → Yeongsan River Estuary near Mokpo, via Damyang's bamboo forest and metasequoia lane and the city of Gwangju. The gentlest of the four.",
+          "Both are comfortable 2-day rides each, or a combined 4–5 day southwest trip — trains and buses reach both ends easily.",
+        ],
+      },
+      {
+        heading: "Beyond the rivers: the whole certification menu",
+        paragraphs: [
+          "The same passport covers a national network of certifiable paths — the Cross-Country and Four Rivers are just the headline acts:",
+        ],
+        list: [
+          "Bukhangang (북한강, ~70 km) — riverside spur northeast of Seoul, an easy weekender.",
+          "Ocheon (오천, ~105 km) — 'five streams' link between the Saejae area and the Geum river.",
+          "Seomjingang (섬진강, ~149 km) — arguably the prettiest river path, cherry blossoms in spring.",
+          "East Coast: Gangwon (~242 km) and Gyeongbuk (~122 km) — beaches and fishing ports along the East Sea, finishing at the DMZ observatory in the north.",
+          "Jeju Fantasy (제주환상, ~234 km) — the loop around Jeju island; ride counter-clockwise for the winds.",
+          "Collect every certification center in the country and you've earned the Grand Slam medal — the system's final boss. Honest note for visitors: that's thousands of kilometers across every corner of the country, realistically beyond a normal tourist stay. Treat it as a reason to come back, not a single-trip goal.",
+        ],
+      },
+      {
+        heading: "Practical strategy — match the route to your stay",
+        list: [
+          "Same passport, same red booths, same rules everywhere — one ₩4,000 passport covers every path and medal.",
+          "Standard trip (1–2 weeks): ride the Cross-Country first (it's the flagship), then return another year for Geum + Yeongsan to claim 4 Rivers.",
+          "Short on time (3–4 days)? Skip the mainland and ride the Jeju Fantasy loop — a complete, self-contained certification with island scenery, right off the airport.",
+          "Have longer? Chain onward from Busan: the East Coast route runs naturally from the Cross-Country finish up through Gyeongbuk and Gangwon to the DMZ observatory — Busan makes a perfect base to keep collecting jongju sections.",
+          "Medals stack: Cross-Country, 4 Rivers and Grand Slam are separate medals — completists can earn all three, just not usually in one visit.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "navigation-apps",
     title: "Maps & navigation: why Google Maps won't work",
     description:
@@ -88,47 +141,47 @@ export const guides: Guide[] = [
       {
         heading: "Water words (you'll follow these for 600 km)",
         list: [
-          "강 gang — river. Hangang (한강) = Han River; Nakdonggang (낙동강) = Nakdong River. The route is basically four of these.",
-          "천 cheon — stream, small river. Ocheon (오천) bike path = 'five streams'.",
-          "호 ho — lake. Chungjuho (충주호) = Chungju Lake.",
-          "보 bo — weir. Ipobo (이포보), Gangjeong-Goryeongbo (강정고령보) — the big river barrages where stamp booths and staffed centers cluster.",
-          "댐 daem — dam. Chungjudaem (충주댐), Andongdaem (안동댐) — path termini beyond the cross-country line.",
-          "하굿둑 hagutduk — estuary barrage. Nakdonggang Hagutduk is the finish line in Busan.",
-          "갑문 gapmun — canal lock. Ara West Sea Lock (아라서해갑문) is where your passport journey starts.",
-          "나루 naru — old ferry landing. Gwangnaru (광나루) in Seoul keeps the name.",
+          "`강` `gang` — river. Han**gang** (한강) = Han River; Nakdong**gang** (낙동강) = Nakdong River. The route is basically four of these.",
+          "`천` `cheon` — stream, small river. O**cheon** (오천) bike path = 'five streams'.",
+          "`호` `ho` — lake. Chungju**ho** (충주호) = Chungju Lake.",
+          "`보` `bo` — weir. Ipo**bo** (이포보), Gangjeong-Goryeong**bo** (강정고령보) — the big river barrages where stamp booths and staffed centers cluster.",
+          "`댐` `daem` — dam. Chungju**daem** (충주댐), Andong**daem** (안동댐) — path termini beyond the cross-country line.",
+          "`하굿둑` `hagutduk` — estuary barrage. Nakdong**gang** Hagutduk is the finish line in Busan.",
+          "`갑문` `gapmun` — canal lock. Ara West Sea Lock (아라서해갑문) is where your passport journey starts.",
+          "`나루` `naru` — old ferry landing. Gwang**naru** (광나루) in Seoul keeps the name.",
         ],
       },
       {
         heading: "Terrain words (the ones that hurt)",
         list: [
-          "령 ryeong — high mountain pass (Sino-Korean). Ihwaryeong (이화령) — the route's one serious climb. See this ending? Eat first.",
-          "재 jae — pass (native Korean, same warning). The Saejae (새재) bike path is named for the historic Mungyeong Saejae pass.",
-          "고개 gogae — hill, smaller pass. Short but often steep.",
-          "산 san — mountain. Useful for orientation, not something the path usually crosses.",
-          "섬 seom / 도 do — island. Binaeseom (비내섬); Eulsukdo (을숙도) at the Busan finish.",
+          "`령` `ryeong` — high mountain pass (Sino-Korean). Ihwa**ryeong** (이화령) — the route's one serious climb. See this ending? Eat first.",
+          "`재` `jae` — pass (native Korean, same warning). The Sae**jae** (새재) bike path is named for the historic Mungyeong Sae**jae** pass.",
+          "`고개` `gogae` — hill, smaller pass. Short but often steep.",
+          "`산` `san` — mountain. Useful for orientation, not something the path usually crosses.",
+          "`섬` `seom` / `도` `do` — island. Binae**seom** (비내섬); Eulsuk**do** (을숙도) at the Busan finish.",
         ],
       },
       {
         heading: "Road and route words",
         list: [
-          "길 gil — way, path. Jajeongeo-gil (자전거길) = bike path. The magic word on every route sign.",
-          "로 ro — road (usually for cars). A sign pointing to a -ro means you're leaving the bike path.",
-          "교 gyo — bridge. Sangpunggyo (상풍교), Paldanggyo (팔당대교) — 대교 daegyo is a big/grand bridge.",
-          "터널 teoneol — tunnel. The Saejae and Nakdong sections have several; lights on.",
-          "역 yeok — station. Neungnae-yeok (능내역) is a disused rail station turned rest stop.",
-          "공원 gongwon — park. Riverside parks host many stamp booths.",
-          "쉼터 swimteo — rest stop/shelter. Yangpyeong Bike Rest Stop (양평자전거쉼터) is a certification center.",
-          "온천 oncheon — hot spring. Suanbo Oncheon (수안보온천): stamp, soak, sleep, climb at dawn.",
-          "삼거리 samgeori / 사거리 sageori — three-way / four-way junction. Common in detour directions.",
+          "`길` `gil` — way, path. Jajeongeo-**gil** (자전거길) = bike path. The magic word on every route sign.",
+          "`로` `ro` — road (usually for cars). A sign pointing to a -ro means you're leaving the bike path.",
+          "`교` `gyo` — bridge. Sangpung**gyo** (상풍교), Paldanggyo (팔당대교) — `대교` `daegyo` is a big/grand bridge.",
+          "`터널` `teoneol` — tunnel. The Sae**jae** and Nakdong sections have several; lights on.",
+          "`역` `yeok` — station. Neungnae-**yeok** (능내역) is a disused rail station turned rest stop.",
+          "`공원` `gongwon` — park. Riverside parks host many stamp booths.",
+          "`쉼터` `swimteo` — rest stop/shelter. Yangpyeong Bike Rest Stop (양평자전거쉼터) is a certification center.",
+          "`온천` `oncheon` — hot spring. Suanbo **Oncheon** (수안보온천): stamp, soak, sleep, climb at dawn.",
+          "`삼거리` `samgeori` / `사거리` `sageori` — three-way / four-way junction. Common in detour directions.",
         ],
       },
       {
         heading: "Certification words",
         list: [
-          "종주 jongju — end-to-end traversal. Gukto Jongju (국토종주) = crossing the whole country; the word on your medal.",
-          "인증센터 injeung-senteo — certification center, i.e. the red stamp booth.",
-          "인증수첩 injeung-sucheop — the Bike Passport you stamp.",
-          "무인 muin / 유인 yuin — unstaffed / staffed. You'll see these on center listings (our center list marks them for you).",
+          "`종주` `jongju` — end-to-end traversal. Gukto **Jongju** (국토종주) = crossing the whole country; the word on your medal.",
+          "`인증센터` `injeung-senteo` — certification center, i.e. the red stamp booth.",
+          "`인증수첩` `injeung-sucheop` — the Bike Passport you stamp.",
+          "`무인` `muin` / `유인` `yuin` — unstaffed / staffed. You'll see these on center listings (our center list marks them for you).",
         ],
       },
       {
@@ -137,9 +190,9 @@ export const guides: Guide[] = [
           "Break a few real signs into their parts and the trick becomes obvious:",
         ],
         list: [
-          "이화령휴게소 인증센터 = Ihwa-ryeong (pass) + hyugeso (rest area) + certification center → 'stamp booth at the top of the Ihwaryeong pass'.",
-          "남한강자전거길 = Nam (south) + Han-gang (Han River) + jajeongeo-gil (bike path) → 'South Han River bike path'.",
-          "상주상풍교 = Sangju (city) + Sangpung-gyo (bridge) → 'Sangpung Bridge in Sangju'.",
+          "`이화령휴게소 인증센터` = Ihwa-**ryeong** (pass) + hyugeso (rest area) + certification center → 'stamp booth at the top of the Ihwa**ryeong** pass'.",
+          "`남한강자전거길` = Nam (south) + Han-**gang** (Han River) + jajeongeo-gil (bike path) → 'South Han River bike path'.",
+          "`상주상풍교` = Sangju (city) + Sangpung-**gyo** (bridge) → 'Sangpung Bridge in Sangju'.",
           "That's the whole trick — twenty syllables, and the route map reads itself.",
         ],
         image:

@@ -73,21 +73,17 @@ export default function SiteHeader({
     document.cookie = `lang=${code};path=/;max-age=31536000;SameSite=Lax`;
   };
 
-  // 언어 드롭다운 — compact(모바일, 타이틀 옆 아이콘 칩) / 기본(데스크톱, 라벨 포함)
-  const renderLangMenu = (compact: boolean) => (
-    <details className={`relative ${compact ? "lg:hidden" : ""}`}>
+  // 언어 드롭다운 (데스크톱) — 모바일은 햄버거 패널 안에 라벨 목록으로 표시
+  const renderLangMenu = () => (
+    <details className="relative">
       <summary
         className="flex cursor-pointer list-none items-center gap-1 rounded-full border px-2.5 py-1 text-xs text-gray-600 select-none hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 [&::-webkit-details-marker]:hidden"
         aria-label="Language"
       >
         <span aria-hidden>🌐</span>
-        {!compact && langs.find((l) => l.code === currentLang)?.label}
+        {langs.find((l) => l.code === currentLang)?.label}
       </summary>
-      <ul
-        className={`absolute z-50 mt-2 w-36 rounded-xl border bg-white py-1 text-sm shadow-lg dark:bg-gray-900 ${
-          compact ? "left-0" : "right-0"
-        }`}
-      >
+      <ul className="absolute right-0 z-50 mt-2 w-36 rounded-xl border bg-white py-1 text-sm shadow-lg dark:bg-gray-900">
         {langs.map((l) => (
           <li key={l.code}>
             <Link
@@ -127,9 +123,6 @@ export default function SiteHeader({
           {brand}
         </Link>
 
-        {/* 모바일: 언어 스위처를 햄버거 밖(타이틀 옆)에 노출 */}
-        {renderLangMenu(true)}
-
         {/* 데스크톱 내비 */}
         <nav className="ml-2 hidden flex-1 items-center gap-x-4 text-sm lg:flex">
           {nav.map((item) => (
@@ -140,27 +133,30 @@ export default function SiteHeader({
         </nav>
 
         <div className="ml-auto hidden items-center gap-3 lg:flex">
-          {renderLangMenu(false)}
+          {renderLangMenu()}
           <ThemeToggle />
         </div>
 
-        {/* 모바일: 햄버거 */}
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          className="ml-auto rounded-lg p-2 text-gray-600 hover:bg-gray-100 lg:hidden dark:text-gray-400 dark:hover:bg-gray-800"
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-            {open ? (
-              <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            ) : (
-              <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            )}
-          </svg>
-        </button>
+        {/* 모바일: 언어 스위처(데스크톱과 동일 형태) + 햄버거 */}
+        <div className="ml-auto flex items-center gap-2 lg:hidden">
+          {renderLangMenu()}
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
+              {open ? (
+                <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              ) : (
+                <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* 모바일 드롭 패널 */}

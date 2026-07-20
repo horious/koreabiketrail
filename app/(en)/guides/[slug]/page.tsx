@@ -5,6 +5,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { MEDIA_URL } from "@/lib/data";
 import { getGuide, guides } from "@/lib/guides";
 import { languageAlternates } from "@/lib/i18n";
+import { renderInline } from "@/lib/renderInline";
 
 export function generateStaticParams() {
   return guides.map((g) => ({ slug: g.slug }));
@@ -53,13 +54,13 @@ export default async function GuidePage({
           <h2 className="text-xl font-semibold">{s.heading}</h2>
           {s.paragraphs?.map((p) => (
             <p key={p.slice(0, 40)} className="mt-2 text-gray-700 dark:text-gray-300">
-              {p}
+              {renderInline(p)}
             </p>
           ))}
           {s.list && (
             <ul className="mt-2 list-disc space-y-1 pl-5 text-gray-700 dark:text-gray-300">
               {s.list.map((item) => (
-                <li key={item.slice(0, 40)}>{item}</li>
+                <li key={item.slice(0, 40)}>{renderInline(item)}</li>
               ))}
             </ul>
           )}
