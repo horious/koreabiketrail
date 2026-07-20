@@ -12,6 +12,9 @@ const zh: LocaleDict = {
     intro: "外國騎士都會問的問題,用真實騎行報告回答——不是觀光手冊。",
     back: "← 全部指南",
     lastVerified: "最後確認",
+    goDeeperTitle: "想挖得更深?",
+    goDeeperBody: "本站刻意只做「入門」。各路線的詳細手冊與最新現場情報,官方網站和專業社群才是最佳去處。",
+    goDeeperLink: "前往資源頁 →",
   },
   resources: {
     title: "資源",
@@ -68,6 +71,20 @@ const zh: LocaleDict = {
       { icon: "🧭", title: "實用指南", body: "地圖App、交通、住宿、行李、市區騎行等。", href: "guides" },
     ],
     enNote: "(英文)",
+    numbers: {
+      eyebrow: "用數字看",
+      title: "整趟旅程,八個數字說完",
+      items: [
+        ["633 km", "仁川 → 釜山"],
+        ["26個", "要收集的印章"],
+        ["5–9天", "所需天數"],
+        ["1座", "真正的山嶺"],
+        ["~12%", "最大坡度"],
+        ["₩4,000", "護照價格"],
+        ["0句", "需要的韓文"],
+        ["1面", "帶回家的獎牌"],
+      ],
+    },
     regions: {
       eyebrow: "無論你在哪裡騎",
       title: "如果說的是你,下一趟旅程就是韓國",

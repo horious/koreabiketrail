@@ -75,6 +75,82 @@ export const guides: Guide[] = [
     ],
   },
   {
+    slug: "day-one",
+    title: "Your Day One in Korea, hour by hour",
+    description:
+      "From the airport landing to your first stamp and your first motel — what the opening day of the Cross-Country Route actually feels like.",
+    lastVerified: "2026-07-21",
+    sections: [
+      {
+        heading: "06:40 — wheels down at Incheon",
+        paragraphs: [
+          "You build the bike right there in the arrivals hall — nobody minds, you won't be the first this week. Grab an eSIM if you didn't pre-load one, fill both bottles, ignore the coffee prices. The airport does NOT sell the Bike Passport, so don't waste time looking.",
+        ],
+      },
+      {
+        heading: "09:00 — Ara West Sea Lock: the ritual begins",
+        paragraphs: [
+          "A short ride or taxi from the airport and you're at the start gate. Inside the center: ₩4,000 in cash, your travel passport for the ID check, and the little book that will run your life for the next week is yours. Walk to the red booth. Press the first stamp. That soft 'clunk' is the sound of the next 632 kilometers starting.",
+        ],
+      },
+      {
+        heading: "10:00 — the Ara Waterway warm-up",
+        paragraphs: [
+          "21 dead-flat kilometers of canal path to shake out the flight. Planes drift overhead into Gimpo, anglers nod as you pass, and the blue line — the one that ends in Busan — rolls out under your front wheel for the first time. Second stamp at the Hangang Lock, and suddenly you're on the Han River with Seoul's skyline stacking up downstream.",
+        ],
+      },
+      {
+        heading: "14:00 — Seoul slides past",
+        paragraphs: [
+          "This is the strangest part of day one: crossing a 10-million-person capital without meeting a single traffic light that matters. Riverside parks, tents, couples on rental bikes, someone practicing the saxophone under a bridge. Stamp at Yeouido. Snack at a convenience store with a river view. Keep east.",
+        ],
+      },
+      {
+        heading: "18:30 — first sunset, first motel",
+        paragraphs: [
+          "Most riders sleep around Paldang or Namyangju, ~70 km in. Find a motel on Naver Map (no booking needed), roll the bike into the room — normal here — and eat at whatever's glowing next door. Passport on the nightstand: three stamps already. Tomorrow the city noise disappears and the river gets quiet. That's when the trip really begins.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "food",
+    title: "The rider's Korean food bucket list",
+    description:
+      "Ten things to eat between Incheon and Busan — the meals that turn a bike ride into the reason you'll come back.",
+    lastVerified: "2026-07-21",
+    sections: [
+      {
+        heading: "The rule",
+        paragraphs: [
+          "You don't need to read a menu: point at what the locals are eating, hold up one finger, done. Korean portion sizes assume you've done a day's work — which, for once, you actually have.",
+        ],
+      },
+      {
+        heading: "The bucket list",
+        list: [
+          "Gukbap (국밥) — rice in boiling meat broth. THE post-climb meal; there's a reason every town near Ihwaryeong serves it.",
+          "Baekban (백반) — 'just bring me food': rice, soup and a table full of side dishes for under ₩10,000. The countryside lunch default.",
+          "Samgyeopsal (삼겹살) — grill-it-yourself pork belly. First-night ceremony; goes criminally well with 100 km in your legs.",
+          "Chimaek (치맥) — fried chicken + beer, ideally delivered to a riverside park. Korea's national recovery protocol.",
+          "Convenience-store ramyeon (라면) — the ritual: hot-water machine, plastic bench, river view. Somehow tastes better than any restaurant version.",
+          "Kimbap (김밥) — seaweed rice rolls, ₩3,000–4,000, survives hours in a jersey pocket. Your handlebar fuel.",
+          "Pajeon + makgeolli (파전 + 막걸리) — savory pancake and cloudy rice wine. Mandatory if it rains; suddenly you'll hope it rains.",
+          "Kalguksu (칼국수) — hand-cut noodle soup, the Yeoju/Chungju river-town specialty.",
+          "Patbingsu (팥빙수) — a mountain of shaved ice in summer. Order one per person; you'll regret sharing.",
+          "Busan finale: dwaeji-gukbap (돼지국밥, the city's soul dish) or raw fish (회) at Jagalchi market — medal in your pocket, sea in front of you.",
+        ],
+      },
+      {
+        heading: "Dietary notes, briefly",
+        list: [
+          "Vegetarian is workable but takes effort — bibimbap (비빔밥, ask 'gogi ppaejuseyo' = no meat), kimbap variants and convenience stores are your allies. Strict vegan is genuinely hard in the countryside.",
+          "Big allergies? Keep a translated card on your phone; broths are commonly beef/pork/anchovy-based.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "navigation-apps",
     title: "Maps & navigation: why Google Maps won't work",
     description:
@@ -259,6 +335,14 @@ export const guides: Guide[] = [
         ],
         image:
           "Dusk shot on an unlit rural stretch of the path: a rider's headlight beam as the only light source, river barely visible. Should feel slightly uncomfortable — that's the point of the warning.",
+      },
+      {
+        heading: "If something goes wrong",
+        list: [
+          "1330 — Korea Travel Hotline: 24/7, real humans, English/Japanese/Chinese and more. Lost, confused, need anything explained? This number is your safety net for the whole trip.",
+          "119 — fire & ambulance (English interpreters available). 112 — police.",
+          "Save all three before you start riding. Odds are you'll never dial any of them — that's rather the point of touring Korea.",
+        ],
       },
     ],
   },

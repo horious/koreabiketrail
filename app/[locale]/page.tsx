@@ -69,6 +69,23 @@ export default async function LocaleHome({
 
       <section className="py-10">
         <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+          {d.home.numbers.eyebrow}
+        </p>
+        <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
+          {d.home.numbers.title}
+        </h2>
+        <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
+          {d.home.numbers.items.map(([big, small]) => (
+            <div key={big} className="rounded-2xl border bg-white p-4 text-center dark:bg-gray-900">
+              <div className="text-xl font-bold text-blue-600 dark:text-blue-400">{big}</div>
+              <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">{small}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-10">
+        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
           {d.home.regions.eyebrow}
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">

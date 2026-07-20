@@ -36,6 +36,10 @@ export interface LocaleDict {
     intro: string;
     back: string;
     lastVerified: string;
+    /** "입문 게이트웨이" 컨셉의 링크아웃 박스 */
+    goDeeperTitle: string;
+    goDeeperBody: string;
+    goDeeperLink: string;
   };
   resources: {
     title: string;
@@ -56,6 +60,11 @@ export interface LocaleDict {
     startTitle: string;
     cards: { icon: string; title: string; body: string; href: string; en?: boolean }[];
     enNote: string; // "(English)" 표기
+    numbers: {
+      eyebrow: string;
+      title: string;
+      items: [string, string][];
+    };
     regions: {
       eyebrow: string;
       title: string;

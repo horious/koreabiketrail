@@ -102,6 +102,19 @@ export default async function GuidePage({
           )}
         </section>
       ))}
+
+      {/* 입문 게이트웨이 컨셉 — 깊이는 링크아웃 */}
+      <aside className="mt-10 rounded-xl bg-gray-50 dark:bg-gray-900 p-5 text-sm">
+        <p className="font-semibold">Going deeper?</p>
+        <p className="mt-1 text-gray-600 dark:text-gray-400">
+          We keep this site light on purpose — it's the front door, not the
+          library. For route-by-route manuals and up-to-the-minute local intel,
+          the official sites and specialist communities are the place.
+        </p>
+        <Link href="/resources/" className="mt-2 inline-block font-medium text-blue-600 underline dark:text-blue-400">
+          Head to Resources →
+        </Link>
+      </aside>
     </article>
   );
 }

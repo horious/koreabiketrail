@@ -11,6 +11,9 @@ const es: LocaleDict = {
     intro: "Las preguntas que todo ciclista extranjero se hace, respondidas con informes de ruta reales — no con folletos.",
     back: "← Todas las guías",
     lastVerified: "Última verificación",
+    goDeeperTitle: "¿Quieres profundizar?",
+    goDeeperBody: "Este sitio es, a propósito, solo la puerta de entrada. Para manuales detallados por ruta e información de última hora, los sitios oficiales y las comunidades especializadas son el mejor destino.",
+    goDeeperLink: "Ir a Recursos →",
   },
   resources: {
     title: "Recursos",
@@ -67,6 +70,20 @@ const es: LocaleDict = {
       { icon: "🧭", title: "Guías prácticas", body: "Apps de mapas, transporte, alojamiento, equipaje y más.", href: "guides" },
     ],
     enNote: "(en inglés)",
+    numbers: {
+      eyebrow: "En números",
+      title: "El viaje entero en ocho cifras",
+      items: [
+        ["633 km", "Incheon → Busan"],
+        ["26", "sellos por reunir"],
+        ["5–9 días", "duración típica"],
+        ["1", "subida seria"],
+        ["~12%", "pendiente máxima"],
+        ["₩4.000", "precio del pasaporte"],
+        ["0 palabras", "de coreano necesarias"],
+        ["1 medalla", "para llevar a casa"],
+      ],
+    },
     regions: {
       eyebrow: "Pedales donde pedales",
       title: "Si este eres tú, Corea es tu próxima ruta",

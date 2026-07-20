@@ -100,6 +100,18 @@ export default async function LocaleGuidePage({
           )}
         </section>
       ))}
+
+      {/* 입문 게이트웨이 컨셉 — 깊이는 링크아웃 */}
+      <aside className="mt-10 rounded-xl bg-gray-50 dark:bg-gray-900 p-5 text-sm">
+        <p className="font-semibold">{ui.goDeeperTitle}</p>
+        <p className="mt-1 text-gray-600 dark:text-gray-400">{ui.goDeeperBody}</p>
+        <Link
+          href={`/${locale}/resources/`}
+          className="mt-2 inline-block font-medium text-blue-600 underline dark:text-blue-400"
+        >
+          {ui.goDeeperLink}
+        </Link>
+      </aside>
     </article>
   );
 }
