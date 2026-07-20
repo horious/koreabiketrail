@@ -191,14 +191,14 @@ export default function HeroCarousel({
 
       {/* 고정 오버레이: 헤드라인 + CTA */}
       <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
-        <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-white [text-shadow:0_0_10px_rgba(0,0,0,0.55),0_0_28px_rgba(0,0,0,0.35)] sm:text-4xl">
+        <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-white [text-shadow:0_0_10px_rgba(0,0,0,0.63),0_0_28px_rgba(0,0,0,0.40)] sm:text-4xl">
           {texts.headline}
         </h1>
-        <p className="mt-3 max-w-xl text-sm text-gray-100 [text-shadow:0_0_8px_rgba(0,0,0,0.55),0_0_20px_rgba(0,0,0,0.35)] sm:text-base">
+        <p className="mt-3 max-w-xl text-sm text-gray-100 [text-shadow:0_0_8px_rgba(0,0,0,0.63),0_0_20px_rgba(0,0,0,0.40)] sm:text-base">
           {texts.sub}
         </p>
         <p
-          className="mt-2 h-5 text-sm font-medium text-white/90 [text-shadow:0_0_8px_rgba(0,0,0,0.55),0_0_20px_rgba(0,0,0,0.35)]"
+          className="mt-2 h-5 text-sm font-medium text-white/90 [text-shadow:0_0_8px_rgba(0,0,0,0.63),0_0_20px_rgba(0,0,0,0.40)]"
           aria-live="polite"
         >
           {texts.labels[index]}

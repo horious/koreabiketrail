@@ -29,23 +29,29 @@ export default function SiteHeader({
 }) {
   const pathname = usePathname() ?? "/";
   const [open, setOpen] = useState(false);
-  const langMenuRef = useRef<HTMLDetailsElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+
+  // 언어 드롭다운(모바일/데스크톱 2개 인스턴스)을 한꺼번에 닫기
+  const closeMenus = () => {
+    setOpen(false);
+    headerRef.current
+      ?.querySelectorAll("details[open]")
+      .forEach((d) => d.removeAttribute("open"));
+  };
 
   // 경로가 바뀌면 모바일 패널·언어 메뉴 닫기
   useEffect(() => {
-    setOpen(false);
-    langMenuRef.current?.removeAttribute("open");
+    closeMenus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
-        langMenuRef.current?.removeAttribute("open");
-      }
+      if (e.key === "Escape") closeMenus();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // 현재 경로에서 언어 프리픽스를 벗겨 대상 언어의 대응 URL 계산
@@ -65,6 +71,38 @@ export default function SiteHeader({
     document.cookie = `lang=${code};path=/;max-age=31536000;SameSite=Lax`;
   };
 
+  // 언어 드롭다운 — compact(모바일, 타이틀 옆 아이콘 칩) / 기본(데스크톱, 라벨 포함)
+  const renderLangMenu = (compact: boolean) => (
+    <details className={`relative ${compact ? "lg:hidden" : ""}`}>
+      <summary
+        className="flex cursor-pointer list-none items-center gap-1 rounded-full border px-2.5 py-1 text-xs text-gray-600 select-none hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 [&::-webkit-details-marker]:hidden"
+        aria-label="Language"
+      >
+        <span aria-hidden>🌐</span>
+        {!compact && langs.find((l) => l.code === currentLang)?.label}
+      </summary>
+      <ul
+        className={`absolute z-50 mt-2 w-36 rounded-xl border bg-white py-1 text-sm shadow-lg dark:bg-gray-900 ${
+          compact ? "left-0" : "right-0"
+        }`}
+      >
+        {langs.map((l) => (
+          <li key={l.code}>
+            <Link
+              href={langHref(l)}
+              onClick={() => rememberLang(l.code)}
+              className={`block px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-800/50 ${
+                l.code === currentLang ? "font-semibold" : ""
+              }`}
+            >
+              {l.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+
   const linkCls = (href: string) =>
     `transition hover:text-gray-900 dark:hover:text-gray-100 ${
       pathname === href
@@ -73,7 +111,10 @@ export default function SiteHeader({
     }`;
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur-md dark:bg-gray-950/80">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur-md dark:bg-gray-950/80"
+    >
       <div className="mx-auto flex h-14 max-w-4xl items-center gap-4 px-4">
         <Link
           href={homeHref}
@@ -84,8 +125,11 @@ export default function SiteHeader({
           {brand}
         </Link>
 
+        {/* 모바일: 언어 스위처를 햄버거 밖(타이틀 옆)에 노출 */}
+        {renderLangMenu(true)}
+
         {/* 데스크톱 내비 */}
-        <nav className="ml-2 hidden flex-1 items-center gap-x-4 text-sm md:flex">
+        <nav className="ml-2 hidden flex-1 items-center gap-x-4 text-sm lg:flex">
           {nav.map((item) => (
             <Link key={item.href} href={item.href} className={linkCls(item.href)}>
               {item.label}
@@ -93,32 +137,8 @@ export default function SiteHeader({
           ))}
         </nav>
 
-        <div className="ml-auto hidden items-center gap-3 md:flex">
-          {/* 언어 스위처 */}
-          <details ref={langMenuRef} className="relative">
-            <summary
-              className="flex cursor-pointer list-none items-center gap-1 rounded-full border px-2.5 py-1 text-xs text-gray-600 select-none hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 [&::-webkit-details-marker]:hidden"
-              aria-label="Language"
-            >
-              <span aria-hidden>🌐</span>
-              {langs.find((l) => l.code === currentLang)?.label}
-            </summary>
-            <ul className="absolute right-0 z-50 mt-2 w-36 rounded-xl border bg-white py-1 text-sm shadow-lg dark:bg-gray-900">
-              {langs.map((l) => (
-                <li key={l.code}>
-                  <Link
-                    href={langHref(l)}
-                    onClick={() => rememberLang(l.code)}
-                    className={`block px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-800/50 ${
-                      l.code === currentLang ? "font-semibold" : ""
-                    }`}
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </details>
+        <div className="ml-auto hidden items-center gap-3 lg:flex">
+          {renderLangMenu(false)}
           <ThemeToggle />
         </div>
 
@@ -129,7 +149,7 @@ export default function SiteHeader({
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="ml-auto rounded-lg p-2 text-gray-600 hover:bg-gray-100 md:hidden dark:text-gray-400 dark:hover:bg-gray-800"
+          className="ml-auto rounded-lg p-2 text-gray-600 hover:bg-gray-100 lg:hidden dark:text-gray-400 dark:hover:bg-gray-800"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
             {open ? (
@@ -143,7 +163,7 @@ export default function SiteHeader({
 
       {/* 모바일 드롭 패널 */}
       {open && (
-        <div id="mobile-menu" className="border-t md:hidden">
+        <div id="mobile-menu" className="border-t lg:hidden">
           <nav className="mx-auto max-w-4xl px-4 py-2">
             {nav.map((item) => (
               <Link
@@ -154,24 +174,7 @@ export default function SiteHeader({
                 {item.label}
               </Link>
             ))}
-            <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 border-t pt-3 text-sm">
-              <span aria-hidden>🌐</span>
-              {langs.map((l) => (
-                <Link
-                  key={l.code}
-                  href={langHref(l)}
-                  onClick={() => rememberLang(l.code)}
-                  className={
-                    l.code === currentLang
-                      ? "font-semibold"
-                      : "text-gray-600 dark:text-gray-400"
-                  }
-                >
-                  {l.label}
-                </Link>
-              ))}
-            </div>
-            <div className="border-t py-3 mt-3">
+            <div className="border-t py-3 mt-2">
               <ThemeToggle />
             </div>
           </nav>
