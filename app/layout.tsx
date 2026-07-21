@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { SITE_NAME, SITE_URL } from "@/lib/data";
 
@@ -53,6 +54,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {process.env.NODE_ENV === "production" && (
           <GoogleAnalytics gaId="G-VB4RWGE68G" />
         )}
+        {/* Vercel Web Analytics — 쿠키리스, Hobby 월 5만 이벤트 무료(초과 시 수집만 중지) */}
+        <Analytics />
       </body>
     </html>
   );
