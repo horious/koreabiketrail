@@ -103,6 +103,8 @@ export interface LocaleDict {
     metaDesc: string;
     intro: string;
     steps: { title: string; body: string }[];
+    /** 2단계 스탬프 영상 캡션 (도장 고무 분리 유머 포함) */
+    stampVideoCaption: string;
     levelsTitle: string;
     levelsHead: { level: string; what: string; reward: string };
     levels: [string, string, string][];

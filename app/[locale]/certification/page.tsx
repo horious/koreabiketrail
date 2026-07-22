@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import StampingVideo from "@/components/StampingVideo";
 import { DICTS, isLocale, languageAlternates } from "@/lib/i18n";
+import { CERT_STEP_IMAGES } from "@/lib/imagePlaceholders";
 
 export async function generateMetadata({
   params,
@@ -32,10 +35,13 @@ export default async function LocaleCertification({
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">{d.intro}</p>
 
       <ol className="mt-8 space-y-5">
-        {d.steps.map((s) => (
+        {d.steps.map((s, i) => (
           <li key={s.title} className="rounded-xl border p-5">
             <h2 className="font-semibold">{s.title}</h2>
             <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{s.body}</p>
+            {i === 1 && <StampingVideo caption={d.stampVideoCaption} />}
+            {/* 플레이스홀더 안내문은 EN 공유 — d.steps는 EN STEPS와 1:1 */}
+            {CERT_STEP_IMAGES[i] && <ImagePlaceholder description={CERT_STEP_IMAGES[i]!} />}
           </li>
         ))}
       </ol>

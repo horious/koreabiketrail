@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import StampingVideo from "@/components/StampingVideo";
 import { languageAlternates } from "@/lib/i18n";
+import { CERT_STEP_IMAGES } from "@/lib/imagePlaceholders";
 
 export const metadata: Metadata = {
   title: "Korea Bike Passport & Certification Guide",
@@ -14,26 +16,22 @@ const STEPS = [
   {
     title: "1. Buy the Bike Passport (₩4,000, cash)",
     body: "Sold at staffed certification centers on the paths — NOT at the airport. Starting in Incheon, buy it at the Ara West Sea Lock center (daily 09:00–18:00). Bring Korean won in cash; foreign cards often fail. The paper route map is ₩500 extra and worth it. Note: since 2022 it's one passport per person with ID verification — bring your actual passport.",
-    image:
-      "The Bike Passport itself: cover + an opened spread showing the stamp grid and route map, held in hand at the Ara West Sea Lock counter. Foreigners have never seen this document — show exactly what they're asking to buy.",
+    image: CERT_STEP_IMAGES[0],
   },
   {
     title: "2. Stamp at every red booth",
     body: "Certification centers are red phone-booth-style boxes every 10–30 km, open 24/7. Each holds a unique stamp and ink pad. Carry a spare ink pad: pads dry out, especially on remote sections. If a stamp is missing or broken, take a photo of yourself at the booth — staffed centers accept it as proof.",
-    image:
-      "The iconic red phone-booth stamp station: exterior wide shot on the path + inset/second frame of the hand pressing the stamp inside. This is the most-searched visual of the whole system — make it unmistakable.",
+    image: CERT_STEP_IMAGES[1],
   },
   {
     title: "3. Get verified at a staffed center",
     body: "At the finish (Nakdong Estuary Bank in Busan, or wherever you complete a path), staff review your stamps, certify the passport, and issue completion stickers. A certificate follows by mail.",
-    image:
-      "A staff member at a counter checking a filled passport and applying the completion sticker (Nakdong Estuary center if possible). Shows the human step so riders know what 'verification' physically looks like.",
+    image: CERT_STEP_IMAGES[2],
   },
   {
     title: "4. Order your medal",
     body: "Finishing the Cross-Country, Four Rivers or Grand Slam lets you buy an Olympic-style medal (₩7,500, display case ₩4,000). Two catches for foreigners: the online shop (riverguide.go.kr, '우리강 이용 도우미') generally needs Korean payment methods, and medals ship to KOREAN ADDRESSES ONLY, taking 2–4 weeks. Plan ahead: order via the finish-line staff or a Korean friend, and use a hotel/friend's address — or budget a return visit.",
-    image:
-      "The medal, front and back, next to the certificate. If available, the three medals (Cross-Country / Four Rivers / Grand Slam) side by side for the collector instinct.",
+    image: CERT_STEP_IMAGES[3],
   },
 ];
 
@@ -70,11 +68,14 @@ export default function CertificationPage() {
       </p>
 
       <ol className="mt-8 space-y-5">
-        {STEPS.map((s) => (
+        {STEPS.map((s, i) => (
           <li key={s.title} className="rounded-xl border p-5">
             <h2 className="font-semibold">{s.title}</h2>
             <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{s.body}</p>
-            <ImagePlaceholder description={s.image} />
+            {i === 1 && (
+              <StampingVideo caption="Stamping at a red booth. Uh-oh — the stamp's rubber has parted ways with its handle. That happens too (see the photo rule above)." />
+            )}
+            {s.image && <ImagePlaceholder description={s.image} />}
           </li>
         ))}
       </ol>

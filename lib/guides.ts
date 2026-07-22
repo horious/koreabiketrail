@@ -39,6 +39,8 @@ export const guides: Guide[] = [
         paragraphs: [
           "Think of the certifications as overlapping sets. The Incheon→Busan Cross-Country Route already contains the full Hangang and Nakdonggang legs — so the day you finish in Busan, you're two rivers into the Four Rivers challenge whether you meant to be or not. Add the Geum and the Yeongsan later and the Four Rivers medal is yours on the same passport. (This is also why the 'Four Rivers' sign at the Busan finish line confuses everyone: it marks a shared endpoint, not a completed certification.)",
         ],
+        image:
+          "Custom diagram, not a photo: overlapping-sets graphic showing the Incheon→Busan Cross-Country Route sharing the Han and Nakdong legs with the Four Rivers certification, with the Geum and Yeongsan as the two separate southwestern paths. One glance should resolve the #1 confusion foreigners have.",
       },
       {
         heading: "The two rivers you're missing",
@@ -76,22 +78,40 @@ export const guides: Guide[] = [
   },
   {
     slug: "day-one",
-    title: "Your Day One in Korea, hour by hour",
+    title: "Landing to first stamp: Day 0 and Day 1",
     description:
-      "From the airport landing to your first stamp and your first motel — what the opening day of the Cross-Country Route actually feels like.",
-    lastVerified: "2026-07-21",
+      "Why smart riders sleep before they ride, how to actually get off the airport island with a bike, and what the first day on the Cross-Country Route feels like.",
+    lastVerified: "2026-07-22",
     sections: [
       {
-        heading: "06:40 — wheels down at Incheon",
+        heading: "Read this before you land",
         paragraphs: [
-          "You build the bike right there in the arrivals hall — nobody minds, you won't be the first this week. Grab an eSIM if you didn't pre-load one, fill both bottles, ignore the coffee prices. The airport does NOT sell the Bike Passport, so don't waste time looking.",
+          "Incheon Airport sits on an island, and for years the only way off it with a bike was a taxi — both original bridges ban bicycles. In January 2026 two things changed at once, in opposite directions: the **AREX airport train now refuses full-size bikes entirely** (any day of the week — only a folding bike, folded, or a bike packed in a bag within carry limits gets on), and the new **Cheongna Sky Bridge (청라하늘대교)** opened with a bike lane — the first bridge ever that lets you ride off the island. Plan around these two facts and Day 0 gets easy.",
+          "One more thing: don't unbox and assemble the bike inside the terminal — assembled bikes aren't welcome in the halls. Do it at your motel, or outside the terminal if you're riding out.",
         ],
       },
       {
-        heading: "09:00 — Ara West Sea Lock: the ritual begins",
+        heading: "Our advice: make it Day 0, not Day 1",
         paragraphs: [
-          "A short ride or taxi from the airport and you're at the start gate. Inside the center: ₩4,000 in cash, your travel passport for the ID check, and the little book that will run your life for the next week is yours. Walk to the red booth. Press the first stamp. That soft 'clunk' is the sound of the next 632 kilometers starting.",
+          "You've been folded into a plane seat for ten hours and your body thinks it's 3 a.m. Don't bolt a 70 km ride onto that. Land, grab an eSIM and cash from the ATM (you'll need ₩4,000 in cash for tomorrow's passport — the airport does NOT sell it), then move the still-boxed bike by van taxi (kiosks at both terminals) to a motel near the start — the Cheongna/Geomam area works well — or into Seoul if you want a city evening. Assemble the bike in your room, spin around the block, eat your first samgyeopsal, sleep like a rock. Tomorrow you start fresh, and the whole 633 km will thank you for it.",
         ],
+      },
+      {
+        heading: "Feeling strong? The ride-out option",
+        paragraphs: [
+          "Landed at dawn with energy to burn? Since 2026 you can actually ride out: assemble outside the terminal, cross Yeongjong Island, take the Cheongna Sky Bridge bike lane to the mainland, then follow the Ara canal west to the start gate — roughly 25 km before your odometer officially starts. It's a genuine option now, but be honest with yourself: jet lag plus 25 km plus the real Day 1 is a big first bite. When in doubt, sleep first.",
+        ],
+        image:
+          "The Cheongna Sky Bridge (청라하늘대교) bike lane in use — a loaded touring bike crossing, water below, airport island behind. The bridge only opened in January 2026, so almost no English-language site has this shot yet: a genuine differentiator.",
+      },
+      {
+        heading: "Day 1, 09:00 — Ara West Sea Lock: the ritual begins",
+        paragraphs: [
+          "The certification center opens at nine. Inside: ₩4,000 in cash, your travel passport for the ID check, and the little book that will run your life for the next week is yours. Walk to the red booth. Press the first stamp. That soft 'clunk' is the sound of the next 632 kilometers starting.",
+        ],
+        imageSrc: "/images/cross-country-start.webp",
+        imageAlt: "The start gate of the Cross-Country Route at Ara West Sea Lock in Incheon",
+        imageCaption: "Km 0: the start gate at Ara West Sea Lock. 633 to go.",
       },
       {
         heading: "10:00 — the Ara Waterway warm-up",
@@ -125,6 +145,9 @@ export const guides: Guide[] = [
         paragraphs: [
           "You don't need to read a menu: point at what the locals are eating, hold up one finger, done. Korean portion sizes assume you've done a day's work — which, for once, you actually have.",
         ],
+        imageSrc: "/images/convenience-rest.webp",
+        imageAlt: "A rider's meal break at a convenience store along the bike path",
+        imageCaption: "The route's 24-hour kitchen: a convenience store every few kilometers — hot water, microwave, benches outside, and no one minds how long you sit.",
       },
       {
         heading: "The bucket list",
@@ -140,6 +163,8 @@ export const guides: Guide[] = [
           "Patbingsu (팥빙수) — a mountain of shaved ice in summer. Order one per person; you'll regret sharing.",
           "Busan finale: dwaeji-gukbap (돼지국밥, the city's soul dish) or raw fish (회) at Jagalchi market — medal in your pocket, sea in front of you.",
         ],
+        image:
+          "Three frames with riding context visible (bike, helmet or jersey in shot — no studio flat-lays): (1) the convenience-store ramyeon ritual — hot-water machine, plastic bench, river view; (2) a steaming gukbap bowl in a countryside diner after the Ihwaryeong climb; (3) chimaek delivered to a riverside park at dusk.",
       },
       {
         heading: "Dietary notes, briefly",
@@ -236,6 +261,9 @@ export const guides: Guide[] = [
           "`산` `san` — mountain. Useful for orientation, not something the path usually crosses.",
           "`섬` `seom` / `도` `do` — island. Binae**seom** (비내섬); Eulsuk**do** (을숙도) at the Busan finish.",
         ],
+        imageSrc: "/images/ihwaryeong-stone.webp",
+        imageAlt: "The Ihwaryeong summit stone and bike route signs at the top of the pass",
+        imageCaption: "The reward for reading 령: the summit stone at Ihwaryeong (이화령), 548 m — the photo every rider stops for.",
       },
       {
         heading: "Road and route words",
@@ -271,8 +299,9 @@ export const guides: Guide[] = [
           "`상주상풍교` = Sangju (city) + Sangpung-**gyo** (bridge) → 'Sangpung Bridge in Sangju'.",
           "That's the whole trick — twenty syllables, and the route map reads itself.",
         ],
-        image:
-          "A real route signpost photo with each name-part color-underlined and translated in overlay (e.g. 남한강/자전거길 split and labeled). One annotated sign teaches the whole system visually.",
+        imageSrc: "/images/trail-sign.webp",
+        imageAlt: "A real direction signpost on the Korean cross-country bike route",
+        imageCaption: "A real one from the route. Try it: every part of this sign is in the tables above.",
       },
     ],
   },
@@ -313,8 +342,9 @@ export const guides: Guide[] = [
             caption: "318 · Bike-only lane (자전거 전용차로)",
           },
         ],
-        image:
-          "Real-world photo of each road type in the wild (bike-only riverside road, split shared path, on-road bike lane, priority-road pavement stencil) to pair with the official sign graphics above.",
+        imageSrc: "/images/blueline-sign.webp",
+        imageAlt: "Bike road sign and the blue guide line on the Cross-Country Route",
+        imageCaption: "The two things that guide you for 633 km: the official bike-road signage and the blue line under your wheels.",
       },
       {
         heading: "Construction zones: don't panic",
@@ -322,8 +352,9 @@ export const guides: Guide[] = [
           "On a 633 km route, some section is always being repaired. Detours are almost always signposted with a marked bypass — but in Korean.",
           "The drill: stop, open your camera translation app (Google Lens or Papago) and point it at the sign — the detour map usually becomes obvious. If not, show a Korean rider your phone with a translated question. Cyclists on this route help each other constantly; a fellow jongju rider will often just say 'follow me'.",
         ],
-        image:
-          "A real construction detour sign on a bike path (Korean text visible) photographed next to a phone running camera translation showing the English overlay — demonstrates the exact technique in one image.",
+        imageSrc: "/images/flood-closure.webp",
+        imageAlt: "Temporary closure and detour notice on the bike path after heavy rain",
+        imageCaption: "A real one from the route: path temporarily closed after heavy rain, detour signed — in Korean. Exactly what the camera-translation drill is for.",
       },
       {
         heading: "Riding after dark",
@@ -333,8 +364,9 @@ export const guides: Guide[] = [
           "Plan stages to finish before dusk (check sunset times — winter days are short). If you're caught out: front and rear lights on, slow down, and take the next town's motel rather than pushing on.",
           "Carry real lights from day one, not just reflectors — tunnels on the Saejae and Nakdong sections are dark even at noon.",
         ],
-        image:
-          "Dusk shot on an unlit rural stretch of the path: a rider's headlight beam as the only light source, river barely visible. Should feel slightly uncomfortable — that's the point of the warning.",
+        imageSrc: "/images/night-booth.webp",
+        imageAlt: "A red certification booth lit only by a bicycle light at night",
+        imageCaption: "A certification booth by bike light. Rural sections have zero street lighting — aim to arrive before dark, and carry a real light for the day you don't.",
       },
       {
         heading: "If something goes wrong",
@@ -503,6 +535,8 @@ export const guides: Guide[] = [
           "Real service shops (Giant, Trek, Specialized dealers) cluster in the cities: Seoul, Chungju, Gumi, Daegu, Busan.",
           "Small-town shops often close Sundays — if something feels wrong on a Saturday, deal with it that day.",
         ],
+        image:
+          "A Samchully (삼천리자전거) storefront on a typical town street — the sign riders should learn to spot from the road. One frame is enough.",
       },
       {
         heading: "When it can't be fixed roadside",
@@ -519,7 +553,7 @@ export const guides: Guide[] = [
     title: "Surviving the cities: leaving Seoul, arriving in Busan",
     description:
       "The route's most dangerous kilometers are its first and last. How to get in and out of the big cities intact.",
-    lastVerified: "2026-07-16",
+    lastVerified: "2026-07-22",
     sections: [
       {
         heading: "The problem",
@@ -542,7 +576,7 @@ export const guides: Guide[] = [
       {
         heading: "Leaving Incheon/Seoul",
         list: [
-          "The Ara path start is easy to reach: Incheon Subway Line 2 or a taxi from the airport (the airport does NOT sell the passport — buy it at Ara West Sea Lock).",
+          "From Incheon Airport: **no full-size bikes on the AREX train since January 2026** — take a van taxi with the boxed bike, or ride out via the new Cheongna Sky Bridge (청라하늘대교) bike lane, the only bridge off the airport island that allows bicycles. (The airport does NOT sell the passport — buy it at Ara West Sea Lock.)",
           "Eastbound out of Seoul, just stay on the Han River path — it's grade-separated almost to Paldang.",
         ],
       },

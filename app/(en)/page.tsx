@@ -3,6 +3,7 @@ import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { languageAlternates } from "@/lib/i18n";
+import { HOME_REWARD_IMAGE } from "@/lib/imagePlaceholders";
 
 export const metadata: Metadata = {
   alternates: { canonical: "./", languages: languageAlternates("/") },
@@ -235,9 +236,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ImagePlaceholder
-        description="Triptych or single shot of the reward chain: opened Bike Passport full of stamps + completion stickers + the Cross-Country medal, laid flat on a map or handlebar bag. This sells the gamification instantly without words."
-      />
+      <ImagePlaceholder description={HOME_REWARD_IMAGE} />
 
       <section className="rounded-xl bg-gray-50 dark:bg-gray-900 p-5 text-sm text-gray-700 dark:text-gray-300">
         <h2 className="font-semibold">Cross-Country ≠ Four Rivers</h2>

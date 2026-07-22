@@ -34,12 +34,21 @@ const guides: Guide[] = [
   },
   {
     slug: "day-one",
-    title: "Tu primer día en Corea, hora a hora",
-    description: "Del aterrizaje al primer sello y al primer motel — cómo se siente de verdad el día inaugural de la ruta transnacional.",
-    lastVerified: "2026-07-21",
+    title: "Del aterrizaje al primer sello: Día 0 y Día 1",
+    description: "Por qué los ciclistas listos duermen antes de rodar, cómo salir de verdad de la isla del aeropuerto con la bici, y cómo se siente el primer día de la ruta.",
+    lastVerified: "2026-07-22",
     sections: [
-      { heading: "06:40 — ruedas en Incheon", paragraphs: ["Montas la bici allí mismo, en la sala de llegadas: a nadie le importa y no serás el primero de la semana. Compra una eSIM si no la traes cargada, llena los dos bidones e ignora el precio del café. El aeropuerto NO vende el Bike Passport, así que no pierdas tiempo buscándolo."] },
-      { heading: "09:00 — Ara West Sea Lock: empieza el ritual", paragraphs: ["Un pedaleo corto o un taxi desde el aeropuerto y estás en la puerta de salida. Dentro del centro: ₩4.000 en efectivo, tu pasaporte de viaje para la verificación, y la libretita que gobernará tu vida la próxima semana ya es tuya. Camina a la caseta roja. Aprieta el primer sello. Ese 'clac' suave es el sonido de los siguientes 632 kilómetros arrancando."] },
+      { heading: "Lee esto antes de aterrizar", paragraphs: [
+        "El aeropuerto de Incheon está en una isla, y durante años la única forma de salir con una bici era el taxi: los dos puentes originales prohíben las bicicletas. En enero de 2026 cambiaron dos cosas a la vez, en direcciones opuestas: el **tren AREX del aeropuerto ya no admite bicicletas de tamaño completo** (ningún día de la semana; solo una plegable, plegada, o una bici embolsada dentro de los límites de equipaje), y se inauguró el nuevo **Cheongna Sky Bridge (청라하늘대교)** con carril bici — el primer puente de la historia que permite salir pedaleando de la isla. Planifica alrededor de estos dos hechos y el Día 0 se vuelve fácil.",
+        "Una cosa más: no desembales ni montes la bici dentro de la terminal — las bicis montadas no son bienvenidas en el edificio. Hazlo en tu motel, o fuera de la terminal si vas a salir rodando.",
+      ] },
+      { heading: "Nuestro consejo: que sea Día 0, no Día 1", paragraphs: [
+        "Llevas diez horas doblado en un asiento de avión y tu cuerpo cree que son las 3 de la madrugada. No le añadas 70 km encima. Aterriza, consigue una eSIM y efectivo del cajero (mañana necesitarás ₩4.000 en efectivo para el pasaporte — el aeropuerto NO lo vende), y lleva la bici aún embalada en un taxi tipo furgoneta (hay mostradores en ambas terminales) hasta un motel cerca de la salida — la zona de Cheongna/Geomam va muy bien — o a Seúl si te apetece una noche de ciudad. Monta la bici en la habitación, da una vuelta a la manzana, cómete tu primer samgyeopsal y duerme como una piedra. Mañana sales fresco, y los 633 km enteros te lo agradecerán.",
+      ] },
+      { heading: "¿Con energía de sobra? La opción de salir rodando", paragraphs: [
+        "¿Aterrizaste al amanecer con ganas de quemar? Desde 2026 se puede salir pedaleando de verdad: monta fuera de la terminal, cruza la isla de Yeongjong, toma el carril bici del Cheongna Sky Bridge hasta tierra firme y sigue el canal Ara hacia el oeste hasta la puerta de salida — unos 25 km antes de que tu cuentakilómetros empiece oficialmente. Hoy es una opción real, pero sé honesto contigo mismo: jet lag + 25 km + el Día 1 de verdad es un primer bocado enorme. Ante la duda, duerme primero.",
+      ] },
+      { heading: "Día 1, 09:00 — Ara West Sea Lock: empieza el ritual", paragraphs: ["El centro de certificación abre a las nueve. Dentro: ₩4.000 en efectivo, tu pasaporte de viaje para la verificación, y la libretita que gobernará tu vida la próxima semana ya es tuya. Camina a la caseta roja. Aprieta el primer sello. Ese 'clac' suave es el sonido de los siguientes 632 kilómetros arrancando."], imageSrc: "/images/cross-country-start.webp", imageAlt: "La puerta de salida de la ruta transnacional en Ara West Sea Lock, Incheon", imageCaption: "Km 0: la puerta de salida en Ara West Sea Lock. Quedan 633." },
       { heading: "10:00 — calentamiento por el canal Ara", paragraphs: ["21 kilómetros llanísimos de vía junto al canal para sacudirse el vuelo. Los aviones planean hacia Gimpo sobre tu cabeza, los pescadores saludan con la cabeza, y la línea azul — la que termina en Busan — se despliega por primera vez bajo tu rueda delantera. Segundo sello en la esclusa del Han, y de pronto estás en el río con el skyline de Seúl creciendo aguas abajo."] },
       { heading: "14:00 — Seúl se desliza a tu lado", paragraphs: ["La parte más extraña del primer día: cruzar una capital de diez millones de habitantes sin toparte con un solo semáforo que importe. Parques fluviales, tiendas de campaña, parejas en bicis de alquiler, alguien ensayando saxofón bajo un puente. Sello en Yeouido. Picoteo en una tienda 24h con vistas al río. Sigue hacia el este."] },
       { heading: "18:30 — primer atardecer, primer motel", paragraphs: ["La mayoría duerme por Paldang o Namyangju, a ~70 km. Busca un motel en Naver Map (sin reserva), mete la bici en la habitación — aquí es normal — y cena en lo que esté iluminado al lado. El pasaporte en la mesilla: tres sellos ya. Mañana desaparece el ruido de la ciudad y el río se queda en silencio. Ahí empieza el viaje de verdad."] },
@@ -51,7 +60,7 @@ const guides: Guide[] = [
     description: "Diez cosas que comer entre Incheon y Busan — las comidas que convierten una ruta en bici en la razón para volver.",
     lastVerified: "2026-07-21",
     sections: [
-      { heading: "La regla", paragraphs: ["No necesitas leer la carta: señala lo que comen los locales, levanta un dedo, listo. Las raciones coreanas asumen que has hecho una jornada de trabajo — y por una vez, es literalmente cierto."] },
+      { heading: "La regla", paragraphs: ["No necesitas leer la carta: señala lo que comen los locales, levanta un dedo, listo. Las raciones coreanas asumen que has hecho una jornada de trabajo — y por una vez, es literalmente cierto."], imageSrc: "/images/convenience-rest.webp", imageAlt: "Pausa para comer en una tienda 24h junto al carril bici", imageCaption: "La cocina 24 horas de la ruta: una tienda cada pocos kilómetros — agua caliente, microondas, bancos fuera y a nadie le importa cuánto te quedes." },
       { heading: "La lista", list: [
         "Gukbap (국밥) — arroz en caldo de carne hirviendo. LA comida post-puerto; por algo la sirven en todos los pueblos cerca de Ihwaryeong.",
         "Baekban (백반) — «tráeme comida»: arroz, sopa y una mesa llena de acompañamientos por menos de ₩10.000. El almuerzo rural por defecto.",
@@ -119,7 +128,7 @@ const guides: Guide[] = [
         "`고개` `gogae` — cuesta, collado. Cortas pero a menudo empinadas.",
         "`산` `san` — montaña. Para orientarte.",
         "`섬` `seom` / `도` `do` — isla. Binae**seom** (비내섬); Eulsuk**do** (을숙도) en la meta de Busan.",
-      ] },
+      ], imageSrc: "/images/ihwaryeong-stone.webp", imageAlt: "La estela de la cima de Ihwaryeong con las señales de la vía ciclista", imageCaption: "La recompensa por leer 령: la estela en la cima de Ihwaryeong (이화령), 548 m — la foto que todo ciclista se para a hacer." },
       { heading: "Palabras de vía y ruta", list: [
         "`길` `gil` — camino. Jajeongeo-**gil** (자전거길) = vía ciclista. La palabra mágica de cada señal.",
         "`로` `ro` — carretera (de coches). Una señal hacia un -ro avisa de que dejas la vía ciclista.",
@@ -142,7 +151,7 @@ const guides: Guide[] = [
         "`남한강자전거길` = Nam (sur) + Han-**gang** (río Han) + vía ciclista → «vía ciclista del Han del Sur».",
         "`상주상풍교` = Sangju (ciudad) + Sangpung-**gyo** (puente) → «puente Sangpung, en Sangju».",
         "Ese es todo el truco: veinte sílabas y el mapa de la ruta se lee solo.",
-      ] },
+      ], imageSrc: "/images/trail-sign.webp", imageAlt: "Un poste señalizador real en la ruta ciclista transnacional", imageCaption: "Una real de la ruta. Pruébalo: cada parte de esta señal está en las tablas de arriba." },
     ],
   },
   {
@@ -162,14 +171,14 @@ const guides: Guide[] = [
         { src: "/signs/sign-302-bike-only-road.png", alt: "Señal coreana 302: círculo azul con bicicleta blanca", caption: "302 · Vía solo-bici" },
         { src: "/signs/sign-303-shared-path.png", alt: "Señal coreana 303: círculo azul con peatones y bicicleta", caption: "303 · Vía compartida bici/peatón" },
         { src: "/signs/sign-318-bike-lane.png", alt: "Señal coreana 318: rectángulo azul con bicicleta y flecha", caption: "318 · Carril solo-bici" },
-      ] },
-      { heading: "Zonas de obras: sin pánico", paragraphs: ["En 633 km siempre hay algún tramo en reparación. Los desvíos casi siempre están señalizados con un bypass marcado… en coreano.", "La rutina: para, abre la traducción por cámara (Google Lens o Papago), apunta a la señal y el esquema del desvío suele quedar claro. Si no, enseña a un ciclista coreano tu pregunta traducida en pantalla. En esta ruta los ciclistas se ayudan constantemente; un compañero de jongju muchas veces resuelve con un «sígueme»."] },
+      ], imageSrc: "/images/blueline-sign.webp", imageAlt: "Señal de vía ciclista y la línea azul de la ruta transnacional", imageCaption: "Las dos cosas que te guían durante 633 km: la señalización oficial y la línea azul bajo tus ruedas." },
+      { heading: "Zonas de obras: sin pánico", paragraphs: ["En 633 km siempre hay algún tramo en reparación. Los desvíos casi siempre están señalizados con un bypass marcado… en coreano.", "La rutina: para, abre la traducción por cámara (Google Lens o Papago), apunta a la señal y el esquema del desvío suele quedar claro. Si no, enseña a un ciclista coreano tu pregunta traducida en pantalla. En esta ruta los ciclistas se ayudan constantemente; un compañero de jongju muchas veces resuelve con un «sígueme»."], imageSrc: "/images/flood-closure.webp", imageAlt: "Aviso de cierre temporal y desvío en el carril bici tras lluvias fuertes", imageCaption: "Una real de la ruta: camino cerrado temporalmente tras lluvias fuertes, desvío señalizado — en coreano. Exactamente para esto existe la rutina de la traducción por cámara." },
       { heading: "Pedalear tras el anochecer", list: [
         "Los tramos urbanos engañan: los parques del Han en Seúl están iluminados hasta tarde y llenos de ciclistas a las 22:00.",
         "Los tramos rurales NO tienen luz alguna. Fuera del área metropolitana hay largos tramos sin farolas, sin edificios y a veces sin cobertura. Tras la puesta de sol pedaleas solo con tus luces junto a un río.",
         "Planifica las etapas para llegar antes del anochecer (mira la hora de puesta: en invierno los días son cortos). Si te pilla: luces delante y detrás, reduce, y quédate en el motel del siguiente pueblo en vez de forzar.",
         "Lleva luces de verdad desde el día uno, no solo reflectantes: los túneles de Saejae y del Nakdong están oscuros incluso a mediodía.",
-      ] },
+      ], imageSrc: "/images/night-booth.webp", imageAlt: "Una caseta de certificación roja iluminada solo por la luz de una bici de noche", imageCaption: "Una caseta de certificación a la luz del faro. Los tramos rurales no tienen alumbrado: llega antes del anochecer y lleva una luz de verdad para el día que no lo consigas." },
       { heading: "Si algo sale mal", list: [
         "1330 — Línea de ayuda al turista de Corea: 24/7, personas reales, inglés/japonés/chino y más. ¿Perdido, confundido, necesitas que te expliquen algo? Este número es tu red de seguridad durante todo el viaje.",
         "119 — bomberos y ambulancia (con intérpretes de inglés). 112 — policía.",
@@ -283,7 +292,7 @@ const guides: Guide[] = [
     slug: "city-riding",
     title: "Sobrevivir a las ciudades: salir de Seúl, llegar a Busan",
     description: "Los kilómetros más peligrosos de la ruta son los primeros y los últimos. Cómo entrar y salir de las grandes ciudades de una pieza.",
-    lastVerified: "2026-07-16",
+    lastVerified: "2026-07-22",
     sections: [
       { heading: "El problema", paragraphs: ["Las vías ciclistas coreanas son de primer nivel; sus calles urbanas, no. Ciclista tras ciclista describe la aproximación final a Busan — 3,5 millones de habitantes, avenidas multicarril, puentes — como el tramo más delicado del viaje. Seúl es más amable gracias a los parques del Han, pero en cuanto dejas el corredor del río la cosa se pone fea rápido."] },
       { heading: "Tácticas de llegada a Busan", list: [
@@ -292,7 +301,7 @@ const guides: Guide[] = [
         "Si tienes que pedalear, quédate en las vías fluviales todo lo posible y cruza el Nakdong por puentes aptos para bicis — planifica este tramo en Naver Map la noche anterior, no sobre la marcha.",
       ] },
       { heading: "Salir de Incheon/Seúl", list: [
-        "El inicio de la vía Ara es fácil de alcanzar: línea 2 del metro de Incheon o taxi desde el aeropuerto (el aeropuerto NO vende el pasaporte: cómpralo en Ara West Sea Lock).",
+        "Desde el aeropuerto de Incheon: **desde enero de 2026 el AREX no admite bicicletas de tamaño completo** — usa un taxi tipo furgoneta con la bici embalada, o sal pedaleando por el carril bici del nuevo Cheongna Sky Bridge (청라하늘대교), el único puente de la isla del aeropuerto que permite bicicletas. (El aeropuerto NO vende el pasaporte: cómpralo en Ara West Sea Lock.)",
         "Hacia el este desde Seúl, simplemente sigue la vía del Han: va segregada casi hasta Paldang.",
       ] },
     ],

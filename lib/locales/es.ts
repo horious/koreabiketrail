@@ -104,7 +104,7 @@ const es: LocaleDict = {
   crossCountry: {
     title: "La ruta transnacional (국토종주)",
     metaTitle: "Ruta transnacional — 633 km de Incheon a Busan",
-    metaDesc: "Guía por etapas de la ruta ciclista de 633 km de Corea: planes de 5 y 7 días, el puerto de Ihwaryeong, sellos y alojamiento.",
+    metaDesc: "De Incheon a Busan pasando por Seúl — guía por etapas de la ruta ciclista de 633 km de Corea: planes de 5 y 7 días, el puerto de Ihwaryeong, sellos y alojamiento.",
     stats: [["633 km", "Incheon → Busan"], ["5–9 días", "duración típica"], ["1 gran subida", "Ihwaryeong, 5 km hasta ~12%"], ["26 casetas", "sellos por reunir"]],
     whatTitle: "Qué es",
     whatP1: "Cuatro vías ciclistas certificadas enlazadas en un recorrido continuo casi sin coches: desde la esclusa Ara West Sea Lock, junto al aeropuerto de Incheon, una línea pintada en el asfalto te lleva hasta el dique del estuario del Nakdong en Busan. Reúne el sello de cada caseta y podrás reclamar la medalla.",
@@ -152,6 +152,7 @@ const es: LocaleDict = {
       { title: "3. Valida en un centro atendido", body: "En la meta (dique del estuario del Nakdong en Busan, etc.) el personal revisa los sellos, certifica el pasaporte y entrega las pegatinas de finisher. El certificado llega después por correo." },
       { title: "4. Pide tu medalla", body: "Completar la ruta da derecho a comprar la medalla (₩7.500; vitrina ₩4.000). Dos avisos para extranjeros: la tienda online (riverguide.go.kr) suele requerir métodos de pago coreanos y solo envía a direcciones en Corea (2–4 semanas). Pide ayuda al personal de la meta o a un amigo coreano y usa la dirección de tu hotel." },
     ],
+    stampVideoCaption: "Sellando en una caseta roja. Vaya — la goma del sello se ha separado del mango. También pasa (para eso existe la regla de la foto de arriba).",
     levelsTitle: "Niveles de certificación",
     levelsHead: { level: "Nivel", what: "Qué se pedalea", reward: "Premio" },
     levels: [

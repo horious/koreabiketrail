@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { DICTS, isLocale, languageAlternates } from "@/lib/i18n";
 import { getLocaleGuide } from "@/lib/guides-i18n";
-import { guides } from "@/lib/guides";
+import { getGuide, guides } from "@/lib/guides";
 import { MEDIA_URL } from "@/lib/data";
 import { renderInline } from "@/lib/renderInline";
 
@@ -41,6 +42,8 @@ export default async function LocaleGuidePage({
   const guide = getLocaleGuide(locale, slug);
   if (!guide) notFound();
   const ui = DICTS[locale].guidesUi;
+  // 이미지 플레이스홀더(촬영 안내문)는 EN 원문을 단일 소스로 공유 — 번역판 섹션 구조는 EN과 1:1 평행
+  const enGuide = getGuide(slug);
 
   return (
     <article>
@@ -54,7 +57,7 @@ export default async function LocaleGuidePage({
         {ui.lastVerified}: {guide.lastVerified}
       </p>
 
-      {guide.sections.map((s) => (
+      {guide.sections.map((s, i) => (
         <section key={s.heading} className="mt-6">
           <h2 className="text-xl font-semibold">{s.heading}</h2>
           {s.paragraphs?.map((p) => (
@@ -97,6 +100,9 @@ export default async function LocaleGuidePage({
                 </figcaption>
               )}
             </figure>
+          )}
+          {!s.imageSrc && enGuide?.sections[i]?.image && (
+            <ImagePlaceholder description={enGuide.sections[i].image!} />
           )}
         </section>
       ))}
