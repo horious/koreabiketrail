@@ -4,8 +4,9 @@
 //  - 기본: 로마자 표기 유지 + 필요시 한글 병기 (현지 표지판 대조 실용성)
 //  - JA: 널리 통용되는 대도시만 현지 표기 (ソウル·釜山·仁川), 나머지 로마자
 //  - ZH-Hant: 정착된 한자 지명만 (首爾·釜山·仁川·漢江·洛東江·梨花嶺), 애매하면 로마자
+//  - ZH-Hans(zh-cn): ZH-Hant와 동일 정책의 간체 (首尔·汉江·洛东江·梨花岭)
 //  - TH/ES: 전부 로마자
-export const LOCALES = ["ja", "zh", "th", "es"] as const;
+export const LOCALES = ["ja", "zh", "zh-cn", "th", "es"] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export interface HeroTexts {
@@ -128,10 +129,11 @@ export interface LocaleDict {
 
 import ja from "./locales/ja";
 import zh from "./locales/zh";
+import zhCn from "./locales/zh-cn";
 import th from "./locales/th";
 import es from "./locales/es";
 
-export const DICTS: Record<Locale, LocaleDict> = { ja, zh, th, es };
+export const DICTS: Record<Locale, LocaleDict> = { ja, zh, "zh-cn": zhCn, th, es };
 
 export const isLocale = (v: string): v is Locale =>
   (LOCALES as readonly string[]).includes(v);
@@ -142,6 +144,7 @@ export const languageAlternates = (path: string) => ({
   en: `${path}`,
   ja: `/ja${path === "/" ? "/" : path}`,
   "zh-Hant": `/zh${path === "/" ? "/" : path}`,
+  "zh-Hans": `/zh-cn${path === "/" ? "/" : path}`,
   th: `/th${path === "/" ? "/" : path}`,
   es: `/es${path === "/" ? "/" : path}`,
 });

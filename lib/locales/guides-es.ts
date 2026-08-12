@@ -70,7 +70,7 @@ const guides: Guide[] = [
         "Kimbap (김밥) — rollos de arroz y alga, ₩3.000–4.000, sobrevive horas en el bolsillo del maillot. Tu combustible de manillar.",
         "Pajeon + makgeolli (파전 + 막걸리) — tortita salada y vino de arroz turbio. Obligatorio si llueve; pronto desearás que llueva.",
         "Kalguksu (칼국수) — sopa de fideos cortados a mano, la especialidad de los pueblos ribereños de Yeoju y Chungju.",
-        "Patbingsu (팥빙수) — una montaña de hielo raspado en verano. Pide uno por persona; compartir se lamenta.",
+        "Patbingsu (팥빙수) — una montaña de hielo raspado en verano. Pide uno por persona; te arrepentirás de compartir.",
         "Final en Busan: dwaeji-gukbap (돼지국밥, el plato-alma de la ciudad) o pescado crudo (회) en el mercado de Jagalchi — la medalla en el bolsillo, el mar delante.",
       ] },
       { heading: "Notas dietéticas, en breve", list: [
@@ -132,7 +132,7 @@ const guides: Guide[] = [
       { heading: "Palabras de vía y ruta", list: [
         "`길` `gil` — camino. Jajeongeo-**gil** (자전거길) = vía ciclista. La palabra mágica de cada señal.",
         "`로` `ro` — carretera (de coches). Una señal hacia un -ro avisa de que dejas la vía ciclista.",
-        "`교` `gyo` — puente. Sangpung**gyo** (상풍교); `대교` `daegyo` es un gran puente.",
+        "`교` `gyo` — puente. Sangpung**gyo** (상풍교), Paldang**daegyo** (팔당대교) — `대교` `daegyo` es un gran puente.",
         "`터널` `teoneol` — túnel. Hay varios en Sae**jae** y Nakdong; luces encendidas.",
         "`역` `yeok` — estación. Neungnae-**yeok** (능내역), estación abandonada convertida en área de descanso.",
         "`공원` `gongwon` — parque. Los parques fluviales albergan muchas casetas.",
@@ -196,7 +196,7 @@ const guides: Guide[] = [
         "KTX (alta velocidad): las bicis completas en general NO — las plegables enfundadas sí.",
         "Buses interurbanos/exprés: la respuesta estándar. La bici va en la bodega y compras un billete normal. Hay terminales por toda la ruta, así que también puedes abandonar a mitad.",
         "Ferri Busan→Fukuoka: la forma popular de combinar Corea con Japón; muchos empiezan en Busan por esto.",
-        "Algunos trenes lentos (Mugunghwa/ITX) llevan espacio para bicis los fines de semana — las normas cambian, confirma in situ.",
+        "Algunos trenes lentos (Mugunghwa/ITX) llevan espacio limitado para bicis los fines de semana — las normas cambian, confirma in situ.",
       ] },
       { heading: "La vuelta desde Busan", paragraphs: ["La mayoría vuelve a Seúl en bus (~4,5 horas). Llega con margen a la terminal, quita la rueda delantera si la bodega va llena y no esperes inglés: señalar y sonreír funciona."] },
     ],
@@ -278,7 +278,7 @@ const guides: Guide[] = [
       { heading: "Encontrar una tienda de bicis", list: [
         "Busca 자전거 (bicicleta) en Naver Map: las que mencionan 수리 (reparación) en las reseñas son las buenas.",
         "삼천리자전거 (Samchully) — la marca de bicicletas local más antigua de Corea, un nombre de toda la vida desde hace más de 70 años — tiene concesionarios en casi cada pueblo de la ruta: piezas básicas, cámaras y arreglos. Señalar funciona.",
-        "Las tiendas serias (Giant, Trek, etc.) se concentran en las ciudades: Seúl, Chungju, Gumi, Daegu, Busan.",
+        "Las tiendas serias (Giant, Trek, Specialized, etc.) se concentran en las ciudades: Seúl, Chungju, Gumi, Daegu, Busan.",
         "Las tiendas de pueblo suelen cerrar los domingos: si algo suena raro un sábado, resuélvelo ese mismo día.",
       ] },
       { heading: "Cuando no se puede arreglar en el arcén", list: [
@@ -297,7 +297,7 @@ const guides: Guide[] = [
       { heading: "El problema", paragraphs: ["Las vías ciclistas coreanas son de primer nivel; sus calles urbanas, no. Ciclista tras ciclista describe la aproximación final a Busan — 3,5 millones de habitantes, avenidas multicarril, puentes — como el tramo más delicado del viaje. Seúl es más amable gracias a los parques del Han, pero en cuanto dejas el corredor del río la cosa se pone fea rápido."] },
       { heading: "Tácticas de llegada a Busan", list: [
         "Termina en el Nakdong Estuary Bank y PARA: valida allí tu pasaporte antes de pelearte con la ciudad.",
-        "Evita pedalear hasta tu hotel del centro con las alforjas cargadas si puedes; el metro admite bicis los fines de semana y festivos (primer/último vagón) y los taxis sirven para trayectos cortos.",
+        "Evita pedalear hasta tu hotel del centro con las alforjas cargadas si puedes; el metro admite bicis los fines de semana y festivos (primer/último vagón) y los taxis con asientos abatibles sirven para trayectos cortos.",
         "Si tienes que pedalear, quédate en las vías fluviales todo lo posible y cruza el Nakdong por puentes aptos para bicis — planifica este tramo en Naver Map la noche anterior, no sobre la marcha.",
       ] },
       { heading: "Salir de Incheon/Seúl", list: [

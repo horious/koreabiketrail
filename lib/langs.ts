@@ -10,6 +10,7 @@ export const LANG_OPTIONS: LangOption[] = [
   { code: "en", label: "English", prefix: "" },
   { code: "ja", label: "日本語", prefix: "/ja" },
   { code: "zh", label: "繁體中文", prefix: "/zh" },
+  { code: "zh-cn", label: "简体中文", prefix: "/zh-cn" },
   { code: "th", label: "ไทย", prefix: "/th" },
   { code: "es", label: "Español", prefix: "/es" },
 ];

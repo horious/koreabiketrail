@@ -81,15 +81,17 @@
 
 ## i18n (2026-07-19 도입)
 
-- 언어: EN(루트, 전체) + JA·ZH-Hant·TH·ES(`/{locale}/` — 홈·cross-country·certification·gpx·**guides 9편·resources**.
-  로케일 미제공: 인증센터 목록·privacy). 가이드 번역은 `lib/locales/guides-{locale}.ts` (레지스트리 `lib/guides-i18n.ts`)
+- 언어: EN(루트, 전체) + JA·ZH-Hant·ZH-Hans(`/zh-cn/`, 2026-08-13 추가)·TH·ES(`/{locale}/` —
+  홈·cross-country·certification·gpx·**guides·resources**. 로케일 미제공: 인증센터 목록·privacy).
+  가이드 번역은 `lib/locales/guides-{locale}.ts` (레지스트리 `lib/guides-i18n.ts`).
+  zh-cn은 zh(繁體)에서 OpenCC tw→cn 변환 + 대륙 어휘 손질로 생성 — zh 수정 시 zh-cn도 함께
 - 구조: `app/(en)/`=영어 전체, `app/[locale]/`=번역판, 루트 layout은 html/테마/분석만.
   사전은 `lib/locales/*.ts` (타입 `lib/i18n.ts`), 언어 스위처 옵션은 `lib/langs.ts`(클라이언트 안전)
 - **지명 정책**: 로마자 기본+한글 병기. JA는 대도시만 현지 표기(ソウル·釜山·仁川),
-  ZH는 정착 한자만(首爾·漢江·洛東江·梨花嶺), 애매하면 영어 로마자 유지. TH/ES는 전부 로마자
+  ZH는 정착 한자만(繁: 首爾·漢江·洛東江·梨花嶺 / 简: 首尔·汉江·洛东江·梨花岭), 애매하면 영어 로마자 유지. TH/ES는 전부 로마자
 - 코어 4페이지의 EN·로케일 양쪽에 hreflang(alternates.languages) 설정 — 새 언어/페이지 추가 시 유지할 것
 - ⚠ TH·ES는 네이티브 감수 전 초벌 번역
-- 콘텐츠 수정 시 주의: 코어 4페이지의 EN 원문을 고치면 `lib/locales/*` 4개 사전도 함께 갱신해야 함
+- 콘텐츠 수정 시 주의: 코어 4페이지의 EN 원문을 고치면 `lib/locales/*` 5개 사전도 함께 갱신해야 함
 
 ## 콘텐츠·데이터 원칙
 

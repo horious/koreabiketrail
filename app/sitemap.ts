@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { guides } from "@/lib/guides";
+import { LOCALES, type Locale } from "@/lib/i18n";
 import { certCentersLastVerified, SITE_URL } from "@/lib/data";
 
 export const dynamic = "force-static";
@@ -28,18 +29,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: g.lastVerified,
       changeFrequency: "monthly" as const,
     })),
-    // 번역판 (JA/ZH-Hant/TH/ES × 코어 4페이지 + guides + resources)
-    ...(["ja", "zh", "th", "es"] as const).flatMap((l) => [
+    // 번역판 (LOCALES × 코어 4페이지 + guides + resources)
+    ...LOCALES.flatMap((l: Locale) => [
       ...["", "/cross-country", "/certification", "/gpx", "/guides", "/resources"].map(
         (p) => ({
           url: `${SITE_URL}/${l}${p}/`,
-          lastModified: "2026-07-20",
+          lastModified: l === "zh-cn" ? "2026-08-13" : "2026-07-20",
           changeFrequency: "monthly" as const,
         }),
       ),
       ...guides.map((g) => ({
         url: `${SITE_URL}/${l}/guides/${g.slug}/`,
-        lastModified: "2026-07-20",
+        lastModified: l === "zh-cn" ? "2026-08-13" : "2026-07-20",
         changeFrequency: "monthly" as const,
       })),
     ]),
