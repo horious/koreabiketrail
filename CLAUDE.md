@@ -33,7 +33,8 @@
   - 원본은 `assets-src/`(git 제외). 히어로 비디오는 슬라이드 첫 활성화 시에만 마운트(대역폭 보호).
     M1의 PMTiles도 같은 버킷 사용 예정
   - 예외: 소형 UI 그래픽(공식 표지판 도안 등, 개당 ~20KB)은 `public/signs/`에 git 커밋 —
-    R2 규칙은 사진·영상 같은 대용량용. 표지판 도안 출처: 도로교통법 시행규칙 공식 도안(Wikimedia Commons SVG 렌더)
+    R2 규칙은 사진·영상 같은 대용량용. 표지판 도안 출처: 도로교통법 시행규칙 공식 도안(Wikimedia Commons SVG 렌더).
+    홈 여정 지형 이모지는 `public/journey/` — Google Noto Emoji (Apache 2.0, 표기 의무 없음, LICENSE.txt 동봉)
   - 전체 트랙 GPX/TCX: R2 `gpx/cross-country-route.{gpx,tcx}` (wrangler put 수동, content-type
     `application/gpx+xml` / `application/vnd.garmin.tcx+xml`, **캐시 1일** — 트랙 수정 가능성 때문에
     immutable 아님, 같은 키에 재업로드로 갱신). 원본은 `assets-src/`, 로컬 미러 `public/gpx/`.

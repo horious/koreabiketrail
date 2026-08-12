@@ -40,6 +40,57 @@
   }
 }
 
+/* 홈 라이더 자전거 — 스크롤로 이동 중(.rider-riding)일 때만 바퀴·크랭크·다리가 굴러간다 */
+.rider-svg .rider-wheel,
+.rider-svg .rider-crank,
+.rider-svg .rider-leg-a,
+.rider-svg .rider-leg-b {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-play-state: paused;
+}
+.rider-svg .rider-wheel,
+.rider-svg .rider-crank {
+  animation: rider-spin 0.7s linear infinite paused;
+}
+.rider-svg .rider-leg-a {
+  transform-origin: top center;
+  animation: rider-leg-a 0.7s ease-in-out infinite paused;
+}
+.rider-svg .rider-leg-b {
+  transform-origin: top center;
+  animation: rider-leg-b 0.7s ease-in-out infinite paused;
+}
+.rider-riding .rider-wheel,
+.rider-riding .rider-crank,
+.rider-riding .rider-leg-a,
+.rider-riding .rider-leg-b {
+  animation-play-state: running;
+}
+@keyframes rider-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rider-leg-a {
+  0%,
+  100% {
+    transform: rotate(-14deg);
+  }
+  50% {
+    transform: rotate(18deg);
+  }
+}
+@keyframes rider-leg-b {
+  0%,
+  100% {
+    transform: rotate(14deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
 /* 홈 라이더 이스터에그 — 클릭 먼지(💨)와 5회 클릭 도장 슬램 */
 .rider-puff {
   animation: rider-puff 0.55s ease-out both;
