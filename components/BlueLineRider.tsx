@@ -3,10 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { INK, RouteStamp } from "@/components/stamps";
 
-// 홈 파란 선 여정을 스크롤에 따라 달리는 라이더.
-// 선을 90도로 세운 도로로 보고 자전거도 90도 눕혀서(머리가 아래=부산 방향)
-// 바퀴가 선에 닿은 채 달린다. 스크롤로 이동 중일 때만 바퀴·크랭크·다리가
-// 굴러간다(.rider-riding, globals.css). reduced-motion에서는 숨김.
+// 홈 파란 선 여정을 스크롤에 따라 달리는 라이더 — 선에 걸친 원형 칩,
+// 이모지만 90도 눕혀서 진행 방향(아래=부산)을 향한다. 뷰포트 중앙 살짝 위
+// 지점을 추적하며 이동(rAF + lerp). reduced-motion에서는 숨김.
 //
 // 이스터에그: 클릭하면 자전거 벨(WebAudio 합성, 에셋 없음) + 윌리 + 💨,
 // 5번째 클릭마다 633km 도장이 화면에 쾅 찍힌다
@@ -28,87 +27,6 @@ function ring(ctx: AudioContext) {
   };
   ding(0);
   ding(0.13);
-}
-
-/** 페달 도는 자전거 — 옆모습(오른쪽 진행), 래퍼가 90도 회전시킴 */
-function Bike() {
-  return (
-    <svg
-      viewBox="0 0 64 46"
-      className="h-full w-full"
-      aria-hidden="true"
-      fill="none"
-      strokeLinecap="round"
-    >
-      {/* 뒷바퀴 */}
-      <g className="rider-wheel">
-        <circle
-          cx="15"
-          cy="33"
-          r="11"
-          strokeWidth="2.5"
-          className="stroke-gray-700 dark:stroke-gray-300"
-        />
-        <path
-          d="M15 23.5 V42.5 M5.5 33 H24.5 M8.3 26.3 L21.7 39.7 M8.3 39.7 L21.7 26.3"
-          strokeWidth="1.3"
-          className="stroke-gray-400 dark:stroke-gray-500"
-        />
-      </g>
-      {/* 앞바퀴 */}
-      <g className="rider-wheel">
-        <circle
-          cx="49"
-          cy="33"
-          r="11"
-          strokeWidth="2.5"
-          className="stroke-gray-700 dark:stroke-gray-300"
-        />
-        <path
-          d="M49 23.5 V42.5 M39.5 33 H58.5 M42.3 26.3 L55.7 39.7 M42.3 39.7 L55.7 26.3"
-          strokeWidth="1.3"
-          className="stroke-gray-400 dark:stroke-gray-500"
-        />
-      </g>
-      {/* 프레임 — 인주색 */}
-      <path
-        d="M15 33 L31 33 L26 16 M31 33 L43 15 L49 33 M15 33 L26 16 M22.5 15 H29 M41 13 L46.5 11.5"
-        strokeWidth="2.4"
-        className="stroke-[#c03325] dark:stroke-[#ea6a58]"
-      />
-      {/* 크랭크 + 페달 */}
-      <g className="rider-crank">
-        <path
-          d="M31 27 V39"
-          strokeWidth="2"
-          className="stroke-gray-700 dark:stroke-gray-300"
-        />
-        <path
-          d="M27.5 27 H34.5 M27.5 39 H34.5"
-          strokeWidth="2.6"
-          className="stroke-gray-800 dark:stroke-gray-200"
-        />
-      </g>
-      {/* 다리 — 페달링 스윙 */}
-      <path
-        d="M26 16 L31 27"
-        strokeWidth="2.6"
-        className="rider-leg-a stroke-blue-700 dark:stroke-blue-300"
-      />
-      <path
-        d="M26 16 L31 38"
-        strokeWidth="2.6"
-        className="rider-leg-b stroke-blue-500 dark:stroke-blue-400"
-      />
-      {/* 몸통·팔·머리 — 파란 저지 */}
-      <path
-        d="M26 16 Q29 9.5 33 9.5 L41.5 13"
-        strokeWidth="2.6"
-        className="stroke-blue-600 dark:stroke-blue-400"
-      />
-      <circle cx="34.5" cy="5" r="4" className="fill-blue-600 dark:fill-blue-400" />
-    </svg>
-  );
 }
 
 export default function BlueLineRider() {
@@ -139,12 +57,10 @@ export default function BlueLineRider() {
         end > start
           ? Math.min(Math.max((scrollY - start) / (end - start), 0), 1)
           : 1;
-      const target = 10 + p * (r.height - 62);
+      const target = 10 + p * (r.height - 52);
       cur = cur < 0 ? target : cur + (target - cur) * 0.18;
       if (Math.abs(target - cur) < 0.5) cur = target;
-      el.style.transform = `translateY(${cur}px)`;
-      // 이동 중일 때만 페달링
-      el.classList.toggle("rider-riding", Math.abs(target - cur) > 1.5);
+      el.style.transform = `translate(-50%, ${cur}px)`;
       if (cur !== target) raf = requestAnimationFrame(frame);
     };
     const kick = () => {
@@ -183,23 +99,24 @@ export default function BlueLineRider() {
       <span
         ref={ref}
         aria-hidden
-        className="rider-svg absolute top-0 left-[5px] z-10 hidden sm:motion-safe:block"
+        className="absolute top-0 left-[9px] z-10 hidden sm:motion-safe:block"
       >
         <button
           type="button"
           onClick={onClick}
           aria-label="Ring the bike bell"
-          className={`block h-12 w-12 cursor-pointer transition-transform duration-300 hover:scale-110 ${
-            wheelie ? "scale-110 rotate-[62deg]" : "rotate-90"
+          className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 border-blue-600 bg-white text-base shadow-md transition-transform duration-300 hover:scale-110 dark:border-blue-500 dark:bg-gray-950 ${
+            wheelie ? "-rotate-[24deg] scale-110" : ""
           }`}
         >
-          <Bike />
+          {/* 반전(진행 방향) + 90도 눕혀서 선을 따라 아래(부산)로 달리는 자세 */}
+          <span className="inline-block -scale-x-100 rotate-90">🚴</span>
         </button>
         {/* 클릭마다 다시 마운트되어 퍼지는 먼지 */}
         {clicks > 0 && (
           <span
             key={clicks}
-            className="rider-puff pointer-events-none absolute -top-3 left-2 text-sm"
+            className="rider-puff pointer-events-none absolute -top-2 -left-3 text-sm"
           >
             💨
           </span>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BlueLineRail, Waypoint } from "@/components/BlueLine";
 import BlueLineRider from "@/components/BlueLineRider";
-import JourneyScenery from "@/components/JourneyScenery";
 import HeroCarousel from "@/components/HeroCarousel";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import StampStats from "@/components/StampStats";
@@ -124,9 +123,8 @@ export default function HomePage() {
       </section>
 
       {/* 파란 선 여정 — 히어로(인천)에서 시작해 페이지 끝(부산)까지, 섹션이 경유지.
-          배경엔 코스 지형 실루엣, 선 위엔 스크롤을 따라 달리는 라이더 */}
+          선 위엔 스크롤을 따라 달리는 라이더 */}
       <div className="relative sm:pl-12">
-        <JourneyScenery />
         <BlueLineRail />
         <BlueLineRider />
 

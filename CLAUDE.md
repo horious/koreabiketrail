@@ -19,8 +19,8 @@
 - 디자인: Cruip Simple Light 베이스 + **도장 모티프 디자인 시스템** (2026-08-13).
   색 체계: 파랑=노면의 파란 선(길·링크·GPX), 인주 버밀리언=도장(숫자·순번·보상, `INK` in
   `components/stamps.tsx`). 레이블·표 헤더는 시스템 모노 대문자. 페이지별 시그니처:
-  홈=파란 선 여정(`BlueLine.tsx` + 스크롤 추적 라이더 `BlueLineRider.tsx` + 지형 실루엣
-  배경 `JourneyScenery.tsx`), cross-country=거리 비율 리본(`RouteRibbon.tsx`),
+  홈=파란 선 여정(`BlueLine.tsx` + 스크롤 추적 라이더 `BlueLineRider.tsx` — 지형/배경
+  장식은 시도 후 사용자가 제거 결정, 다시 넣지 말 것), cross-country=거리 비율 리본(`RouteRibbon.tsx`),
   certification=도장 스파인(`cert/CertificationGuide.tsx`), gpx=실데이터 트레이스(`RouteTrace.tsx`),
   guides=호버 도장 수집, 숫자 스탯=`StampStats.tsx`. **장식 그래픽은 전부 aria-hidden +
   로마자/숫자만 → 로케일 사전 무부담**. 도장 잉크 질감은 SVG feTurbulence
@@ -33,8 +33,7 @@
   - 원본은 `assets-src/`(git 제외). 히어로 비디오는 슬라이드 첫 활성화 시에만 마운트(대역폭 보호).
     M1의 PMTiles도 같은 버킷 사용 예정
   - 예외: 소형 UI 그래픽(공식 표지판 도안 등, 개당 ~20KB)은 `public/signs/`에 git 커밋 —
-    R2 규칙은 사진·영상 같은 대용량용. 표지판 도안 출처: 도로교통법 시행규칙 공식 도안(Wikimedia Commons SVG 렌더).
-    홈 여정 지형 이모지는 `public/journey/` — Google Noto Emoji (Apache 2.0, 표기 의무 없음, LICENSE.txt 동봉)
+    R2 규칙은 사진·영상 같은 대용량용. 표지판 도안 출처: 도로교통법 시행규칙 공식 도안(Wikimedia Commons SVG 렌더)
   - 전체 트랙 GPX/TCX: R2 `gpx/cross-country-route.{gpx,tcx}` (wrangler put 수동, content-type
     `application/gpx+xml` / `application/vnd.garmin.tcx+xml`, **캐시 1일** — 트랙 수정 가능성 때문에
     immutable 아님, 같은 키에 재업로드로 갱신). 원본은 `assets-src/`, 로컬 미러 `public/gpx/`.
