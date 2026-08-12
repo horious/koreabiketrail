@@ -40,6 +40,44 @@
   }
 }
 
+/* 홈 라이더 이스터에그 — 클릭 먼지(💨)와 5회 클릭 도장 슬램 */
+.rider-puff {
+  animation: rider-puff 0.55s ease-out both;
+}
+@keyframes rider-puff {
+  0% {
+    opacity: 0.9;
+    transform: translate(0, 0) scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-16px, -22px) scale(1.5);
+  }
+}
+.stamp-slam {
+  animation: stamp-slam 1.3s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+@keyframes stamp-slam {
+  0% {
+    opacity: 0;
+    scale: 2;
+  }
+  18% {
+    opacity: 1;
+    scale: 0.94;
+  }
+  28% {
+    scale: 1;
+  }
+  78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 1.05;
+  }
+}
+
 /* MapLibre 팝업 다크모드 */
 .dark .maplibregl-popup-content {
   background: var(--color-gray-900);
