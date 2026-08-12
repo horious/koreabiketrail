@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import RouteTrace from "@/components/RouteTrace";
 import { DICTS, isLocale, languageAlternates } from "@/lib/i18n";
 import { MEDIA_URL } from "@/lib/data";
 
@@ -29,8 +30,13 @@ export default async function LocaleGpx({
 
   return (
     <article>
-      <h1 className="text-3xl font-bold">{d.title}</h1>
-      <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">{d.intro}</p>
+      <div className="flex flex-col items-start gap-6 sm:flex-row sm:justify-between">
+        <div className="max-w-2xl">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{d.title}</h1>
+          <p className="mt-3 text-gray-600 dark:text-gray-400">{d.intro}</p>
+        </div>
+        <RouteTrace className="mx-auto h-56 w-auto shrink-0 sm:mx-0" />
+      </div>
 
       <div className="mt-6 rounded-xl border p-5">
         <h2 className="font-semibold">{d.trackTitle}</h2>
@@ -39,7 +45,7 @@ export default async function LocaleGpx({
           <a
             href={`${MEDIA_URL}/gpx/cross-country-route.gpx`}
             download
-            className="inline-block rounded-lg bg-gray-900 px-5 py-2.5 font-medium text-white hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+            className="inline-block rounded-lg bg-blue-600 px-5 py-2.5 font-medium text-white hover:bg-blue-500"
           >
             {d.dlGpx}
           </a>

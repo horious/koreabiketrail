@@ -23,11 +23,12 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme | null>(null);
 
   useEffect(() => {
-    const stored = (localStorage.getItem("theme") as Theme | null) ?? "system";
+    // 저장값 없으면 light 기본 (layout.tsx THEME_INIT과 같은 규칙)
+    const stored = (localStorage.getItem("theme") as Theme | null) ?? "light";
     setTheme(stored);
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
     const onChange = () => {
-      if ((localStorage.getItem("theme") ?? "system") === "system")
+      if (localStorage.getItem("theme") === "system")
         apply("system");
     };
     mq.addEventListener("change", onChange);

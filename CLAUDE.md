@@ -14,8 +14,15 @@
 - `data/route-line.json` — 공식 노선 폴리라인 GeoJSON (갱신: `node scripts/fetch-route-line.mjs`, 네트워크 필요)
 - 다크모드: 클래스 기반 (`@custom-variant dark` in globals.css). `layout.tsx`의 인라인 스크립트가
   첫 페인트 전 `<html class="dark">` 적용(FOUC 방지), `components/ThemeToggle.tsx`가
-  light/dark/system 선택을 localStorage `theme`에 저장. **새 UI에는 반드시 `dark:` 변형 포함**
-- 디자인: Cruip Simple Light 스타일 참조 (스티키 블러 헤더, 카드 호버, 3열 푸터)
+  light/dark/system 선택을 localStorage `theme`에 저장. **기본값은 light** (저장값 없으면
+  시스템 무시하고 light — 2026-08-13 사용자 확정). **새 UI에는 반드시 `dark:` 변형 포함**
+- 디자인: Cruip Simple Light 베이스 + **도장 모티프 디자인 시스템** (2026-08-13).
+  색 체계: 파랑=노면의 파란 선(길·링크·GPX), 인주 버밀리언=도장(숫자·순번·보상, `INK` in
+  `components/stamps.tsx`). 레이블·표 헤더는 시스템 모노 대문자. 페이지별 시그니처:
+  홈=파란 선 여정(`BlueLine.tsx`), cross-country=거리 비율 리본(`RouteRibbon.tsx`),
+  certification=도장 스파인(`cert/CertificationGuide.tsx`), gpx=실데이터 트레이스(`RouteTrace.tsx`),
+  guides=호버 도장 수집, 숫자 스탯=`StampStats.tsx`. **장식 그래픽은 전부 aria-hidden +
+  로마자/숫자만 → 로케일 사전 무부담**. 도장 잉크 질감은 SVG feTurbulence
 - 미디어(이미지·비디오): **Cloudflare R2 서빙** (`MEDIA_URL` = media.koreabiketrail.com, 버킷
   `koreabiketrail-media`). **추가는 반드시 `npm run media:add -- <원본> <video|images>/<이름>`**
   (scripts/media.mjs — ffmpeg/sharp 변환 → public/ 로컬 미러 → R2 업로드까지 자동, wrangler 로그인 필요).

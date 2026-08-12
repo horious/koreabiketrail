@@ -19,6 +19,27 @@
   }
 }
 
+/* 인증 페이지 히어로 도장 — 페이지 로드 시 한 번 '찍히는' 모션 (reduced-motion 시 정지 상태) */
+@media (prefers-reduced-motion: no-preference) {
+  .stamp-in {
+    animation: stamp-in 0.45s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+  }
+}
+@keyframes stamp-in {
+  0% {
+    opacity: 0;
+    scale: 1.5;
+  }
+  60% {
+    opacity: 1;
+    scale: 0.95;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
 /* MapLibre 팝업 다크모드 */
 .dark .maplibregl-popup-content {
   background: var(--color-gray-900);

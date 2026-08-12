@@ -53,7 +53,7 @@ export default async function LocaleGuidePage({
         </Link>
       </p>
       <h1 className="mt-2 text-3xl font-bold">{guide.title}</h1>
-      <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+      <p className="mt-2 font-mono text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
         {ui.lastVerified}: {guide.lastVerified}
       </p>
 

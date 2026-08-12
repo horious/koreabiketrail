@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BlueLineRail, Waypoint } from "@/components/BlueLine";
 import HeroCarousel from "@/components/HeroCarousel";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import StampStats from "@/components/StampStats";
 import { languageAlternates } from "@/lib/i18n";
 import { HOME_REWARD_IMAGE } from "@/lib/imagePlaceholders";
 
@@ -119,8 +121,13 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="py-10">
-        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+      {/* 파란 선 여정 — 히어로(인천)에서 시작해 페이지 끝(부산)까지, 섹션이 경유지 */}
+      <div className="relative sm:pl-12">
+        <BlueLineRail />
+
+      <section className="relative py-10">
+        <Waypoint />
+        <p className="text-center font-mono text-[11px] font-semibold tracking-widest text-blue-600 uppercase dark:text-blue-400">
           Why Korea
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
@@ -129,7 +136,7 @@ export default function HomePage() {
         <ul className="mx-auto mt-8 max-w-3xl divide-y">
           {REASONS.map((r) => (
             <li key={r.n} className="flex gap-5 py-5">
-              <span className="text-2xl font-bold text-gray-300 tabular-nums dark:text-gray-700">
+              <span className="font-mono text-2xl font-bold text-gray-300 dark:text-gray-700">
                 {r.n}
               </span>
               <div>
@@ -148,15 +155,17 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="py-10">
-        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+      <section className="relative py-10">
+        <Waypoint />
+        <p className="text-center font-mono text-[11px] font-semibold tracking-widest text-blue-600 uppercase dark:text-blue-400">
           By the numbers
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
           The whole trip in eight numbers
         </h2>
-        <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
-          {[
+        <StampStats
+          className="mx-auto mt-8 max-w-3xl"
+          items={[
             ["633 km", "Incheon → Busan"],
             ["26", "stamps to collect"],
             ["5–9 days", "typical duration"],
@@ -165,17 +174,13 @@ export default function HomePage() {
             ["₩4,000", "passport price"],
             ["0 words", "of Korean needed"],
             ["1 medal", "to take home"],
-          ].map(([big, small]) => (
-            <div key={big} className="rounded-2xl border bg-white p-4 text-center dark:bg-gray-900">
-              <div className="text-xl font-bold text-blue-600 dark:text-blue-400">{big}</div>
-              <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">{small}</div>
-            </div>
-          ))}
-        </div>
+          ]}
+        />
       </section>
 
-      <section className="py-10">
-        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+      <section className="relative py-10">
+        <Waypoint />
+        <p className="text-center font-mono text-[11px] font-semibold tracking-widest text-blue-600 uppercase dark:text-blue-400">
           Wherever you ride
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
@@ -207,8 +212,9 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="py-10">
-        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+      <section className="relative py-10">
+        <Waypoint />
+        <p className="text-center font-mono text-[11px] font-semibold tracking-widest text-blue-600 uppercase dark:text-blue-400">
           Start here
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
@@ -249,6 +255,7 @@ export default function HomePage() {
           marker at the Busan finish line.
         </p>
       </section>
+      </div>
     </div>
   );
 }

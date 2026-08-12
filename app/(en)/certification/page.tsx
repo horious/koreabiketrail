@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
-import StampingVideo from "@/components/StampingVideo";
+import CertificationGuide from "@/components/cert/CertificationGuide";
 import { languageAlternates } from "@/lib/i18n";
-import { CERT_STEP_IMAGES } from "@/lib/imagePlaceholders";
 
 export const metadata: Metadata = {
   title: "Korea Bike Passport & Certification Guide",
@@ -16,23 +13,26 @@ const STEPS = [
   {
     title: "1. Buy the Bike Passport (₩4,000, cash)",
     body: "Sold at staffed certification centers on the paths — NOT at the airport. Starting in Incheon, buy it at the Ara West Sea Lock center (daily 09:00–18:00). Bring Korean won in cash; foreign cards often fail. The paper route map is ₩500 extra and worth it. Note: since 2022 it's one passport per person with ID verification — bring your actual passport.",
-    image: CERT_STEP_IMAGES[0],
   },
   {
     title: "2. Stamp at every red booth",
     body: "Certification centers are red phone-booth-style boxes every 10–30 km, open 24/7. Each holds a unique stamp and ink pad. Carry a spare ink pad: pads dry out, especially on remote sections. If a stamp is missing or broken, take a photo of yourself at the booth — staffed centers accept it as proof.",
-    image: CERT_STEP_IMAGES[1],
   },
   {
     title: "3. Get verified at a staffed center",
     body: "At the finish (Nakdong Estuary Bank in Busan, or wherever you complete a path), staff review your stamps, certify the passport, and issue completion stickers. A certificate follows by mail.",
-    image: CERT_STEP_IMAGES[2],
   },
   {
     title: "4. Order your medal",
     body: "Finishing the Cross-Country, Four Rivers or Grand Slam lets you buy an Olympic-style medal (₩7,500, display case ₩4,000). Two catches for foreigners: the online shop (riverguide.go.kr, '우리강 이용 도우미') generally needs Korean payment methods, and medals ship to KOREAN ADDRESSES ONLY, taking 2–4 weeks. Plan ahead: order via the finish-line staff or a Korean friend, and use a hotel/friend's address — or budget a return visit.",
-    image: CERT_STEP_IMAGES[3],
   },
+];
+
+const LEVELS: [string, string, string][] = [
+  ["Individual path", "Any one certification path", "Path sticker"],
+  ["Cross-Country", "Ara + Hangang + Saejae + Nakdonggang", "Cross-Country medal"],
+  ["Four Rivers", "Han, Nakdong, Geum, Yeongsan rivers", "Four Rivers medal"],
+  ["Grand Slam", "Every certification center in the country", "Grand Slam medal"],
 ];
 
 // HowTo 리치 결과용 — 가시 콘텐츠(STEPS)와 1:1 일치
@@ -57,71 +57,19 @@ export default function CertificationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(HOWTO_JSONLD) }}
       />
-      <h1 className="text-3xl font-bold">
-        Korea's Bike Passport &amp; certification system
-      </h1>
-      <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
-        Korea's cycling network is gamified: collect stamps in a paper passport
-        as you ride, get paths certified, earn stickers, certificates and
-        medals. It sounds silly until you're 400 km in and would sooner die
-        than miss a booth.
-      </p>
-
-      <ol className="mt-8 space-y-5">
-        {STEPS.map((s, i) => (
-          <li key={s.title} className="rounded-xl border p-5">
-            <h2 className="font-semibold">{s.title}</h2>
-            <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{s.body}</p>
-            {i === 1 && (
-              <StampingVideo caption="Stamping at a red booth. Uh-oh — the stamp's rubber has parted ways with its handle. That happens too (see the photo rule above)." />
-            )}
-            {s.image && <ImagePlaceholder description={s.image} />}
-          </li>
-        ))}
-      </ol>
-
-      <section className="mt-8">
-        <h2 className="text-xl font-semibold">Certification levels</h2>
-        <div className="mt-3 overflow-x-auto">
-        <table className="w-full min-w-[480px] border-collapse text-sm">
-          <thead>
-            <tr className="border-b text-left text-gray-500 dark:text-gray-400">
-              <th className="py-1 pr-3">Level</th>
-              <th className="py-1 pr-3">What you ride</th>
-              <th className="py-1">Reward</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="border-b">
-              <td className="py-1.5 pr-3">Individual path</td>
-              <td className="py-1.5 pr-3">Any one certification path</td>
-              <td className="py-1.5">Path sticker</td>
-            </tr>
-            <tr className="border-b">
-              <td className="py-1.5 pr-3">Cross-Country</td>
-              <td className="py-1.5 pr-3">Ara + Hangang + Saejae + Nakdonggang</td>
-              <td className="py-1.5">Cross-Country medal</td>
-            </tr>
-            <tr className="border-b">
-              <td className="py-1.5 pr-3">Four Rivers</td>
-              <td className="py-1.5 pr-3">Han, Nakdong, Geum, Yeongsan rivers</td>
-              <td className="py-1.5">Four Rivers medal</td>
-            </tr>
-            <tr className="border-b">
-              <td className="py-1.5 pr-3">Grand Slam</td>
-              <td className="py-1.5 pr-3">Every certification center in the country</td>
-              <td className="py-1.5">Grand Slam medal</td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-      </section>
-
-      <p className="mt-8">
-        <Link href="/certification/centers/" className="underline">
-          See every certification center on the Cross-Country Route →
-        </Link>
-      </p>
+      <CertificationGuide
+        title="Korea's Bike Passport & certification system"
+        intro="Korea's cycling network is gamified: collect stamps in a paper passport as you ride, get paths certified, earn stickers, certificates and medals. It sounds silly until you're 400 km in and would sooner die than miss a booth."
+        steps={STEPS}
+        stampVideoCaption="Stamping at a red booth. Uh-oh — the stamp's rubber has parted ways with its handle. That happens too (see the photo rule above)."
+        levelsTitle="Certification levels"
+        levelsHead={{ level: "Level", what: "What you ride", reward: "Reward" }}
+        levels={LEVELS}
+        centersLink={{
+          href: "/certification/centers/",
+          label: "See every certification center on the Cross-Country Route →",
+        }}
+      />
     </article>
   );
 }

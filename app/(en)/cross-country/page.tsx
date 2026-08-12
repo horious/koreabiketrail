@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import RouteRibbon from "@/components/RouteRibbon";
+import StampStats from "@/components/StampStats";
+import { INK, RouteStamp } from "@/components/stamps";
 import {
   certCenters,
   MEDIA_URL,
@@ -63,26 +65,34 @@ export default function CrossCountryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <h1 className="text-3xl font-bold">
-        The Cross-Country Bike Route (국토종주): Incheon &amp; Seoul to Busan
-      </h1>
-      <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-        Last verified: {stagesLastVerified} · distances approximate
-      </p>
+      <div className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:justify-between">
+        <div className="max-w-2xl">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            The Cross-Country Bike Route (국토종주): Incheon &amp; Seoul to
+            Busan
+          </h1>
+          <p className="mt-2 font-mono text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+            Last verified: {stagesLastVerified} · distances approximate
+          </p>
+        </div>
+        <span
+          className={`stamp-in mx-auto block h-32 w-32 shrink-0 rotate-6 sm:mx-0 sm:mt-1 sm:h-40 sm:w-40 ${INK}`}
+        >
+          <RouteStamp className="h-full w-full" />
+        </span>
+      </div>
 
-      <section className="mt-6 grid gap-3 sm:grid-cols-4">
-        {[
+      <RouteRibbon className="mt-10" />
+
+      <StampStats
+        className="mt-8"
+        items={[
           ["633 km", "Incheon → Busan"],
           ["5–9 days", "typical duration"],
           ["1 big climb", "Ihwaryeong, 5km @ up to ~12%"],
           [`${certCenters.length} booths`, "stamps to collect"],
-        ].map(([big, small]) => (
-          <div key={big} className="rounded-lg border p-4 text-center">
-            <div className="text-xl font-bold">{big}</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">{small}</div>
-          </div>
-        ))}
-      </section>
+        ]}
+      />
 
       <figure className="my-6">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -155,25 +165,25 @@ export default function CrossCountryPage() {
           <div key={plan.id} className="mt-4">
             <h3 className="font-semibold">{plan.title}</h3>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{plan.blurb}</p>
-            <div className="mt-2 overflow-x-auto">
+            <div className="mt-3 overflow-x-auto rounded-xl border">
             <table className="w-full min-w-[560px] border-collapse text-sm">
-              <thead>
-                <tr className="border-b text-left text-gray-500 dark:text-gray-400">
-                  <th className="py-1 pr-2">Day</th>
-                  <th className="py-1 pr-2">From → To</th>
-                  <th className="py-1 pr-2">~km</th>
-                  <th className="py-1">Notes</th>
+              <thead className="bg-gray-50 dark:bg-gray-900">
+                <tr className="text-left font-mono text-[11px] tracking-widest text-gray-500 uppercase dark:text-gray-400">
+                  <th className="px-3 py-2 font-semibold">Day</th>
+                  <th className="px-3 py-2 font-semibold">From → To</th>
+                  <th className="px-3 py-2 font-semibold">~km</th>
+                  <th className="px-3 py-2 font-semibold">Notes</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
                 {plan.days.map((d) => (
-                  <tr key={d.day} className="border-b align-top">
-                    <td className="py-1.5 pr-2">{d.day}</td>
-                    <td className="py-1.5 pr-2 whitespace-nowrap">
+                  <tr key={d.day} className="align-top">
+                    <td className={`px-3 py-2 font-mono font-semibold ${INK}`}>{d.day}</td>
+                    <td className="px-3 py-2 whitespace-nowrap">
                       {d.from} → {d.to}
                     </td>
-                    <td className="py-1.5 pr-2">{d.km}</td>
-                    <td className="py-1.5 text-gray-600 dark:text-gray-400">{d.notes}</td>
+                    <td className="px-3 py-2 font-mono">{d.km}</td>
+                    <td className="px-3 py-2 text-gray-600 dark:text-gray-400">{d.notes}</td>
                   </tr>
                 ))}
               </tbody>

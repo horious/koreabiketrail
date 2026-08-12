@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import RouteRibbon from "@/components/RouteRibbon";
+import StampStats from "@/components/StampStats";
+import { INK, RouteStamp } from "@/components/stamps";
 import { DICTS, isLocale, languageAlternates } from "@/lib/i18n";
 import { MEDIA_URL } from "@/lib/data";
 
@@ -30,16 +33,20 @@ export default async function LocaleCrossCountry({
 
   return (
     <article>
-      <h1 className="text-3xl font-bold">{d.title}</h1>
+      <div className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:justify-between">
+        <h1 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+          {d.title}
+        </h1>
+        <span
+          className={`stamp-in mx-auto block h-32 w-32 shrink-0 rotate-6 sm:mx-0 sm:mt-1 sm:h-40 sm:w-40 ${INK}`}
+        >
+          <RouteStamp className="h-full w-full" />
+        </span>
+      </div>
 
-      <section className="mt-6 grid gap-3 sm:grid-cols-4">
-        {d.stats.map(([big, small]) => (
-          <div key={big} className="rounded-lg border p-4 text-center">
-            <div className="text-xl font-bold">{big}</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">{small}</div>
-          </div>
-        ))}
-      </section>
+      <RouteRibbon className="mt-10" />
+
+      <StampStats className="mt-8" items={d.stats} />
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -80,25 +87,25 @@ export default async function LocaleCrossCountry({
           <div key={plan.title} className="mt-4">
             <h3 className="font-semibold">{plan.title}</h3>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{plan.blurb}</p>
-            <div className="mt-2 overflow-x-auto">
+            <div className="mt-3 overflow-x-auto rounded-xl border">
             <table className="w-full min-w-[560px] border-collapse text-sm">
-              <thead>
-                <tr className="border-b text-left text-gray-500 dark:text-gray-400">
-                  <th className="py-1 pr-2">{d.tableHead.day}</th>
-                  <th className="py-1 pr-2">{d.tableHead.fromTo}</th>
-                  <th className="py-1 pr-2">{d.tableHead.km}</th>
-                  <th className="py-1">{d.tableHead.notes}</th>
+              <thead className="bg-gray-50 dark:bg-gray-900">
+                <tr className="text-left font-mono text-[11px] tracking-widest text-gray-500 uppercase dark:text-gray-400">
+                  <th className="px-3 py-2 font-semibold">{d.tableHead.day}</th>
+                  <th className="px-3 py-2 font-semibold">{d.tableHead.fromTo}</th>
+                  <th className="px-3 py-2 font-semibold">{d.tableHead.km}</th>
+                  <th className="px-3 py-2 font-semibold">{d.tableHead.notes}</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
                 {plan.days.map((day) => (
-                  <tr key={day.day} className="border-b align-top">
-                    <td className="py-1.5 pr-2">{day.day}</td>
-                    <td className="py-1.5 pr-2">
+                  <tr key={day.day} className="align-top">
+                    <td className={`px-3 py-2 font-mono font-semibold ${INK}`}>{day.day}</td>
+                    <td className="px-3 py-2">
                       {day.from} → {day.to}
                     </td>
-                    <td className="py-1.5 pr-2">{day.km}</td>
-                    <td className="py-1.5 text-gray-600 dark:text-gray-400">{day.notes}</td>
+                    <td className="px-3 py-2 font-mono">{day.km}</td>
+                    <td className="px-3 py-2 text-gray-600 dark:text-gray-400">{day.notes}</td>
                   </tr>
                 ))}
               </tbody>

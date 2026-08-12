@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BlueLineRail, Waypoint } from "@/components/BlueLine";
 import HeroCarousel from "@/components/HeroCarousel";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import StampStats from "@/components/StampStats";
 import { DICTS, isLocale, languageAlternates, type Locale } from "@/lib/i18n";
 import { HOME_REWARD_IMAGE } from "@/lib/imagePlaceholders";
 
@@ -40,8 +42,13 @@ export default async function LocaleHome({
         />
       </section>
 
-      <section className="py-10">
-        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+      {/* 파란 선 여정 — EN 홈과 동일한 구조 */}
+      <div className="relative sm:pl-12">
+        <BlueLineRail />
+
+      <section className="relative py-10">
+        <Waypoint />
+        <p className="text-center font-mono text-[11px] font-semibold tracking-widest text-blue-600 uppercase dark:text-blue-400">
           {d.home.whyEyebrow}
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
@@ -50,7 +57,7 @@ export default async function LocaleHome({
         <ul className="mx-auto mt-8 max-w-3xl divide-y">
           {d.home.reasons.map((r, i) => (
             <li key={r.claim} className="flex gap-5 py-5">
-              <span className="text-2xl font-bold text-gray-300 tabular-nums dark:text-gray-700">
+              <span className="font-mono text-2xl font-bold text-gray-300 dark:text-gray-700">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
@@ -69,25 +76,20 @@ export default async function LocaleHome({
         </ul>
       </section>
 
-      <section className="py-10">
-        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+      <section className="relative py-10">
+        <Waypoint />
+        <p className="text-center font-mono text-[11px] font-semibold tracking-widest text-blue-600 uppercase dark:text-blue-400">
           {d.home.numbers.eyebrow}
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
           {d.home.numbers.title}
         </h2>
-        <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
-          {d.home.numbers.items.map(([big, small]) => (
-            <div key={big} className="rounded-2xl border bg-white p-4 text-center dark:bg-gray-900">
-              <div className="text-xl font-bold text-blue-600 dark:text-blue-400">{big}</div>
-              <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">{small}</div>
-            </div>
-          ))}
-        </div>
+        <StampStats className="mx-auto mt-8 max-w-3xl" items={d.home.numbers.items} />
       </section>
 
-      <section className="py-10">
-        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+      <section className="relative py-10">
+        <Waypoint />
+        <p className="text-center font-mono text-[11px] font-semibold tracking-widest text-blue-600 uppercase dark:text-blue-400">
           {d.home.regions.eyebrow}
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
@@ -121,8 +123,9 @@ export default async function LocaleHome({
         </p>
       </section>
 
-      <section className="py-10">
-        <p className="text-center text-sm font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">
+      <section className="relative py-10">
+        <Waypoint />
+        <p className="text-center font-mono text-[11px] font-semibold tracking-widest text-blue-600 uppercase dark:text-blue-400">
           {d.home.startEyebrow}
         </p>
         <h2 className="mt-1 text-center text-2xl font-bold tracking-tight">
@@ -161,6 +164,7 @@ export default async function LocaleHome({
         <h2 className="font-semibold">{d.home.confusionTitle}</h2>
         <p className="mt-2">{d.home.confusionBody}</p>
       </section>
+      </div>
     </div>
   );
 }

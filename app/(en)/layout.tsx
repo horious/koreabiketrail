@@ -36,7 +36,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold tracking-wide uppercase text-gray-500 dark:text-gray-400">
+            <p className="font-mono text-[11px] font-semibold tracking-widest uppercase text-gray-500 dark:text-gray-400">
               Explore
             </p>
             <ul className="mt-2 space-y-1.5 text-sm">
@@ -53,7 +53,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
             </ul>
           </div>
           <div>
-            <p className="text-sm font-semibold tracking-wide uppercase text-gray-500 dark:text-gray-400">
+            <p className="font-mono text-[11px] font-semibold tracking-widest uppercase text-gray-500 dark:text-gray-400">
               Official sources
             </p>
             <ul className="mt-2 space-y-1.5 text-sm">

@@ -27,8 +27,8 @@ const WEBSITE_JSONLD = {
     "The practical English guide to cycling South Korea's Cross-Country Route.",
 };
 
-// 첫 페인트 전에 테마 적용 (FOUC 방지) — ThemeToggle과 같은 규칙
-const THEME_INIT = `(function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||((!t||t==="system")&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d)}catch(e){}})()`;
+// 첫 페인트 전에 테마 적용 (FOUC 방지) — ThemeToggle과 같은 규칙. 기본값은 light (system 아님)
+const THEME_INIT = `(function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t==="system"&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d)}catch(e){}})()`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
