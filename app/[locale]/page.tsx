@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BlueLineRail, Waypoint } from "@/components/BlueLine";
+import BlueLineRider from "@/components/BlueLineRider";
+import JourneyScenery from "@/components/JourneyScenery";
 import HeroCarousel from "@/components/HeroCarousel";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import StampStats from "@/components/StampStats";
@@ -44,7 +46,9 @@ export default async function LocaleHome({
 
       {/* 파란 선 여정 — EN 홈과 동일한 구조 */}
       <div className="relative sm:pl-12">
+        <JourneyScenery />
         <BlueLineRail />
+        <BlueLineRider />
 
       <section className="relative py-10">
         <Waypoint />

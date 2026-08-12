@@ -19,7 +19,8 @@
 - 디자인: Cruip Simple Light 베이스 + **도장 모티프 디자인 시스템** (2026-08-13).
   색 체계: 파랑=노면의 파란 선(길·링크·GPX), 인주 버밀리언=도장(숫자·순번·보상, `INK` in
   `components/stamps.tsx`). 레이블·표 헤더는 시스템 모노 대문자. 페이지별 시그니처:
-  홈=파란 선 여정(`BlueLine.tsx`), cross-country=거리 비율 리본(`RouteRibbon.tsx`),
+  홈=파란 선 여정(`BlueLine.tsx` + 스크롤 추적 라이더 `BlueLineRider.tsx` + 지형 실루엣
+  배경 `JourneyScenery.tsx`), cross-country=거리 비율 리본(`RouteRibbon.tsx`),
   certification=도장 스파인(`cert/CertificationGuide.tsx`), gpx=실데이터 트레이스(`RouteTrace.tsx`),
   guides=호버 도장 수집, 숫자 스탯=`StampStats.tsx`. **장식 그래픽은 전부 aria-hidden +
   로마자/숫자만 → 로케일 사전 무부담**. 도장 잉크 질감은 SVG feTurbulence
