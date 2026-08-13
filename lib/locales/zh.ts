@@ -3,7 +3,7 @@ import type { LocaleDict } from "../i18n";
 // 繁體中文(台灣)。地名:已定型的漢字地名採用(首爾·釜山·仁川·漢江·洛東江·梨花嶺),
 // 認證中心等小地名保留羅馬字+韓文,方便對照現場路牌。
 const zh: LocaleDict = {
-  code: "zh",
+  code: "zh-tw",
   htmlLang: "zh-Hant",
   name: "繁體中文",
   nav: { route: "縱貫路線", cert: "認證制度", gpx: "GPX·地圖", guides: "指南", resources: "資源", english: "English" },

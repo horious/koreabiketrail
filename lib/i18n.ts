@@ -6,7 +6,8 @@
 //  - ZH-Hant: 정착된 한자 지명만 (首爾·釜山·仁川·漢江·洛東江·梨花嶺), 애매하면 로마자
 //  - ZH-Hans(zh-cn): ZH-Hant와 동일 정책의 간체 (首尔·汉江·洛东江·梨花岭)
 //  - TH/ES: 전부 로마자
-export const LOCALES = ["ja", "zh", "zh-cn", "th", "es"] as const;
+// zh-tw = 번체(구 /zh/ — 2026-08-13 이관, vercel.json 301), zh-cn = 간체
+export const LOCALES = ["ja", "zh-tw", "zh-cn", "th", "es"] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export interface HeroTexts {
@@ -133,7 +134,7 @@ import zhCn from "./locales/zh-cn";
 import th from "./locales/th";
 import es from "./locales/es";
 
-export const DICTS: Record<Locale, LocaleDict> = { ja, zh, "zh-cn": zhCn, th, es };
+export const DICTS: Record<Locale, LocaleDict> = { ja, "zh-tw": zh, "zh-cn": zhCn, th, es };
 
 export const isLocale = (v: string): v is Locale =>
   (LOCALES as readonly string[]).includes(v);
@@ -143,7 +144,7 @@ export const languageAlternates = (path: string) => ({
   "x-default": `${path}`,
   en: `${path}`,
   ja: `/ja${path === "/" ? "/" : path}`,
-  "zh-Hant": `/zh${path === "/" ? "/" : path}`,
+  "zh-Hant": `/zh-tw${path === "/" ? "/" : path}`,
   "zh-Hans": `/zh-cn${path === "/" ? "/" : path}`,
   th: `/th${path === "/" ? "/" : path}`,
   es: `/es${path === "/" ? "/" : path}`,

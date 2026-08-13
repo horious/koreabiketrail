@@ -81,10 +81,12 @@
 
 ## i18n (2026-07-19 도입)
 
-- 언어: EN(루트, 전체) + JA·ZH-Hant·ZH-Hans(`/zh-cn/`, 2026-08-13 추가)·TH·ES(`/{locale}/` —
+- 언어: EN(루트, 전체) + JA·ZH-Hant(`/zh-tw/`)·ZH-Hans(`/zh-cn/`)·TH·ES(`/{locale}/` —
   홈·cross-country·certification·gpx·**guides·resources**. 로케일 미제공: 인증센터 목록·privacy).
   가이드 번역은 `lib/locales/guides-{locale}.ts` (레지스트리 `lib/guides-i18n.ts`).
-  zh-cn은 zh(繁體)에서 OpenCC tw→cn 변환 + 대륙 어휘 손질로 생성 — zh 수정 시 zh-cn도 함께
+  zh-cn은 zh(繁體)에서 OpenCC tw→cn 변환 + 대륙 어휘 손질로 생성 — zh 수정 시 zh-cn도 함께.
+  번체 경로는 구 `/zh/`에서 2026-08-13 `/zh-tw/`로 이관 (vercel.json 301 + 구 lang=zh 쿠키 호환,
+  Accept-Language 분기: zh-TW/HK/Hant→zh-tw, 그 외 zh→zh-cn)
 - 구조: `app/(en)/`=영어 전체, `app/[locale]/`=번역판, 루트 layout은 html/테마/분석만.
   사전은 `lib/locales/*.ts` (타입 `lib/i18n.ts`), 언어 스위처 옵션은 `lib/langs.ts`(클라이언트 안전)
 - **지명 정책**: 로마자 기본+한글 병기. JA는 대도시만 현지 표기(ソウル·釜山·仁川),

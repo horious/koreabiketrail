@@ -34,13 +34,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...["", "/cross-country", "/certification", "/gpx", "/guides", "/resources"].map(
         (p) => ({
           url: `${SITE_URL}/${l}${p}/`,
-          lastModified: l === "zh-cn" ? "2026-08-13" : "2026-07-20",
+          lastModified: "2026-08-13", // 전 로케일 번역 감수·zh 개편일
           changeFrequency: "monthly" as const,
         }),
       ),
       ...guides.map((g) => ({
         url: `${SITE_URL}/${l}/guides/${g.slug}/`,
-        lastModified: l === "zh-cn" ? "2026-08-13" : "2026-07-20",
+        lastModified: "2026-08-13",
         changeFrequency: "monthly" as const,
       })),
     ]),

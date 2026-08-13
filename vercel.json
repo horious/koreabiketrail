@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/zh/:path*",
+      "destination": "/zh-tw/:path*",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [{ "type": "cookie", "key": "lang", "value": "ja" }],
       "destination": "/ja/",
@@ -8,8 +13,14 @@
     },
     {
       "source": "/",
-      "has": [{ "type": "cookie", "key": "lang", "value": "zh" }],
-      "destination": "/zh/",
+      "has": [{ "type": "cookie", "key": "lang", "value": "(zh|zh-tw)" }],
+      "destination": "/zh-tw/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "lang", "value": "zh-cn" }],
+      "destination": "/zh-cn/",
       "permanent": false
     },
     {
@@ -33,9 +44,22 @@
     },
     {
       "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "(zh-TW|zh-HK|zh-Hant).*"
+        }
+      ],
+      "missing": [{ "type": "cookie", "key": "lang" }],
+      "destination": "/zh-tw/",
+      "permanent": false
+    },
+    {
+      "source": "/",
       "has": [{ "type": "header", "key": "accept-language", "value": "zh.*" }],
       "missing": [{ "type": "cookie", "key": "lang" }],
-      "destination": "/zh/",
+      "destination": "/zh-cn/",
       "permanent": false
     },
     {

@@ -8,7 +8,7 @@ import zhCn from "./locales/guides-zh-cn";
 import th from "./locales/guides-th";
 import es from "./locales/guides-es";
 
-export const GUIDE_DICTS: Record<Locale, Guide[]> = { ja, zh, "zh-cn": zhCn, th, es };
+export const GUIDE_DICTS: Record<Locale, Guide[]> = { ja, "zh-tw": zh, "zh-cn": zhCn, th, es };
 
 export const getLocaleGuide = (locale: Locale, slug: string): Guide | undefined =>
   GUIDE_DICTS[locale].find((g) => g.slug === slug);
