@@ -4,10 +4,9 @@ import { notFound } from "next/navigation";
 import { BlueLineRail, Waypoint } from "@/components/BlueLine";
 import BlueLineRider from "@/components/BlueLineRider";
 import HeroCarousel from "@/components/HeroCarousel";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import StampStats from "@/components/StampStats";
+import { MEDIA_URL } from "@/lib/data";
 import { DICTS, isLocale, languageAlternates, type Locale } from "@/lib/i18n";
-import { HOME_REWARD_IMAGE } from "@/lib/imagePlaceholders";
 
 export async function generateMetadata({
   params,
@@ -159,8 +158,14 @@ export default async function LocaleHome({
         </div>
       </section>
 
-      {/* 플레이스홀더 안내문은 EN 공유(촬영 가이드) — 실제 이미지 교체 시 전 로케일 동시 반영됨 */}
-      <ImagePlaceholder description={HOME_REWARD_IMAGE} />
+      {/* 보상 체인 실사진 — 캡션은 EN 전용이라 로케일판은 이미지만 (기존 이미지 패턴과 동일) */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${MEDIA_URL}/images/certificate-medal.webp`}
+        alt="Stamped bike passports, certificates, stickers and medals — the full reward chain"
+        loading="lazy"
+        className="my-10 w-full rounded-xl border"
+      />
 
       <section className="rounded-xl bg-gray-50 dark:bg-gray-900 p-5 text-sm text-gray-700 dark:text-gray-300">
         <h2 className="font-semibold">{d.home.confusionTitle}</h2>

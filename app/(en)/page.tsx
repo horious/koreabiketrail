@@ -3,10 +3,9 @@ import Link from "next/link";
 import { BlueLineRail, Waypoint } from "@/components/BlueLine";
 import BlueLineRider from "@/components/BlueLineRider";
 import HeroCarousel from "@/components/HeroCarousel";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import StampStats from "@/components/StampStats";
+import { MEDIA_URL } from "@/lib/data";
 import { languageAlternates } from "@/lib/i18n";
-import { HOME_REWARD_IMAGE } from "@/lib/imagePlaceholders";
 
 export const metadata: Metadata = {
   alternates: { canonical: "./", languages: languageAlternates("/") },
@@ -245,7 +244,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ImagePlaceholder description={HOME_REWARD_IMAGE} />
+      <figure className="my-10">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${MEDIA_URL}/images/certificate-medal.webp`}
+          alt="The full reward chain laid out: stamped bike passports, Cross-Country and Grand Slam certificates, completion stickers, and three gold medals including the Grand Slam medal in its wooden case"
+          loading="lazy"
+          className="w-full rounded-xl border"
+        />
+        <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+          Not stock photos — the actual haul: stamped passports, certificates,
+          stickers, and the medals (that's the Grand Slam in the wooden case).
+        </figcaption>
+      </figure>
 
       <section className="rounded-xl bg-gray-50 dark:bg-gray-900 p-5 text-sm text-gray-700 dark:text-gray-300">
         <h2 className="font-semibold">Cross-Country ≠ Four Rivers</h2>

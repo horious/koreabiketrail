@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import StampingVideo from "@/components/StampingVideo";
+import { MEDIA_URL } from "@/lib/data";
 import { CERT_STEP_IMAGES } from "@/lib/imagePlaceholders";
 import { INK, RouteStamp, StepStamp } from "@/components/stamps";
 
@@ -66,6 +67,16 @@ export default function CertificationGuide({
               <h2 className="font-semibold">{stripNo(s.title)}</h2>
               <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{s.body}</p>
               {i === 1 && <StampingVideo caption={stampVideoCaption} />}
+              {/* 4단계 보상 실사진 — 캡션 없이 이미지만 (로케일 공유, 본문이 맥락 설명) */}
+              {i === 3 && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={`${MEDIA_URL}/images/certificate-medal.webp`}
+                  alt="Stamped bike passports, Cross-Country and Grand Slam certificates, completion stickers, and three gold medals including the Grand Slam medal in its wooden case"
+                  loading="lazy"
+                  className="my-6 w-full rounded-xl border"
+                />
+              )}
               {CERT_STEP_IMAGES[i] && (
                 <ImagePlaceholder description={CERT_STEP_IMAGES[i]!} />
               )}
