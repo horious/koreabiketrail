@@ -1,8 +1,18 @@
 {
   "redirects": [
     {
-      "source": "/zh/:path*",
-      "destination": "/zh-tw/:path*",
+      "source": "/zh",
+      "destination": "/zh-tw/",
+      "permanent": true
+    },
+    {
+      "source": "/zh/",
+      "destination": "/zh-tw/",
+      "permanent": true
+    },
+    {
+      "source": "/zh/:path(.+)",
+      "destination": "/zh-tw/:path",
       "permanent": true
     },
     {
