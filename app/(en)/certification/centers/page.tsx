@@ -5,6 +5,7 @@ import { INK } from "@/components/stamps";
 import {
   certCenters,
   certCentersLastVerified,
+  MEDIA_URL,
   PATH_LABELS,
   type BikePath,
 } from "@/lib/data";
@@ -39,17 +40,39 @@ export default function CentersPage() {
       </div>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <figure className="my-6">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${MEDIA_URL}/images/nakdong-estuary-center.webp`}
+            alt="Glass building of the Nakdong River Culture Pavilion with its entrance sign, home of the staffed Nakdong Estuary Bank certification center in Busan"
+            loading="lazy"
+            className="aspect-video w-full rounded-xl border object-cover"
+          />
+          <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            Staffed center — passports sold, completions verified. Pictured:
+            Nakdong Estuary Bank, the route finish in Busan.
+          </figcaption>
+        </figure>
         <ImagePlaceholder
-          aspect="tall"
-          description="A STAFFED certification center: building exterior with signage and the service counter visible (e.g., Ara West Sea Lock or a weir center). Riders need to recognize 'this is where I can buy the passport / get verified'."
-          caption="Staffed center — passports sold, completions verified."
-        />
-        <ImagePlaceholder
-          aspect="tall"
+          aspect="video"
           description="An UNSTAFFED red stamp booth standing alone on the path (weir or riverside backdrop). Contrast shot so riders can tell the two types apart at a glance."
           caption="Unstaffed booth — stamp anytime, 24/7."
         />
       </div>
+
+      <figure className="my-6">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${MEDIA_URL}/images/nakdong-estuary-exhibits.webp`}
+          alt="Display shelf inside the Nakdong Estuary center showing sample Cross-Country, Four Rivers, and Grand Slam certificates alongside completion medals in wooden cases"
+          loading="lazy"
+          className="w-full rounded-xl border"
+        />
+        <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+          Inside the finish-line center: sample certificates and medals for
+          every completion level, on display next to the counter.
+        </figcaption>
+      </figure>
 
       {PATH_ORDER.map((path) => (
         <section key={path} className="mt-8">
